@@ -1,12 +1,13 @@
 .mainContainer {
-  padding-bottom: 60px;
+  padding-bottom: 120px;
+  position:relative;
 }
 
 .container {
   background-color: #090a0a;
   position: relative;
   min-height: 100vh;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .load_icon {
@@ -14,6 +15,9 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.load_icon1{
   cursor:pointer;
 }
 
@@ -23,12 +27,24 @@
   margin-bottom: 20px;
 }
 
+#top{
+  font-size:calc(18px + 1.3vw);
+}
+
+#name{
+  text-shadow: 10px 2px #533152;
+}
+
 .titleTop {
-  width: 40vw;
+  width: calc(20vw + 150px);
+  height: auto;
+  line-height: calc(50px + 2.2vw);
 }
 
 .logoBox {
   position: fixed;
+  display:flex;
+  align-items: center;
   top: 0;
   width: 100%;
   height: 100vh;
@@ -36,6 +52,7 @@
   background-image: linear-gradient(#090a0a, #090a0a);
   z-index: 100;
   transition: background-color 0.5s;
+  padding: 0 calc(30px + 2vw);
 }
 
 .mainBox {
@@ -85,7 +102,7 @@
 
 .titleMain {
   letter-spacing: 5px;
-  font-size: calc(5px + .5vw);
+  font-size: calc(10px + .5vw);
 }
 
 .iconBox {
@@ -130,9 +147,11 @@
 .showBox {
   display: flex;
   width: 100%;
+  height: fit-content;
   justify-content: space-between;
   margin-top: 2rem;
-  overflow: scroll;
+  overflow:scroll;
+  z-index:80;
 }
 
 .showBox::-webkit-scrollbar {
@@ -140,11 +159,19 @@
 }
 
 .showImg {
-  border-radius: 11px;
-  width: 15%;
-  min-width: 250px;
+  border-radius: 7px;
+  width: 100%;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.showImgA{
+  width:15%;
+  min-width: 250px;
   margin-right: 10px;
+  overflow: visible;
+  transition: all 0.3s;
+  position:relative;
 }
 
 .boxMargin {
@@ -164,6 +191,28 @@
   z-index: 50;
 }
 
+.footer{
+  position: absolute;
+  bottom:0;
+  height: 80px;
+  width:100%;
+  background:#E9007F;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 calc(30px + 2vw);
+  color:#fff;
+  font-weight: 600;
+}
+
+#back{
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%,0);
+  width: 150%;
+}
+
 @media screen and (max-width: 1200px) {
   .boxMargin {
     min-width: calc(30px + 2vw);
@@ -180,6 +229,14 @@
   .aceBox2 {
     padding: 0;
     justify-content: unset;
+  }
+
+  .logoBox{
+    justify-content:center;
+  }
+
+  #name{
+    text-shadow: 4px 2px #533152;
   }
 }
 

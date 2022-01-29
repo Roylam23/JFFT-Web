@@ -5,6 +5,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: rgb(14, 14, 14);
+  scroll-behavior: smooth;
 }
 
 a {
@@ -18,7 +19,7 @@ a {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 /* Track */
@@ -29,14 +30,14 @@ a {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #e900809f; 
-  border-radius: 10px;
+  background: #E9007F; 
+  border-radius: 4px;
   transition:all 0.3s;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #E9007F; 
+  background: #e900809f; 
 }
 
 .black{

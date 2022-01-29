@@ -20,6 +20,21 @@ const load = {
   },
 };
 
+const load1 = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (i) => {
+    const delay = 6 + i * 0.5;
+    return {
+      opacity: 1,
+      pathLength: 1,
+      transition: {
+        pathLength: { delay, duration: 1.25 },
+        opacity: { delay, duration: 0.5 },
+      },
+    };
+  },
+};
+
 const hidden = {
   visible: {
     height: "calc(55px + 1vw)",
@@ -37,7 +52,7 @@ const hidden = {
 
 const end = {
   visible: {
-    width: "calc(40px + 1vw)",
+    width: "0px",
     height: "auto",
     transition: {
       delay: 4.5,
@@ -64,7 +79,7 @@ const icon = {
     const delay = 2.5 + i * 0.15;
     return {
       opacity: 1,
-      y: -30,
+      y: -20,
       transition: {
         opacity: { delay, duration: 1 },
         y: { delay, duration: 1 },
@@ -97,6 +112,46 @@ const show = {
     };
   },
 };
+
+let showss = ["j6", "j5", "j2", "j3", "j4", "j1"];
+let showes = [];
+showss.forEach((item, index) => {
+  const a = "/" + item + ".webp";
+  const b =
+    "https://www.youtube.com/watch?v=jIB5dPRMSRg&list=PLU9puGF2UY12vasd3ATv1VJwMHieMN-TQ";
+  showes.push(
+    <a className={styles.showImgA} href={b} target="_blank" rel="noreferrer">
+      <motion.img
+        src={a}
+        alt=""
+        className={styles.showImg}
+        variants={show}
+        initial="hidden"
+        animate="visible"
+        // viewport={{ once: true }}
+        custom={index}
+      />
+    </a>
+  );
+});
+
+let list = [];
+
+for (let i = 0; i < 5; i++) {
+  list.push(
+    <motion.div
+      className={styles.aceBox2}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { delay: 4.5, duration: 1.5 } }}
+    >
+      <span className={styles.optionTitle}>人氣節目</span>
+      <div className={styles.showBox}>
+        <div className={styles.boxMargin}></div>
+        {showes}
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Home() {
   useEffect(() => {
@@ -145,6 +200,70 @@ export default function Home() {
           variants={hidden}
           animate="visible"
         >
+          <motion.svg
+            width="calc(30px + .8vw)"
+            viewBox="0 0 846 724"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={styles.load_icon1}
+            initial="hidden"
+            animate="visible"
+            onClick={clickTop}
+          >
+            <motion.path
+              d="M153.453 239.755C105.008 187.311 73.7379 138.908 50.762 65.58C50.4462 64.5721 51.7079 63.8239 52.4381 64.5872C95.3553 109.444 135.636 140.946 201.352 168.601C202.476 169.074 203.777 168.41 204.084 167.23C231.245 62.7833 281.066 23.1592 327.069 59.5057C327.832 60.1082 328.982 59.3265 328.78 58.3758C313.128 -15.4635 419.271 14.8808 437.52 82.6255C437.731 83.4078 438.747 83.6501 439.288 83.0468C502.467 12.5734 605.711 17.6574 633.42 123.721C633.728 124.9 635.041 125.575 636.177 125.133C682.135 107.262 698.658 128.776 690.161 226.664C690.073 227.686 690.785 228.65 691.789 228.859C767.914 244.714 794.299 322.603 768.5 400C737.301 462.995 729.172 458.641 718.971 470.942C718.236 471.829 719.326 472.758 720.207 472.015C780.796 420.963 767.88 473.253 694.951 536.945C694.174 537.624 694.785 538.949 695.801 538.767C730.81 532.502 728.141 547.768 687.702 609.664C686.997 610.742 687.043 612.195 687.844 613.202C726.494 661.821 766.706 683.596 829.889 703.906C830.988 704.259 830.701 705.901 829.547 705.879C731.526 704.055 667.603 697.724 578.209 681.879C573.172 680.986 567.96 681.483 563.173 683.288C478.333 715.272 436.547 720.506 449.67 676.624C449.936 675.735 448.953 674.926 448.154 675.398C380.463 715.455 335.978 717.413 350.335 672.016C350.587 671.218 349.811 670.422 349.021 670.7C289.248 691.703 258.341 691.173 244.018 659.38C243.374 657.95 241.971 656.963 240.406 656.87C185.533 653.62 158.665 620.384 186.395 593.923C187.925 592.464 186.483 589.503 184.388 589.792C-14.1904 617.2 -20.1504 449.607 74.5002 387C79.7463 387 34.9533 351.973 82.8745 350.04C84.042 349.993 84.6105 347.544 83.6159 346.931C54.283 328.85 62.3766 259.796 152.265 243.153C153.835 242.863 154.536 240.928 153.453 239.755Z"
+              stroke="#E9007F"
+              stroke-width="30"
+              variants={load1}
+              custom={1}
+            />
+            <motion.path
+              d="M537 369C562.5 391.5 598 397.5 627 373.5"
+              stroke="white"
+              stroke-width="30"
+              variants={load1}
+              stroke-linecap="round"
+              custom={2}
+            />
+            <motion.path
+              d="M219 429.5C257.763 447.896 287.946 430.13 324.5 386"
+              stroke="white"
+              stroke-width="30"
+              variants={load1}
+              stroke-linecap="round"
+              custom={2}
+            />
+            <motion.path
+              d="M527.438 254.279C600.437 247.779 605.938 356.779 534.938 363.279C463.938 369.779 454.438 260.779 527.438 254.279Z"
+              stroke="white"
+              stroke-width="29"
+              variants={load1}
+              custom={3}
+            />
+            <motion.path
+              d="M286.438 288.279C359.437 281.779 364.938 390.779 293.938 397.279C222.938 403.779 213.438 294.779 286.438 288.279Z"
+              stroke="white"
+              stroke-width="29"
+              variants={load1}
+              custom={3}
+            />
+            <motion.path
+              d="M530 395.5L325.084 424C356.812 455.866 380.386 439.273 433 431.5C477 425 508.472 430.353 530 395.5Z"
+              stroke="white"
+              stroke-width="27"
+              stroke-linecap="round"
+              variants={load1}
+              custom={4}
+            />
+            <motion.path
+              d="M297 399.5C316.155 427.209 338.65 444.347 366 453M542 365C538.858 379.845 532.668 393.255 524.19 405M366 453C327.5 578 253 512.5 291.5 472M366 453C381.235 457.82 397.178 459.927 413 459.571M413 459.571L413.75 506.536M413 459.571C437.879 459.012 462.456 452.364 483.5 440.6M414.5 553.5L413.75 506.536M413.75 506.536L454.5 503M483.5 440.6L498.75 490.55M483.5 440.6C499.62 431.589 513.667 419.577 524.19 405M514 540.5L498.75 490.55M498.75 490.55L536 477.5M524.19 405L588 464"
+              stroke="#E9007F"
+              stroke-width="28"
+              stroke-linecap="round"
+              variants={load1}
+              custom={4}
+            />
+          </motion.svg>
           <motion.svg
             width="calc(65px + 6vw)"
             height="724"
@@ -222,6 +341,8 @@ export default function Home() {
             muted
             loop
             src={"/main.mp4"}
+            controls="controls"
+            preload="auto"
             className={styles.video}
             initial={{ opacity: 0 }}
             whileInView={{
@@ -234,33 +355,55 @@ export default function Home() {
             }}
             viewport={{ once: true }}
           >
-            <source src={"/main.mp4"} type="video/mp4" />
+            <source src={"/main.mp4#t=0.001"} type="video/mp4" />
           </motion.video>
+          <img id={styles.back} src={"/back.jpg"}></img>
           <div className={styles.filter}></div>
           <motion.div className={styles.title}>
             <motion.span
               className={styles.titleTop}
               initial={{ opacity: 0, y: 0 }}
               whileInView={{
-                width: ["30vw", "20vw"],
                 opacity: 1,
-                y: -50,
+                y: -30,
+                transition: {
+                  duration: 0.75,
+                  delay: 1,
+                },
+              }}
+              viewport={{ once: true }}
+              id={styles.top}
+            >
+              全港最大黃賭毒邪教
+            </motion.span>
+            <motion.span
+              className={styles.titleTop}
+              initial={{ opacity: 0, y: 0 }}
+              whileInView={{
+                // width: ["30vw", "20vw"],
+                opacity: 1,
+                y: -30,
                 transition: {
                   duration: 0.75,
                   delay: 1.5,
-                  width: { delay: 6, duration: 1.5 },
+                  // width: { delay: 6, duration: 1.5, ease: "easeInOut" },
                 },
               }}
               viewport={{ once: true }}
             >
-              <motion.img src={"/jffsong.png"} className={styles.jffsong} alt />
+              <motion.span
+                id={styles.name}
+                whileInView={{ fontSize: "calc(80px + 6vw)", color: "#E9007F" }}
+              >
+                JFFT
+              </motion.span>
             </motion.span>
             <motion.span
               className={styles.titleMain}
               initial={{ opacity: 0, y: 0 }}
               whileInView={{
                 opacity: 1,
-                y: -50,
+                y: -30,
                 transition: { duration: 0.75, delay: 2 },
               }}
               viewport={{ once: true }}
@@ -271,6 +414,7 @@ export default function Home() {
               <motion.a
                 className={styles.a}
                 href="https://www.youtube.com/channel/UC3aipgNToMvs2pFaQyaM_hg"
+                target="_blank"
                 whileHover={{ y: -10 }}
               >
                 <motion.svg
@@ -306,6 +450,7 @@ export default function Home() {
               <motion.a
                 className={styles.a}
                 href="https://www.instagram.com/jfft_justforfun/"
+                target="_blank"
                 whileHover={{ y: -10 }}
               >
                 <motion.svg
@@ -334,6 +479,7 @@ export default function Home() {
               <motion.a
                 className={styles.a}
                 href="https://www.facebook.com/JUSTFORFUN.JFFT/"
+                target="_blank"
                 initial={{ y: 0 }}
                 whileHover={{ y: -10 }}
               >
@@ -369,135 +515,24 @@ export default function Home() {
           <span className={styles.optionTitle}>人氣節目</span>
           <div className={styles.showBox}>
             <div className={styles.boxMargin}></div>
-            <motion.img
-              src="/j5.webp"
-              alt=""
-              className={styles.showImg}
-              variants={show}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={1}
-            />
-            <motion.img
-              src="/j2.webp"
-              alt=""
-              className={styles.showImg}
-              variants={show}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={2}
-            />
-            <motion.img
-              src="/j3.webp"
-              alt=""
-              className={styles.showImg}
-              variants={show}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={3}
-            />
-            <motion.img
-              src="/j4.webp"
-              alt=""
-              className={styles.showImg}
-              variants={show}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={4}
-            />
-            <motion.img
-              src="/j1.webp"
-              alt=""
-              className={styles.showImg}
-              variants={show}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={5}
-            />
+            {showes}
           </div>
         </motion.div>
         <div className={styles.frame}></div>
       </motion.div>
-      <motion.div
-        className={styles.aceBox2}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 4.5, duration: 1.5 } }}
+      {list}
+      <motion.footer
+        className={styles.footer}
+        whileInView={{
+          opacity: [0, 1],
+          transition: { delay: 6, duration: 1.5 },
+        }}
+        viewport={{ once: true }}
       >
-        <span className={styles.optionTitle}>成員</span>
-        <div className={styles.showBox}>
-          <div className={styles.boxMargin}></div>
-          <img src="/j5.webp" alt="" className={styles.showImg} />
-          <img src="/j2.webp" alt="" className={styles.showImg} />
-          <img src="/j3.webp" alt="" className={styles.showImg} />
-          <img src="/j4.webp" alt="" className={styles.showImg} />
-          <img src="/j1.webp" alt="" className={styles.showImg} />
-        </div>
-      </motion.div>
-      <motion.div
-        className={styles.aceBox2}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 4.5, duration: 1.5 } }}
-      >
-        <span className={styles.optionTitle}>王牌節目</span>
-        <div className={styles.showBox}>
-          <div className={styles.boxMargin}></div>
-          <img src="/j5.webp" alt="" className={styles.showImg} />
-          <img src="/j2.webp" alt="" className={styles.showImg} />
-          <img src="/j3.webp" alt="" className={styles.showImg} />
-          <img src="/j4.webp" alt="" className={styles.showImg} />
-          <img src="/j1.webp" alt="" className={styles.showImg} />
-        </div>
-      </motion.div>
-      <motion.div
-        className={styles.aceBox2}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 4.5, duration: 1.5 } }}
-      >
-        <span className={styles.optionTitle}>王牌節目</span>
-        <div className={styles.showBox}>
-          <div className={styles.boxMargin}></div>
-          <img src="/j5.webp" alt="" className={styles.showImg} />
-          <img src="/j2.webp" alt="" className={styles.showImg} />
-          <img src="/j3.webp" alt="" className={styles.showImg} />
-          <img src="/j4.webp" alt="" className={styles.showImg} />
-          <img src="/j1.webp" alt="" className={styles.showImg} />
-        </div>
-      </motion.div>
-      <motion.div
-        className={styles.aceBox2}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 4.5, duration: 1.5 } }}
-      >
-        <span className={styles.optionTitle}>王牌節目</span>
-        <div className={styles.showBox}>
-          <div className={styles.boxMargin}></div>
-          <img src="/j5.webp" alt="" className={styles.showImg} />
-          <img src="/j2.webp" alt="" className={styles.showImg} />
-          <img src="/j3.webp" alt="" className={styles.showImg} />
-          <img src="/j4.webp" alt="" className={styles.showImg} />
-          <img src="/j1.webp" alt="" className={styles.showImg} />
-        </div>
-      </motion.div>
-      <motion.div
-        className={styles.aceBox2}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 4.5, duration: 1.5 } }}
-      >
-        <span className={styles.optionTitle}>王牌節目</span>
-        <div className={styles.showBox}>
-          <div className={styles.boxMargin}></div>
-          <img src="/j5.webp" alt="" className={styles.showImg} />
-          <img src="/j2.webp" alt="" className={styles.showImg} />
-          <img src="/j3.webp" alt="" className={styles.showImg} />
-          <img src="/j4.webp" alt="" className={styles.showImg} />
-          <img src="/j1.webp" alt="" className={styles.showImg} />
-        </div>
-      </motion.div>
+        <span>© 2022 JFFT</span>
+        <span></span>
+        <span>醉愛JFFT</span>
+      </motion.footer>
     </motion.div>
   );
 }

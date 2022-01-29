@@ -137,8 +137,8 @@ export default function Home() {
           <title>JFFT</title>
           <meta name="description" content="JFFT" />
           <link rel="icon" href="/favicon.ico" />
-          <Script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></Script>
         </Head>
+        <Script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></Script>
         <motion.div
           className={("nav", styles.logoBox)}
           id="nav"

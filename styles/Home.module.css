@@ -208,9 +208,9 @@
 #back{
   position: absolute;
   left: 50%;
-  top: 10%;
+  top: 0%;
   transform: translate(-50%,0);
-  width: 150%;
+  width: 100%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -237,6 +237,11 @@
 
   #name{
     text-shadow: 4px 2px #533152;
+  }
+
+  #back{
+    top: 10%;
+    width: 100%;
   }
 }
 

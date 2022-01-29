@@ -23,13 +23,13 @@ const load = {
 const hidden = {
   visible: {
     height: "calc(55px + 1vw)",
-    backgroundimg:
+    backgroundImage:
       "linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))",
     // backgroundColor: "transparent",
     transition: {
       delay: 4,
       duration: 1.5,
-      backgroundimg: { delay: 5, duration: 1.5 },
+      backgroundImage: { delay: 5, duration: 1.5 },
       backgroundColor: { delay: 4, duration: 1.5 },
     },
   },
@@ -137,7 +137,7 @@ export default function Home() {
           <title>JFFT</title>
           <meta name="description" content="JFFT" />
           <link rel="icon" href="/favicon.ico" />
-          <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+          <Script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></Script>
         </Head>
         <motion.div
           className={("nav", styles.logoBox)}
@@ -289,7 +289,7 @@ export default function Home() {
                   viewBox="0 0 24 24"
                 >
                   <g fill="none">
-                    <g clip-path="url(#clip0_100_7)">
+                    <g>
                       <path
                         d="M23.5 6.507a2.786 2.786 0 0 0-.766-1.27a3.05 3.05 0 0 0-1.338-.742C19.518 4 11.994 4 11.994 4a76.624 76.624 0 0 0-9.39.47a3.16 3.16 0 0 0-1.338.76c-.37.356-.638.795-.778 1.276A29.09 29.09 0 0 0 0 12c-.012 1.841.151 3.68.488 5.494c.137.479.404.916.775 1.269c.371.353.833.608 1.341.743c1.903.494 9.39.494 9.39.494a76.8 76.8 0 0 0 9.402-.47a3.05 3.05 0 0 0 1.338-.742c.37-.353.633-.792.765-1.27A28.38 28.38 0 0 0 24 12.023a26.579 26.579 0 0 0-.5-5.517zM9.602 15.424V8.577l6.26 3.424l-6.26 3.423z"
                         fill="currentColor"
@@ -372,29 +372,27 @@ export default function Home() {
             <motion.img
               src="/j5.webp"
               alt=""
-              className={styles.showimg}
+              className={styles.showImg}
               variants={show}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               custom={1}
-              layout='fill'
             />
             <motion.img
               src="/j2.webp"
               alt=""
-              className={styles.showimg}
+              className={styles.showImg}
               variants={show}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               custom={2}
-              
             />
             <motion.img
               src="/j3.webp"
               alt=""
-              className={styles.showimg}
+              className={styles.showImg}
               variants={show}
               initial="hidden"
               whileInView="visible"
@@ -404,7 +402,7 @@ export default function Home() {
             <motion.img
               src="/j4.webp"
               alt=""
-              className={styles.showimg}
+              className={styles.showImg}
               variants={show}
               initial="hidden"
               whileInView="visible"
@@ -414,7 +412,7 @@ export default function Home() {
             <motion.img
               src="/j1.webp"
               alt=""
-              className={styles.showimg}
+              className={styles.showImg}
               variants={show}
               initial="hidden"
               whileInView="visible"
@@ -433,11 +431,11 @@ export default function Home() {
         <span className={styles.optionTitle}>成員</span>
         <div className={styles.showBox}>
           <div className={styles.boxMargin}></div>
-          <img src="/j5.webp" alt="" className={styles.showimg} />
-          <img src="/j2.webp" alt="" className={styles.showimg} />
-          <img src="/j3.webp" alt="" className={styles.showimg} />
-          <img src="/j4.webp" alt="" className={styles.showimg} />
-          <img src="/j1.webp" alt="" className={styles.showimg} />
+          <img src="/j5.webp" alt="" className={styles.showImg} />
+          <img src="/j2.webp" alt="" className={styles.showImg} />
+          <img src="/j3.webp" alt="" className={styles.showImg} />
+          <img src="/j4.webp" alt="" className={styles.showImg} />
+          <img src="/j1.webp" alt="" className={styles.showImg} />
         </div>
       </motion.div>
       <motion.div
@@ -448,11 +446,11 @@ export default function Home() {
         <span className={styles.optionTitle}>王牌節目</span>
         <div className={styles.showBox}>
           <div className={styles.boxMargin}></div>
-          <img src="/j5.webp" alt="" className={styles.showimg} />
-          <img src="/j2.webp" alt="" className={styles.showimg} />
-          <img src="/j3.webp" alt="" className={styles.showimg} />
-          <img src="/j4.webp" alt="" className={styles.showimg} />
-          <img src="/j1.webp" alt="" className={styles.showimg} />
+          <img src="/j5.webp" alt="" className={styles.showImg} />
+          <img src="/j2.webp" alt="" className={styles.showImg} />
+          <img src="/j3.webp" alt="" className={styles.showImg} />
+          <img src="/j4.webp" alt="" className={styles.showImg} />
+          <img src="/j1.webp" alt="" className={styles.showImg} />
         </div>
       </motion.div>
       <motion.div
@@ -463,11 +461,11 @@ export default function Home() {
         <span className={styles.optionTitle}>王牌節目</span>
         <div className={styles.showBox}>
           <div className={styles.boxMargin}></div>
-          <img src="/j5.webp" alt="" className={styles.showimg} />
-          <img src="/j2.webp" alt="" className={styles.showimg} />
-          <img src="/j3.webp" alt="" className={styles.showimg} />
-          <img src="/j4.webp" alt="" className={styles.showimg} />
-          <img src="/j1.webp" alt="" className={styles.showimg} />
+          <img src="/j5.webp" alt="" className={styles.showImg} />
+          <img src="/j2.webp" alt="" className={styles.showImg} />
+          <img src="/j3.webp" alt="" className={styles.showImg} />
+          <img src="/j4.webp" alt="" className={styles.showImg} />
+          <img src="/j1.webp" alt="" className={styles.showImg} />
         </div>
       </motion.div>
       <motion.div
@@ -478,11 +476,11 @@ export default function Home() {
         <span className={styles.optionTitle}>王牌節目</span>
         <div className={styles.showBox}>
           <div className={styles.boxMargin}></div>
-          <img src="/j5.webp" alt="" className={styles.showimg} />
-          <img src="/j2.webp" alt="" className={styles.showimg} />
-          <img src="/j3.webp" alt="" className={styles.showimg} />
-          <img src="/j4.webp" alt="" className={styles.showimg} />
-          <img src="/j1.webp" alt="" className={styles.showimg} />
+          <img src="/j5.webp" alt="" className={styles.showImg} />
+          <img src="/j2.webp" alt="" className={styles.showImg} />
+          <img src="/j3.webp" alt="" className={styles.showImg} />
+          <img src="/j4.webp" alt="" className={styles.showImg} />
+          <img src="/j1.webp" alt="" className={styles.showImg} />
         </div>
       </motion.div>
       <motion.div
@@ -493,11 +491,11 @@ export default function Home() {
         <span className={styles.optionTitle}>王牌節目</span>
         <div className={styles.showBox}>
           <div className={styles.boxMargin}></div>
-          <img src="/j5.webp" alt="" className={styles.showimg} />
-          <img src="/j2.webp" alt="" className={styles.showimg} />
-          <img src="/j3.webp" alt="" className={styles.showimg} />
-          <img src="/j4.webp" alt="" className={styles.showimg} />
-          <img src="/j1.webp" alt="" className={styles.showimg} />
+          <img src="/j5.webp" alt="" className={styles.showImg} />
+          <img src="/j2.webp" alt="" className={styles.showImg} />
+          <img src="/j3.webp" alt="" className={styles.showImg} />
+          <img src="/j4.webp" alt="" className={styles.showImg} />
+          <img src="/j1.webp" alt="" className={styles.showImg} />
         </div>
       </motion.div>
     </motion.div>

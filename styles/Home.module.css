@@ -149,7 +149,7 @@
   width: 100%;
   height: fit-content;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: calc(1rem + .5vw);
   overflow:scroll;
   z-index:80;
 }

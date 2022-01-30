@@ -113,7 +113,7 @@
   font-size: calc(20px + 1.2vw);
   font-weight: 600;
   padding: 0 calc(30px + 2vw);
-  bottom: calc(200px + 10vw);
+  bottom: calc(200px + 11vw);
   color: #fff;
   display: flex;
   flex-direction: column;

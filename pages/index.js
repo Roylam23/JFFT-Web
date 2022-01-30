@@ -611,7 +611,7 @@ export default function Home() {
         className={styles.footer}
         whileInView={{
           opacity: [0, 1],
-          transition: { delay: 6, duration: 1.5 },
+          transition: { delay: 6, duration: 1 },
         }}
         viewport={{ once: true }}
       >

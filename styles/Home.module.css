@@ -148,8 +148,8 @@
 .titleTop {
   width: calc(150px + 20vw);
   height: auto;
-  line-height: calc(30px + 2.25vw);
-  font-size: calc(12px + 1.3vw);
+  line-height: calc(25px + 2.5vw);
+  font-size: calc(11px + 1.3vw);
 }
 
 .titleMain {
@@ -321,10 +321,6 @@
     justify-content: unset;
   }
 
-  .logoBox {
-    justify-content: center;
-  }
-
   #name {
     text-shadow: 4px 2px #533152;
   }
@@ -363,6 +359,13 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+
+  .logoBox {
+    justify-content: center;
+  }
+}
+
 @media screen and (max-height: 768px) {
   .title {
     bottom: calc(225px + 6vh);
@@ -371,7 +374,7 @@
   .titleTop {
     font-size: calc(12px + 1.1vh);
     height: auto;
-    line-height: calc(30px + 2.25vh);
+    line-height: calc(25px + 2.25vh);
   }
 
   .name {
@@ -385,8 +388,16 @@
 }
 
 @supports (-webkit-touch-callout: none) {
-  /* CSS specific to iOS devices */ 
+  .logoBox {
+    height: calc(100vh - 50px);
+  }
+
   .container {
     min-height: calc(100vh - 50px);
+  }
+
+  .titleTop {
+    line-height: calc(47.5px + .6vw);
+    font-size: calc(23px + .2vw);
   }
 }

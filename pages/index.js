@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Script from "next/script";
+import { useRouter } from 'next/router'
 import {
   useViewportScroll,
   motion,
@@ -9,6 +10,8 @@ import {
 } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import ReactGA from "react-ga";
+import { initGA, logPageView } from "../utils/analytics";
 
 const load = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -169,6 +172,22 @@ export default function Home() {
   // const y1 = useTransform(scrollY, [0, 1000], [0, 500]);
   // const y2 = useTransform(scrollY, [0, 1000], [0, -50]);
   // const op = useTransform(scrollY, [0, 500], [0, 1])
+  const router = useRouter()
+  useEffect(() => {
+    initGA();
+    if (!router.asPath.includes("?")) {
+      logPageView();
+    }
+  }, []);
+
+  useEffect(() => {
+    // Listen for page changes after a navigation or when the query changes
+    router.events.on("routeChangeComplete", logPageView);
+    return () => {
+      router.events.off("routeChangeComplete", logPageView);
+    };
+  }, [router.events]);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -178,7 +197,6 @@ export default function Home() {
         document.querySelector("#nav").classList.remove("black");
       }
     };
-
     // just trigger this so that the initial state
     // is updated as soon as the component is mounted
     // related: https://stackoverflow.com/a/63408216
@@ -600,8 +618,8 @@ export default function Home() {
         <div className={styles.frame}></div>
       </motion.div>
       <motion.div className={styles.textCon}>
-      <div className={styles.frameRe}></div>
-      <div className={styles.frame}></div>
+        <div className={styles.frameRe}></div>
+        <div className={styles.frame}></div>
         <motion.div
           className={styles.text1}
           initial={{ opacity: 0, y: 50 }}
@@ -625,7 +643,7 @@ export default function Home() {
       >
         <span>© 2022 JFFT</span>
         <span></span>
-        <span>醉愛JFFT</span>
+        <span>JFFT世一</span>
       </motion.footer>
     </motion.div>
   );

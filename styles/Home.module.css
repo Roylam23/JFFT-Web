@@ -70,6 +70,7 @@
   width: fit-content;
   margin: 0 auto;
   z-index:60;
+  text-align: center;
 }
 
 #t1 {
@@ -78,6 +79,10 @@
 
 #t2 {
   right: calc(30px + 2vw);
+}
+
+#mean{
+  font-size: 12px;
 }
 
 .logoBox {

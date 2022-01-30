@@ -1,6 +1,6 @@
 .mainContainer {
   padding-bottom: 120px;
-  position:relative;
+  position: relative;
 }
 
 .container {
@@ -17,8 +17,8 @@
   transform: translate(-50%, -50%);
 }
 
-.load_icon1{
-  cursor:pointer;
+.load_icon1 {
+  cursor: pointer;
 }
 
 .jffsong {
@@ -27,12 +27,40 @@
   margin-bottom: 20px;
 }
 
-#top{
-  font-size:calc(18px + 1.3vw);
+#top {
+  font-size: calc(18px + 1.3vw);
 }
 
-#name{
+#name {
   text-shadow: 10px 2px #533152;
+  cursor: default;
+}
+
+.textCon {
+  padding: 200px 0;
+  overflow: hidden;
+  /* position: relative; */
+}
+
+.text {
+  font-size: calc(24px + 2vw);
+  color: #fff;
+  position: absolute;
+}
+
+
+.text1{
+  font-size: calc(24px + 2vw);
+  color: rgb(131, 130, 130);
+  width:fit-content;
+  margin:0 auto;
+}
+#t1 {
+  left: calc(30px + 2vw);
+}
+
+#t2 {
+  right: calc(30px + 2vw);
 }
 
 .titleTop {
@@ -43,7 +71,7 @@
 
 .logoBox {
   position: fixed;
-  display:flex;
+  display: flex;
   align-items: center;
   top: 0;
   width: 100%;
@@ -150,8 +178,8 @@
   height: fit-content;
   justify-content: space-between;
   margin-top: calc(1rem + .5vw);
-  overflow:scroll;
-  z-index:80;
+  overflow: scroll;
+  z-index: 80;
 }
 
 .showBox::-webkit-scrollbar {
@@ -165,13 +193,13 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.showImgA{
-  width:15%;
-  min-width: 250px;
+.showImgA {
+  width: 15%;
+  min-width: 225px;
   margin-right: 10px;
   overflow: visible;
   transition: all 0.3s;
-  position:relative;
+  position: relative;
 }
 
 .boxMargin {
@@ -191,26 +219,46 @@
   z-index: 50;
 }
 
-.footer{
+.footer {
   position: absolute;
-  bottom:0;
-  height: 80px;
-  width:100%;
-  background:#E9007F;
-  display:flex;
+  bottom: 0;
+  height: calc(45px + 2vw);
+  width: 100%;
+  background: #E9007F;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:0 calc(30px + 2vw);
-  color:#fff;
+  padding: 0 calc(30px + 2vw);
+  color: #fff;
+  font-size: calc(10px + .5vw);
   font-weight: 600;
 }
 
-#back{
+#back {
   position: absolute;
   left: 50%;
   top: 0%;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   width: 100%;
+}
+
+@media (max-width:1700px) {
+  .optionTitle {
+    padding: 0 calc(30px + 2vw);
+  }
+
+  .boxMargin {
+    min-width: calc(30px + 2vw);
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .aceBox,
+  .aceBox2 {
+    padding: 0;
+    justify-content: unset;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -231,15 +279,15 @@
     justify-content: unset;
   }
 
-  .logoBox{
-    justify-content:center;
+  .logoBox {
+    justify-content: center;
   }
 
-  #name{
+  #name {
     text-shadow: 4px 2px #533152;
   }
 
-  #back{
+  #back {
     top: 10%;
     width: 100%;
   }
@@ -263,8 +311,8 @@
     bottom: calc(280px + 2vw);
   }
 
-  .aceBox{
-    padding:0;
+  .aceBox {
+    padding: 0;
   }
 
 }

@@ -118,11 +118,18 @@ const show = {
 };
 
 let showss = ["j5", "j4", "j3", "j1", "j2", "j6"];
+let listes = [
+  "https://www.youtube.com/watch?v=jIB5dPRMSRg&list=PLU9puGF2UY12vasd3ATv1VJwMHieMN-TQ",
+  "https://www.youtube.com/watch?v=78yMRWPmOaE&list=PLBv4Tx9f5FcyddMtzbrZLBWeOXXaTUIET",
+  "https://www.youtube.com/watch?v=loZQE_Q_uvc&list=PLBv4Tx9f5FczGeOjNoJVC27WwZ6zi6JdH",
+  "https://www.youtube.com/watch?v=aTXace4KyAU&list=PLBv4Tx9f5Fcw0nKy-B_1-psxE-STdoQX0",
+  "https://www.youtube.com/watch?v=wOE7hXV4bFc&list=PLU9puGF2UY104bFl5A9QJpBUPF3QNMMpm",
+  "https://www.youtube.com/watch?v=x5IVwvfXoRA&list=PLU9puGF2UY11OVE84g2di41BlTlaCmuA5",
+];
 let showes = [];
 showss.forEach((item, index) => {
   const a = "/" + item + ".webp";
-  const b =
-    "https://www.youtube.com/watch?v=jIB5dPRMSRg&list=PLU9puGF2UY12vasd3ATv1VJwMHieMN-TQ";
+  const b = listes[index];
   showes.push(
     <a className={styles.showImgA} href={b} target="_blank" rel="noreferrer">
       <motion.img
@@ -275,7 +282,7 @@ export default function Home() {
               custom={1}
             />
           </motion.svg>
-
+          {/* Transparent version */}
           {/* <motion.svg
             width="calc(30px + .8vw)"
             viewBox="0 0 846 724"
@@ -452,7 +459,6 @@ export default function Home() {
                 // width: ["30vw", "20vw"],
                 opacity: 1,
                 y: -30,
-                lineHeight: "calc(50px + 2.2vw)",
                 transition: {
                   duration: 0.75,
                   delay: 1.5,
@@ -463,8 +469,8 @@ export default function Home() {
             >
               <motion.span
                 id={styles.name}
+                className={styles.name}
                 whileInView={{
-                  fontSize: "calc(80px + 6vw)",
                   color: "#E9007F",
                 }}
               >
@@ -602,7 +608,7 @@ export default function Home() {
             y: 0,
             transition: { duration: 1 },
           }}
-          viewport={{once: true }}
+          viewport={{ once: true }}
         >
           更多內容將會陸續更新
         </motion.div>

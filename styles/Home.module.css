@@ -27,10 +27,6 @@
   margin-bottom: 20px;
 }
 
-#top {
-  font-size: calc(18px + 1.3vw);
-}
-
 #name {
   text-shadow: 10px 2px #533152;
   cursor: default;
@@ -49,24 +45,19 @@
 }
 
 
-.text1{
+.text1 {
   font-size: calc(18px + 1.2vw);
   color: rgb(131, 130, 130);
-  width:fit-content;
-  margin:0 auto;
+  width: fit-content;
+  margin: 0 auto;
 }
+
 #t1 {
   left: calc(30px + 2vw);
 }
 
 #t2 {
   right: calc(30px + 2vw);
-}
-
-.titleTop {
-  width: calc(20vw + 150px);
-  height: auto;
-  line-height: calc(50px + 2.2vw);
 }
 
 .logoBox {
@@ -122,15 +113,26 @@
   font-size: calc(20px + 1.2vw);
   font-weight: 600;
   padding: 0 calc(30px + 2vw);
-  bottom: calc(300px + 6vw);
+  bottom: calc(200px + 10vw);
   color: #fff;
   display: flex;
   flex-direction: column;
 }
 
+.titleTop {
+  width: calc(150px + 20vw);
+  height: auto;
+  line-height: calc(30px + 2.25vw);
+  font-size: calc(12px + 1.3vw);
+}
+
 .titleMain {
   letter-spacing: 5px;
   font-size: calc(10px + .5vw);
+}
+
+.name{
+  font-size: calc(50px + 6vw);
 }
 
 .iconBox {
@@ -308,11 +310,32 @@
   }
 
   .title {
-    bottom: calc(280px + 2vw);
+    bottom: calc(220px + 10vw);
   }
 
   .aceBox {
     padding: 0;
   }
 
+}
+
+@media screen and (max-height: 700px) {
+  .title {
+    bottom: calc(225px + 6vh);
+  }
+
+  .titleTop {
+    font-size: calc(12px + 1.1vh);
+    height: auto;
+    line-height: calc(30px + 2.25vh);
+  }
+  
+  .name{
+    font-size: calc(50px + 6vh);
+  }
+
+  .titleMain {
+    letter-spacing: 5px;
+    font-size: calc(10px + .5vh);
+  }
 }

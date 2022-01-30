@@ -600,6 +600,8 @@ export default function Home() {
         <div className={styles.frame}></div>
       </motion.div>
       <motion.div className={styles.textCon}>
+      <div className={styles.frameRe}></div>
+      <div className={styles.frame}></div>
         <motion.div
           className={styles.text1}
           initial={{ opacity: 0, y: 50 }}

@@ -1,13 +1,13 @@
 .mainContainer {
-  padding-bottom: 120px;
   position: relative;
+  padding-bottom: calc(45px + 1.2vw);
 }
 
 .container {
   background-color: #090a0a;
   position: relative;
   min-height: 100vh;
-  margin-bottom: 10px;
+  z-index:10;
 }
 
 .load_icon {
@@ -33,23 +33,43 @@
 }
 
 .textCon {
-  padding: calc(200px + 10vw) 0;
+  height: 60vh;
   overflow: hidden;
-  /* position: relative; */
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.textCon::before {
+  content: "";
+  background: url('/jffticon.png');
+  /* position: absolute; */
+  z-index: 0;
+  /* background-repeat: no-repeat; */
+  background-attachment: fixed;
+  background-size: calc(200px + 5vw);
+  background-position: center 65%;
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  opacity: .3;
 }
 
 .text {
   font-size: calc(24px + 2vw);
-  color: #fff;
+  color: rgb(255, 255, 255);
   position: absolute;
 }
 
 
 .text1 {
   font-size: calc(18px + 1.2vw);
-  color: rgb(131, 130, 130);
+  color: rgb(190, 190, 190);
   width: fit-content;
   margin: 0 auto;
+  z-index:60;
 }
 
 #t1 {
@@ -131,7 +151,7 @@
   font-size: calc(10px + .5vw);
 }
 
-.name{
+.name {
   font-size: calc(50px + 6vw);
 }
 
@@ -217,6 +237,19 @@
   background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 13, 1) 100%);
   background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 13, 1) 100%);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(14, 14, 14));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#0d0d0d", GradientType=1);
+  z-index: 50;
+}
+
+.frameRe {
+  position: absolute;
+  top:-15px;
+  width: 100%;
+  height: 300px;
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 13, 1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 13, 1) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(14, 14, 14));
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#0d0d0d", GradientType=1);
   z-index: 50;
 }
@@ -329,8 +362,8 @@
     height: auto;
     line-height: calc(30px + 2.25vh);
   }
-  
-  .name{
+
+  .name {
     font-size: calc(50px + 6vh);
   }
 

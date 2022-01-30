@@ -37,7 +37,7 @@
 }
 
 .textCon {
-  padding: 200px 0;
+  padding: calc(200px + 5vw) 0;
   overflow: hidden;
   /* position: relative; */
 }
@@ -50,7 +50,7 @@
 
 
 .text1{
-  font-size: calc(24px + 2vw);
+  font-size: calc(18px + 1.5vw);
   color: rgb(131, 130, 130);
   width:fit-content;
   margin:0 auto;
@@ -222,7 +222,7 @@
 .footer {
   position: absolute;
   bottom: 0;
-  height: calc(45px + 2vw);
+  height: calc(45px + 1.2vw);
   width: 100%;
   background: #E9007F;
   display: flex;
@@ -230,7 +230,7 @@
   justify-content: space-between;
   padding: 0 calc(30px + 2vw);
   color: #fff;
-  font-size: calc(10px + .5vw);
+  font-size: calc(7px + .35vw);
   font-weight: 600;
 }
 

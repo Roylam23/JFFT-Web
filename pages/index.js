@@ -48,12 +48,10 @@ const hidden = {
     height: "calc(55px + 1vw)",
     backgroundImage:
       "linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))",
-    // backgroundColor: "transparent",
     transition: {
       delay: 4,
       duration: 1.5,
-      backgroundImage: { delay: 5, duration: 1.5 },
-      backgroundColor: { delay: 4, duration: 1.5 },
+      backgroundImage: { delay: 4.5, duration: 1 },
     },
   },
 };
@@ -621,7 +619,7 @@ export default function Home() {
         <div className={styles.frame}></div>
         <motion.div
           className={styles.text1}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{
             opacity: 1,
             y: 0,

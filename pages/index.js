@@ -224,6 +224,7 @@ export default function Home() {
           <title>JFFT</title>
           <meta name="description" content="JFFT" />
           <meta name="description" content="Jun For Fun Team" />
+          <meta name="google-site-verification" content="k3n1vQkq8AOOwF4G2R65vOQGeWg7Zovv0GPfKbp_ACo" />
           <meta
             name="robots"
             content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"

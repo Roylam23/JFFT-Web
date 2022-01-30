@@ -37,7 +37,7 @@
 }
 
 .textCon {
-  padding: calc(200px + 5vw) 0;
+  padding: calc(200px + 10vw) 0;
   overflow: hidden;
   /* position: relative; */
 }
@@ -50,7 +50,7 @@
 
 
 .text1{
-  font-size: calc(18px + 1.5vw);
+  font-size: calc(18px + 1.2vw);
   color: rgb(131, 130, 130);
   width:fit-content;
   margin:0 auto;

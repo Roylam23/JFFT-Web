@@ -341,7 +341,7 @@ export default function Home() {
             />
           </motion.svg> */}
           <motion.svg
-            width="calc(65px + 6vw)"
+            width="calc(65px + 3.5vw)"
             height="724"
             viewBox="0 0 846 724"
             fill="none"

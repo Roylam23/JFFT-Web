@@ -713,22 +713,22 @@ export default function Home() {
           </motion.span>
         </motion.span>
       </motion.div> */}
-      {/* <motion.div className={styles.textCon}>
+      <motion.div className={styles.textCon}>
         <div className={styles.frameRe} id={styles.frame}></div>
         <div className={styles.frame} id={styles.frame}></div>
         <motion.div
           className={styles.text1}
-          initial={{ y: 30, opacity: 0 }}
+          initial={{ y: 25, opacity: 0 }}
           whileInView={{
             y: 0,
             opacity: 1,
-            transition: { delay: 1, duration: 1 },
+            transition: {duration: 1 },
           }}
           viewport={{ once: true }}
         >
           更多內容將會陸續更新
         </motion.div>
-      </motion.div> */}
+      </motion.div>
       <motion.footer
         className={styles.footer}
         animate={{

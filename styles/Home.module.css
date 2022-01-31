@@ -348,7 +348,7 @@
 .memberBoxes {
   display: flex;
   justify-content: space-between;
-  margin-top: 25px;
+  margin-top: calc(25px + 1vw);
 }
 
 .memberBoxes::-webkit-scrollbar {
@@ -372,8 +372,8 @@
   height: 15vw;
   min-width: 100px;
   min-height: 100px;
-  max-width: 225px;
-  max-height: 225px;
+  max-width: 180px;
+  max-height: 180px;
   position: relative;
 }
 
@@ -386,7 +386,7 @@
 .memberName{
   text-align: center;
   margin-top:20px;
-  font-size:calc(14px + 1vw);
+  font-size:calc(14px + .5vw);
   font-weight: 600;
 }
 

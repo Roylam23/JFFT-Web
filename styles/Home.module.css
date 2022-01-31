@@ -541,9 +541,9 @@
   }
 
   .titleTop {
-    font-size: calc(12px + 1.1vh);
+    font-size: calc(10px + 1.1vh);
     height: auto;
-    line-height: calc(25px + 2.25vh);
+    line-height: calc(40px + 2.25vh);
   }
 
   .name {

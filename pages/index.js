@@ -163,10 +163,12 @@ for (let i = 0; i < 5; i++) {
   );
 }
 export default function Home() {
-  // const { scrollY } = useViewportScroll();
-  // const y1 = useTransform(scrollY, [0, 1000], [0, 500]);
-  // const y2 = useTransform(scrollY, [0, 1000], [0, -50]);
-  // const op = useTransform(scrollY, [0, 500], [0, 1])
+  const { scrollY } = useViewportScroll();
+  const x1 = useTransform(scrollY, [100, 2500], ["10%", "-80%"]);
+  const x2 = useTransform(scrollY, [100, 5000], ["-80%", "20%"]);
+  const x3 = useTransform(scrollY, [100, 2500], ["5%", "-20%"]);
+  const op = useTransform(scrollY, [180, 450], [0, 1]);
+  const font = useTransform(scrollY, [250, 400], ["calc(60px + 2vw)", "0px"]);
   const router = useRouter();
   useEffect(() => {
     initGA();
@@ -192,7 +194,7 @@ export default function Home() {
         document.querySelector("#nav").classList.remove("black");
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
   }, []);
   const height = use100vh();
@@ -236,6 +238,10 @@ export default function Home() {
           <meta property="og:title" content="JFFT"></meta>
           <meta property="og:site_name" content="JFFT"></meta>
           <meta name="author" content="RL"></meta>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Dongle&family=Fjalla+One&family=Open+Sans&family=Roboto:wght@300;400&display=swap"
+            rel="stylesheet"
+          ></link>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></Script>
@@ -621,28 +627,114 @@ export default function Home() {
         <div className={styles.frame}></div>
       </motion.div>
       <motion.div className={styles.textCon}>
-        <div className={styles.frameRe}></div>
-        <div className={styles.frame}></div>
+        <div className={styles.frameRe} id={styles.frame}></div>
+        <div className={styles.frame} id={styles.frame}></div>
+        <motion.div className={styles.text1}>
+          <motion.span className={styles.scroll} style={{ x: x1, opacity: op }}>
+            Firm&nbsp; 0尊&nbsp; 是&nbsp; Can Cheaper ?&nbsp; 不如?&nbsp;
+            就係咁囉&nbsp; is侮辱&nbsp;
+          </motion.span>
+          <motion.span className={styles.scroll} style={{ x: x2, opacity: op }}>
+            酒仙酒仙&nbsp; 拿拿趣&nbsp; 做畀你&nbsp; 我屌你老母呀 ?&nbsp; 不如
+            ?&nbsp; 哭撚左&nbsp; 夠做埋黎&nbsp; 含&nbsp; 0Firm
+          </motion.span>
+          <motion.span className={styles.scroll} style={{ x: x3, opacity: op }}>
+            0興&nbsp; 小癲&nbsp; 咩老環&nbsp; Don’t know 做 what&nbsp;
+            日向0似&nbsp; 招&nbsp;
+          </motion.span>
+        </motion.div>
+      </motion.div>
+      <motion.div className={styles.info}>
+        <motion.div className={styles.memberBox}>
+          <motion.span className={styles.memberTitle}>成員</motion.span>
+          <motion.span className={styles.memberBoxes}>
+            <div className={styles.photoMargin}></div>
+            <motion.div className={styles.memberPhotoBox}>
+              <motion.div className={styles.memberPhotoCon}>
+                <motion.img src={"/bedgor.jpg"} id={styles.bed}></motion.img>
+              </motion.div>
+              <motion.span className={styles.memberName}>床哥</motion.span>
+            </motion.div>
+            <motion.div className={styles.memberPhotoBox}>
+              <motion.div className={styles.memberPhotoCon}>
+                <motion.img src={"/ge.jpg"} id={styles.ge}></motion.img>
+              </motion.div>
+              <motion.span className={styles.memberName}>雞翼</motion.span>
+            </motion.div>
+            <motion.div className={styles.memberPhotoBox}>
+              <motion.div className={styles.memberPhotoCon}>
+                <motion.img src={"/rice.jpg"} id={styles.rice}></motion.img>
+              </motion.div>
+              <motion.span className={styles.memberName}>米爺</motion.span>
+            </motion.div>
+            <motion.div className={styles.memberPhotoBox}>
+              <motion.div className={styles.memberPhotoCon}>
+                <motion.img
+                  src={"/leungsiu.jpg"}
+                  id={styles.leung}
+                ></motion.img>
+              </motion.div>
+              <motion.span className={styles.memberName}>良少</motion.span>
+            </motion.div>
+            <motion.div className={styles.memberPhotoBox}>
+              <motion.div className={styles.memberPhotoCon}>
+                <motion.img
+                  src={"/garbriel.jpg"}
+                  id={styles.garbriel}
+                ></motion.img>
+              </motion.div>
+              <motion.span className={styles.memberName}>比叔</motion.span>
+            </motion.div>
+          </motion.span>
+        </motion.div>
+      </motion.div>
+      {/* <motion.div className={styles.info}>
+        <motion.span
+          className={styles.infoName}
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+          viewport={{ once: true }}
+        >
+          J
+          <motion.span className={styles.infoNameIn} style={{ fontSize: font }}>
+            ust&nbsp;
+          </motion.span>
+          F
+          <motion.span className={styles.infoNameIn} style={{ fontSize: font }}>
+            or&nbsp;
+          </motion.span>
+          F
+          <motion.span className={styles.infoNameIn} style={{ fontSize: font }}>
+            un&nbsp;
+          </motion.span>
+          T
+          <motion.span className={styles.infoNameIn} style={{ fontSize: font }}>
+            eam
+          </motion.span>
+        </motion.span>
+      </motion.div> */}
+      {/* <motion.div className={styles.textCon}>
+        <div className={styles.frameRe} id={styles.frame}></div>
+        <div className={styles.frame} id={styles.frame}></div>
         <motion.div
           className={styles.text1}
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ y: 30, opacity: 0 }}
           whileInView={{
-            opacity: 1,
             y: 0,
-            transition: { duration: 1 },
+            opacity: 1,
+            transition: { delay: 1, duration: 1 },
           }}
           viewport={{ once: true }}
         >
           更多內容將會陸續更新
         </motion.div>
-      </motion.div>
+      </motion.div> */}
       <motion.footer
         className={styles.footer}
-        whileInView={{
+        animate={{
           opacity: [0, 1],
           transition: { delay: 6, duration: 1 },
         }}
-        viewport={{ once: true }}
       >
         <span>© 2022 JFFT</span>
         <span></span>

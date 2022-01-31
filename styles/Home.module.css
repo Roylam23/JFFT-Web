@@ -29,7 +29,7 @@
 }
 
 .textCon {
-  height: 60vh;
+  height: calc(250px + 20vh);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -40,17 +40,17 @@
   content: "";
   background: url('/jffticon.png');
   /* position: absolute; */
-  z-index: 0;
   /* background-repeat: no-repeat; */
   background-attachment: fixed;
   background-size: calc(200px + 5vw);
   background-position: center 65%;
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: .3;
+  z-index: 0;
 }
 
 .text {
@@ -65,8 +65,19 @@
   color: rgb(190, 190, 190);
   width: fit-content;
   margin: 0 auto;
-  z-index: 60;
   text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.scroll {
+  font-size: calc(55px + 2vw);
+  display: flex;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 5px 2px #E9007F;
+  z-index: 100;
 }
 
 #t1 {
@@ -90,9 +101,9 @@
   height: 100vh;
   /* background-color: rgba(0, 0, 0); */
   background-image: linear-gradient(#090a0a, #090a0a);
-  z-index: 100;
   transition: background-color 0.5s;
   padding: 0 calc(30px + 2vw);
+  z-index: 100;
 }
 
 .mainBox {
@@ -131,7 +142,6 @@
   position: absolute;
   z-index: 60;
   font-size: calc(20px + 1.2vw);
-  font-weight: 600;
   padding: 0 calc(30px + 2vw);
   bottom: calc(200px + 11vw);
   color: #fff;
@@ -141,8 +151,8 @@
 
 .titleTop {
   width: calc(150px + 20vw);
-  line-height: calc(35px + 2.5vw);
-  font-size: calc(18px + 1vw);
+  line-height: calc(50px + 2.5vw);
+  font-size: calc(15px + .8vw);
 }
 
 .titleMain {
@@ -242,7 +252,10 @@
   background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 13, 1) 100%);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(14, 14, 14));
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#0d0d0d", GradientType=1);
-  z-index: 50;
+}
+
+#frame {
+  height: 100px;
 }
 
 .frameRe {
@@ -255,7 +268,6 @@
   background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 13, 1) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(14, 14, 14));
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#0d0d0d", GradientType=1);
-  z-index: 50;
 }
 
 .footer {
@@ -281,6 +293,132 @@
   width: 100%;
 }
 
+.info {
+  color: #E9007F;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  background: rgb(14, 14, 14);
+  position: relative;
+  font-family: 'Dongle', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Noto Sans HK', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.info::after {
+  content: "";
+  background-color: rgb(14, 14, 14);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
+
+.infoName {
+  font-size: calc(45px + .5vw);
+  font-weight: 600;
+  /* text-shadow: 5px 2px #ffffff; */
+  z-index: 60;
+  letter-spacing: 1px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.infoNameIn {
+  font-size: calc(50px + 2vw);
+  color: rgb(255, 255, 255);
+  /* text-shadow: 5px 2px #E9007F; */
+}
+
+.memberBox {
+  color: #fff;
+  z-index: 100;
+  width: 100%;
+  padding: 0 calc(30px + 2vw);
+  display: flex;
+  flex-direction: column;
+}
+
+.memberBoxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.memberBoxes::-webkit-scrollbar {
+  display: none;
+}
+
+.memberTitle {
+  font-size: calc(14px + .7vw);
+  font-weight: 600;
+}
+
+.memberPhotoBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.memberPhotoCon {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 15vw;
+  height: 15vw;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 225px;
+  max-height: 225px;
+  position: relative;
+}
+
+.memberPhotoCon>img {
+  position: absolute;
+  width: 100%;
+  top: -50px;
+}
+
+.memberName{
+  text-align: center;
+  margin-top:20px;
+  font-size:calc(14px + 1vw);
+  font-weight: 600;
+}
+
+#bed{
+  top:-20%;
+  transform: scale(2.5);
+  left:-40%;
+}
+
+#ge{
+  top:35%;
+  transform: scale(3.2);
+  left:-50%;
+}
+
+#rice{
+  top:-10%;
+  transform: scale(2);
+}
+
+#leung{
+  top:1%;
+}
+
+#garbriel{
+  top:1%;
+}
+
+.photoMargin{
+  display: none;
+}
+
 @media (max-width:1700px) {
   .optionTitle {
     padding: 0 calc(30px + 2vw);
@@ -292,7 +430,6 @@
     box-sizing: border-box;
     display: block;
   }
-
   .aceBox,
   .aceBox2 {
     padding: 0;
@@ -357,10 +494,45 @@
 }
 
 @media screen and (max-width: 768px) {
-
   .logoBox {
     justify-content: center;
   }
+
+  .photoMargin{
+    min-width: calc(30px + 2vw);
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .memberTitle{
+    padding-left:calc(30px + 2vw);
+  }
+
+  
+  .memberBox{
+    padding:0;
+  }
+
+  .memberBoxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    overflow: scroll;
+  }
+
+  .memberPhotoBox{
+    display:flex;
+    align-items:center;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .memberPhotoCon{
+    width:30vw;
+    height:30vw;
+  }
+
 }
 
 @media screen and (max-height: 768px) {
@@ -394,13 +566,12 @@
   }
 
   .titleTop {
-    line-height: calc(55px + .6vw);
-    font-size: calc(23.5px + .2vw);
+    line-height: calc(60px + .6vw);
+    font-size: calc(19px + .2vw);
   }
 
   .textCon::before {
     position: fixed;
-    height: 65vh;
-    bottom: calc(45px + 1.2vw);
+    z-index: unset;
   }
 }

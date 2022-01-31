@@ -27,6 +27,21 @@ const load = {
   },
 };
 
+const memberList = {
+  hidden: { opacity: 0, y: 25 },
+  visible: (i) => {
+    const delay = i * 0.25;
+    return {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: delay,
+        duration: 0.5,
+      },
+    };
+  },
+};
+
 const load1 = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i) => {
@@ -636,7 +651,8 @@ export default function Home() {
           </motion.span>
           <motion.span className={styles.scroll} style={{ x: x2, opacity: op }}>
             酒仙酒仙&nbsp; 拿拿趣&nbsp; 做畀你&nbsp; 我屌你老母呀 ?&nbsp; 不如
-            ?&nbsp; 哭撚左&nbsp; 夠做埋黎&nbsp; 含&nbsp; 0Firm&nbsp; Let’s think&nbsp; 
+            ?&nbsp; 哭撚左&nbsp; 夠做埋黎&nbsp; 含&nbsp; 0Firm&nbsp; Let’s
+            think&nbsp;
           </motion.span>
           <motion.span className={styles.scroll} style={{ x: x3, opacity: op }}>
             0興&nbsp; 小癲&nbsp; 咩老環&nbsp; Don’t know 做 what&nbsp;
@@ -646,28 +662,60 @@ export default function Home() {
       </motion.div>
       <motion.div className={styles.info}>
         <motion.div className={styles.memberBox}>
-          <motion.span className={styles.memberTitle}>成員</motion.span>
+          <motion.span
+            className={styles.memberTitle}
+            variants={memberList}
+            initial="hidden"
+            whileInView="visible"
+            custom={1}
+          >
+            成員
+          </motion.span>
           <motion.span className={styles.memberBoxes}>
             <div className={styles.photoMargin}></div>
-            <motion.div className={styles.memberPhotoBox}>
+            <motion.div
+              className={styles.memberPhotoBox}
+              variants={memberList}
+              initial="hidden"
+              whileInView="visible"
+              custom={2}
+            >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img src={"/bedgor.jpg"} id={styles.bed}></motion.img>
               </motion.div>
               <motion.span className={styles.memberName}>床哥</motion.span>
             </motion.div>
-            <motion.div className={styles.memberPhotoBox}>
+            <motion.div
+              className={styles.memberPhotoBox}
+              variants={memberList}
+              initial="hidden"
+              whileInView="visible"
+              custom={3}
+            >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img src={"/ge.jpg"} id={styles.ge}></motion.img>
               </motion.div>
               <motion.span className={styles.memberName}>雞翼</motion.span>
             </motion.div>
-            <motion.div className={styles.memberPhotoBox}>
+            <motion.div
+              className={styles.memberPhotoBox}
+              variants={memberList}
+              initial="hidden"
+              whileInView="visible"
+              custom={4}
+            >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img src={"/rice.jpg"} id={styles.rice}></motion.img>
               </motion.div>
               <motion.span className={styles.memberName}>米爺</motion.span>
             </motion.div>
-            <motion.div className={styles.memberPhotoBox}>
+            <motion.div
+              className={styles.memberPhotoBox}
+              variants={memberList}
+              initial="hidden"
+              whileInView="visible"
+              custom={3}
+            >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img
                   src={"/leungsiu.jpg"}
@@ -676,7 +724,13 @@ export default function Home() {
               </motion.div>
               <motion.span className={styles.memberName}>良少</motion.span>
             </motion.div>
-            <motion.div className={styles.memberPhotoBox}>
+            <motion.div
+              className={styles.memberPhotoBox}
+              variants={memberList}
+              initial="hidden"
+              whileInView="visible"
+              custom={2}
+            >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img
                   src={"/garbriel.jpg"}
@@ -722,7 +776,7 @@ export default function Home() {
           whileInView={{
             y: 0,
             opacity: 1,
-            transition: {duration: 1 },
+            transition: { duration: 1 },
           }}
           viewport={{ once: true }}
         >

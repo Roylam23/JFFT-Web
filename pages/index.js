@@ -668,6 +668,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             custom={1}
+            viewport={{ once: true }}
           >
             成員
           </motion.span>
@@ -679,6 +680,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               custom={2}
+              viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img src={"/bedgor.jpg"} id={styles.bed}></motion.img>
@@ -691,6 +693,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               custom={3}
+              viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img src={"/ge.jpg"} id={styles.ge}></motion.img>
@@ -703,6 +706,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               custom={4}
+              viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img src={"/rice.jpg"} id={styles.rice}></motion.img>
@@ -715,6 +719,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               custom={3}
+              viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img
@@ -730,6 +735,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               custom={2}
+              viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img

@@ -6,7 +6,8 @@
 .container {
   background-color: #090a0a;
   position: relative;
-  min-height: 100vh;
+  /* height: 100vh;
+  min-height: 100vh; */
   z-index: 10;
 }
 
@@ -27,11 +28,6 @@
   margin-bottom: 20px;
 }
 
-#name {
-  text-shadow: 10px 2px #533152;
-  cursor: default;
-}
-
 .textCon {
   height: 60vh;
   overflow: hidden;
@@ -49,8 +45,8 @@
   background-attachment: fixed;
   background-size: calc(200px + 5vw);
   background-position: center 65%;
-  position: fixed;
-  top: 0;
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -104,7 +100,6 @@
   height: 100%;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s;
   margin-bottom: 100px;
 }
 
@@ -129,7 +124,6 @@
 .a {
   height: 0px;
   width: min-content;
-  display: inline-block;
   z-index: 200;
 }
 
@@ -147,9 +141,8 @@
 
 .titleTop {
   width: calc(150px + 20vw);
-  height: auto;
-  line-height: calc(25px + 2.5vw);
-  font-size: calc(11px + 1.3vw);
+  line-height: calc(35px + 2.5vw);
+  font-size: calc(18px + 1vw);
 }
 
 .titleMain {
@@ -158,8 +151,14 @@
 }
 
 .name {
-  font-size: calc(50px + 6vw);
+  font-size: calc(85px + 4vw);
 }
+
+#name {
+  text-shadow: 10px 2px #533152;
+  cursor: default;
+}
+
 
 .iconBox {
   display: flex;
@@ -169,14 +168,13 @@
 }
 
 .icon {
-  width: calc(20px + .5vw);
-  transition: all 0.3s;
+  width: calc(20px + .3vw);
   z-index: 100;
 }
 
 .aceBox {
   position: absolute;
-  bottom: calc(3rem + 1vw);
+  bottom: calc(1.5rem + 1vw);
   z-index: 55;
   color: #fff;
   padding: 0 calc(30px + 2vw);
@@ -227,7 +225,6 @@
   min-width: 225px;
   margin-right: 10px;
   overflow: visible;
-  transition: all 0.3s;
   position: relative;
 }
 
@@ -346,7 +343,7 @@
   }
 
   .title {
-    bottom: calc(220px + 10vw);
+    bottom: calc(175px + 6vh);
   }
 
   .aceBox {
@@ -368,7 +365,7 @@
 
 @media screen and (max-height: 768px) {
   .title {
-    bottom: calc(225px + 6vh);
+    bottom: calc(175px + 6vh);
   }
 
   .titleTop {
@@ -389,15 +386,21 @@
 
 @supports (-webkit-touch-callout: none) {
   .logoBox {
-    height: calc(100vh - 50px);
+    height: -webkit-fill-available;
   }
 
-  .container {
-    min-height: calc(100vh - 50px);
+  .aceBox {
+    margin-bottom: 0;
   }
 
   .titleTop {
-    line-height: calc(47.5px + .6vw);
+    line-height: calc(55px + .6vw);
     font-size: calc(23.5px + .2vw);
+  }
+
+  .textCon::before {
+    position: fixed;
+    height: 65vh;
+    bottom: calc(45px + 1.2vw);
   }
 }

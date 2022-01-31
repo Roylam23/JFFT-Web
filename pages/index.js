@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Script from "next/script";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import {
   useViewportScroll,
   motion,
@@ -9,9 +9,8 @@ import {
   useMotionValue,
 } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
-import { Icon } from "@iconify/react";
-import ReactGA from "react-ga";
 import { initGA, logPageView } from "../utils/analytics";
+import { use100vh } from "react-div-100vh";
 
 const load = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -71,22 +70,22 @@ const icon = {
     opacity: 0,
     y: 0,
   },
-  hover: {
-    y: -40,
-    transition: {
-      duration: 0.4,
-      type: "tween",
-      ease: "easeOut",
-    },
-  },
+  // visible: {
+  //   opacity: 1,
+  //   y: -20,
+  //   transition: {
+  //     duration: 1,
+  //     delay: 3,
+  //   },
+  // },
   visible: (i) => {
     const delay = 2.5 + i * 0.15;
     return {
       opacity: 1,
       y: -20,
       transition: {
-        opacity: { delay, duration: 1 },
-        y: { delay, duration: 1 },
+        duration: 1,
+        delay: delay,
       },
     };
   },
@@ -105,7 +104,7 @@ const show = {
     x: 20,
   },
   visible: (i) => {
-    const delay = 6 + i * 0.15;
+    const delay = 7 + i * 0.15;
     return {
       opacity: 1,
       x: 0,
@@ -163,13 +162,12 @@ for (let i = 0; i < 5; i++) {
     </motion.div>
   );
 }
-
 export default function Home() {
   // const { scrollY } = useViewportScroll();
   // const y1 = useTransform(scrollY, [0, 1000], [0, 500]);
   // const y2 = useTransform(scrollY, [0, 1000], [0, -50]);
   // const op = useTransform(scrollY, [0, 500], [0, 1])
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     initGA();
     if (!router.asPath.includes("?")) {
@@ -194,11 +192,11 @@ export default function Home() {
         document.querySelector("#nav").classList.remove("black");
       }
     };
-    // just trigger this so that the initial state
-    // is updated as soon as the component is mounted
-    // related: https://stackoverflow.com/a/63408216
+    
     window.addEventListener("scroll", handleScroll);
   }, []);
+  const height = use100vh();
+
   return (
     <motion.div
       className={styles.mainContainer}
@@ -211,18 +209,26 @@ export default function Home() {
     >
       <motion.div
         className={styles.container}
-        initial={{ height: "100vh", overflow: "hidden" }}
+        id="container"
+        style={{ height: height }}
+        initial={{ overflow: "hidden" }}
         animate={{
-          height: "calc(250px + 35vw)",
           overflow: "visible",
           transition: { delay: 4, duration: 1.5, ease: "easeInOut" },
         }}
       >
         <Head>
           <title>JFFT</title>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+          ></meta>
           <meta name="description" content="JFFT" />
           <meta name="description" content="Jun For Fun Team" />
-          <meta name="google-site-verification" content="k3n1vQkq8AOOwF4G2R65vOQGeWg7Zovv0GPfKbp_ACo" />
+          <meta
+            name="google-site-verification"
+            content="k3n1vQkq8AOOwF4G2R65vOQGeWg7Zovv0GPfKbp_ACo"
+          />
           <meta
             name="robots"
             content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
@@ -604,7 +610,7 @@ export default function Home() {
         <motion.div
           className={styles.aceBox}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 4.5, duration: 1.5 } }}
+          animate={{ opacity: 1, transition: { delay: 6, duration: 1.5 } }}
         >
           <span className={styles.optionTitle}>人氣節目</span>
           <div className={styles.showBox}>

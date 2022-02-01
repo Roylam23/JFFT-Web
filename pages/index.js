@@ -139,8 +139,21 @@ const shows = {
       },
     };
   },
+  before: (i) => {
+    const delay = 6.5 + i * 0.15;
+    return {
+      opacity: 1,
+      x: 0,
+      zIndex: 80,
+      transition: {
+        delay: delay,
+        duration: 0.5,
+        zIndex: { delay: 0 },
+      },
+    };
+  },
   visible: (i) => {
-    const delay = .5 + i * 0.15;
+    const delay = 0.5 + i * 0.15;
     return {
       opacity: 1,
       x: 0,
@@ -173,7 +186,7 @@ const lives = {
     };
   },
   out: (i) => {
-    const delay = .5 + i * 0.15;
+    const delay = 0.5 + i * 0.15;
     return {
       opacity: 1,
       x: 0,
@@ -253,7 +266,7 @@ export default function Home() {
           className={styles.showImgA}
           variants={shows}
           initial="hidden"
-          whileInView={video ? "out" : "visible"}
+          animate={video ? "out" : show ? "visible" : "before"}
           viewport={{ once: true }}
           custom={index}
           href={b}
@@ -322,7 +335,7 @@ export default function Home() {
   return (
     <motion.div
       className={styles.mainContainer}
-      initial={{ height: '100vh', overflow: "hidden" }}
+      initial={{ height: "100vh", overflow: "hidden" }}
       animate={{
         height: "auto",
         overflow: "visible",

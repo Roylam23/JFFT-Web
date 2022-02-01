@@ -85,14 +85,6 @@ const icon = {
     opacity: 0,
     y: 0,
   },
-  // visible: {
-  //   opacity: 1,
-  //   y: -20,
-  //   transition: {
-  //     duration: 1,
-  //     delay: 3,
-  //   },
-  // },
   visible: (i) => {
     const delay = 2.5 + i * 0.15;
     return {
@@ -775,7 +767,7 @@ export default function Home() {
           </motion.span>
         </motion.span>
       </motion.div> */}
-      <motion.div className={styles.textCon}>
+      <motion.div className={styles.textCon} style={{ height: "auto" }}>
         <div className={styles.frameRe} id={styles.frame}></div>
         <div className={styles.frame} id={styles.frame}></div>
         <motion.div
@@ -784,11 +776,19 @@ export default function Home() {
           whileInView={{
             y: 0,
             opacity: 1,
-            transition: { duration: 1 },
+            transition: { duration: 1.5 },
           }}
           viewport={{ once: true }}
+          style={{
+            paddingTop: "calc(50px + 10vw)",
+            paddingBottom: "calc(50px + 10vw)",
+            fontWeight: "600",
+          }}
         >
-          更多內容將會陸續更新
+          更多內容將會陸續更新<br></br> <br></br>
+          祝各位新年快樂 ! <br></br>
+          會然RoyL上<br></br> <br></br>
+          目前製作進度 : <br></br>成員詳細資料<br></br>頻道訂閲數功能<br></br>
         </motion.div>
       </motion.div>
       <motion.footer

@@ -46,7 +46,7 @@ const load = {
 const memberList = {
   hidden: { opacity: 0, y: 25 },
   visible: (i) => {
-    const delay = i * 0.25;
+    const delay = i * 0.1;
     return {
       opacity: 1,
       y: 0,

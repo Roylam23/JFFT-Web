@@ -637,6 +637,7 @@ export default function Home() {
           <div className={styles.showBox}>
             <div className={styles.boxMargin}></div>
             {showes}
+            <div className={styles.boxMargin}></div>
           </div>
         </motion.div>
         <div className={styles.frame}></div>
@@ -745,6 +746,7 @@ export default function Home() {
               </motion.div>
               <motion.span className={styles.memberName}>比叔</motion.span>
             </motion.div>
+            <div className={styles.photoMargin}></div>
           </motion.span>
         </motion.div>
       </motion.div>

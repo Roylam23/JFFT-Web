@@ -426,7 +426,7 @@
 
   .boxMargin {
     min-width: calc(30px + 2vw);
-    height: 100%;
+    height: 1px;
     box-sizing: border-box;
     display: block;
   }
@@ -440,7 +440,7 @@
 @media screen and (max-width: 1200px) {
   .boxMargin {
     min-width: calc(30px + 2vw);
-    height: 100%;
+    height: 1px;
     box-sizing: border-box;
     display: block;
   }
@@ -500,7 +500,7 @@
 
   .photoMargin{
     min-width: calc(30px + 2vw);
-    height: 100%;
+    height: 1px;
     box-sizing: border-box;
     display: block;
   }
@@ -518,14 +518,14 @@
     display: flex;
     justify-content: space-between;
     margin-top: 25px;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
 
   .memberPhotoBox{
     display:flex;
     align-items:center;
     margin-right: 30px;
-    margin-bottom: 30px;
   }
 
   .memberPhotoCon{

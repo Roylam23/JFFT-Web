@@ -267,7 +267,6 @@ export default function Home() {
           variants={shows}
           initial="hidden"
           animate={video ? "out" : show ? "visible" : "before"}
-          viewport={{ once: true }}
           custom={index}
           href={b}
           target="_blank"
@@ -289,8 +288,7 @@ export default function Home() {
           className={styles.showImgA}
           variants={lives}
           initial="hidden"
-          whileInView={video ? "out" : "visible"}
-          viewport={{ once: true }}
+          animate={video ? "out" : "visible"}
           custom={index}
           href={b}
           target="_blank"

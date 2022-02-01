@@ -343,8 +343,8 @@ export default function Home() {
           <title>JFFT - Home</title>
           <meta
             name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=1"
-          ></meta>
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi"
+          />
           <meta name="description" content="JFFT" />
           <meta name="description" content="Jun For Fun Team" />
           <meta
@@ -1026,7 +1026,7 @@ export default function Home() {
           更多內容將會陸續更新<br></br> <br></br>
           祝各位新年快樂 ! <br></br>
           <br></br>
-          目前製作進度 : <br></br>成員詳細資料<br></br>頻道訂閲數功能<br></br>
+          加入JFFT永遠都唔會遲！
         </motion.div>
       </motion.div>
       <motion.footer

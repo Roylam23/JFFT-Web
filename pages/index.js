@@ -787,7 +787,7 @@ export default function Home() {
         >
           更多內容將會陸續更新<br></br> <br></br>
           祝各位新年快樂 ! <br></br>
-          會然RoyL上<br></br> <br></br>
+          <br></br>
           目前製作進度 : <br></br>成員詳細資料<br></br>頻道訂閲數功能<br></br>
         </motion.div>
       </motion.div>

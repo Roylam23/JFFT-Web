@@ -943,7 +943,7 @@ export default function Home() {
               variants={memberList}
               initial="hidden"
               whileInView="visible"
-              custom={3}
+              custom={5}
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
@@ -959,7 +959,7 @@ export default function Home() {
               variants={memberList}
               initial="hidden"
               whileInView="visible"
-              custom={2}
+              custom={6}
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>

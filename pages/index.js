@@ -140,7 +140,7 @@ const shows = {
     };
   },
   visible: (i) => {
-    const delay = 1 + i * 0.15;
+    const delay = .5 + i * 0.15;
     return {
       opacity: 1,
       x: 0,
@@ -173,7 +173,7 @@ const lives = {
     };
   },
   out: (i) => {
-    const delay = 1 + i * 0.15;
+    const delay = .5 + i * 0.15;
     return {
       opacity: 1,
       x: 0,

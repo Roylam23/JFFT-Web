@@ -1018,8 +1018,8 @@ export default function Home() {
           }}
           viewport={{ once: true }}
           style={{
-            paddingTop: "calc(80px + 10vw)",
-            paddingBottom: "calc(80px + 10vw)",
+            paddingTop: "calc(100px + 10vw)",
+            paddingBottom: "calc(100px + 10vw)",
             fontWeight: "600",
           }}
         >

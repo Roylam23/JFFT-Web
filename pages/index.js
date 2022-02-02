@@ -316,7 +316,7 @@ export default function Home({ data }) {
           target="_blank"
           rel="noreferrer"
         >
-          <motion.img src={a} alt="" className={styles.showImg} />
+          <motion.img src={"/showImg/" + a} alt="" className={styles.showImg} />
         </motion.a>
       );
     });
@@ -338,7 +338,7 @@ export default function Home({ data }) {
           target="_blank"
           rel="noreferrer"
         >
-          <motion.img src={a} alt="" className={styles.showImg} />
+          <motion.img src={"/liveImg/" + a} alt="" className={styles.showImg} />
         </motion.a>
       );
     });
@@ -403,6 +403,7 @@ export default function Home({ data }) {
           />
           <meta name="description" content="JFFT" />
           <meta name="description" content="Jun For Fun Team" />
+          <meta name="description" content="JFFLive" />
           <meta
             name="google-site-verification"
             content="k3n1vQkq8AOOwF4G2R65vOQGeWg7Zovv0GPfKbp_ACo"
@@ -1000,7 +1001,10 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <motion.img src={"/bedgor.jpg"} id={styles.bed}></motion.img>
+                <motion.img
+                  src={"/member/bedgor.jpg"}
+                  id={styles.bed}
+                ></motion.img>
               </motion.div>
               <motion.span className={styles.memberName}>床哥</motion.span>
             </motion.div>
@@ -1013,7 +1017,7 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <motion.img src={"/ge.jpg"} id={styles.ge}></motion.img>
+                <motion.img src={"/member/ge.jpg"} id={styles.ge}></motion.img>
               </motion.div>
               <motion.span className={styles.memberName}>雞翼</motion.span>
             </motion.div>
@@ -1026,7 +1030,10 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <motion.img src={"/rice.jpg"} id={styles.rice}></motion.img>
+                <motion.img
+                  src={"/member/rice.jpg"}
+                  id={styles.rice}
+                ></motion.img>
               </motion.div>
               <motion.span className={styles.memberName}>米爺</motion.span>
             </motion.div>
@@ -1040,7 +1047,7 @@ export default function Home({ data }) {
             >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img
-                  src={"/leungsiu.jpg"}
+                  src={"/member/leungsiu.jpg"}
                   id={styles.leung}
                 ></motion.img>
               </motion.div>
@@ -1056,7 +1063,7 @@ export default function Home({ data }) {
             >
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img
-                  src={"/garbriel.jpg"}
+                  src={"/member/garbriel.jpg"}
                   id={styles.garbriel}
                 ></motion.img>
               </motion.div>

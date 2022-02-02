@@ -41,12 +41,16 @@
   margin-bottom: 20px;
 }
 
-.textCon {
+.textCon, .textCon1 {
   height: calc(250px + 20vh);
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
+}
+
+#textCon{
+  background:rgb(20, 20, 20);
 }
 
 .textCon::before {
@@ -588,11 +592,11 @@
   }
 
   .scroll{
-    font-size: calc(38px + 1vw);
+    font-size: calc(50px + 1vw);
   }
 
   .textCon{
-    height: calc(200px + 10vw);
+    height: calc(350px + 10vw);
   }
 
 }

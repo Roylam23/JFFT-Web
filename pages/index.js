@@ -248,11 +248,11 @@ export default function Home() {
   const [video, setVideo] = useState(false);
   const handleVideo = () => {
     setVideo(true);
-    document.querySelector('#box1').scrollLeft = 0;
+    document.querySelector("#box1").scrollLeft = 0;
   };
   const handleLive = () => {
     setVideo(false);
-    document.querySelector('#box').scrollLeft = 0;
+    document.querySelector("#box").scrollLeft = 0;
   };
   const handleClick = () => {
     setShow(true);
@@ -364,10 +364,7 @@ export default function Home() {
             name="google-site-verification"
             content="k3n1vQkq8AOOwF4G2R65vOQGeWg7Zovv0GPfKbp_ACo"
           />
-          <meta
-            name="robots"
-            content="index, follow"
-          ></meta>
+          <meta name="robots" content="index, follow"></meta>
           <meta property="og:title" content="JFFT"></meta>
           <meta property="og:site_name" content="JFFT"></meta>
           <meta name="author" content="RL"></meta>
@@ -879,25 +876,6 @@ export default function Home() {
         </motion.div>
         <div className={styles.frame}></div>
       </motion.div>
-      <motion.div className={styles.textCon}>
-        <div className={styles.frameRe} id={styles.frame}></div>
-        <div className={styles.frame} id={styles.frame}></div>
-        <motion.div className={styles.text1}>
-          <motion.span className={styles.scroll} style={{ x: x1, opacity: op }}>
-            Firm&nbsp; 0尊&nbsp; 是&nbsp; Can Cheaper ?&nbsp; 不如?&nbsp;
-            就係咁囉&nbsp; is侮辱&nbsp; 就係咁囉
-          </motion.span>
-          <motion.span className={styles.scroll} style={{ x: x2, opacity: op }}>
-            酒仙酒仙&nbsp; 拿拿趣&nbsp; 做畀你&nbsp; 我屌你老母呀 ?&nbsp; 不如
-            ?&nbsp; 哭撚左&nbsp; 夠做埋黎&nbsp; 含&nbsp; 0Firm&nbsp; Let’s
-            think&nbsp;
-          </motion.span>
-          <motion.span className={styles.scroll} style={{ x: x3, opacity: op }}>
-            0興&nbsp; 小癲&nbsp; 咩老環&nbsp; Don’t know 做 what&nbsp;
-            日向0似&nbsp; 招&nbsp; 62520
-          </motion.span>
-        </motion.div>
-      </motion.div>
       <motion.div className={styles.info}>
         <motion.div className={styles.memberBox}>
           <motion.span
@@ -993,6 +971,26 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </motion.div>
+      <motion.div className={styles.textCon}>
+        <div className={styles.frameRe} id={styles.frame}></div>
+        <div className={styles.frame} id={styles.frame}></div>
+        <motion.div className={styles.text1}>
+          <motion.span className={styles.scroll} style={{ x: x1, opacity: op }}>
+            Firm&nbsp; 0尊&nbsp; 是&nbsp; Can Cheaper ?&nbsp; 不如?&nbsp;
+            就係咁囉&nbsp; is侮辱&nbsp; 就係咁囉
+          </motion.span>
+          <motion.span className={styles.scroll} style={{ x: x2, opacity: op }}>
+            酒仙酒仙&nbsp; 拿拿趣&nbsp; 做畀你&nbsp; 我屌你老母呀 ?&nbsp; 不如
+            ?&nbsp; 哭撚左&nbsp; 夠做埋黎&nbsp; 含&nbsp; 0Firm&nbsp; Let’s
+            think&nbsp;
+          </motion.span>
+          <motion.span className={styles.scroll} style={{ x: x3, opacity: op }}>
+            0興&nbsp; 小癲&nbsp; 咩老環&nbsp; Don’t know 做 what&nbsp;
+            日向0似&nbsp; 招&nbsp; 62520
+          </motion.span>
+        </motion.div>
+      </motion.div>
+
       {/* <motion.div className={styles.info}>
         <motion.span
           className={styles.infoName}
@@ -1018,7 +1016,7 @@ export default function Home() {
           </motion.span>
         </motion.span>
       </motion.div> */}
-      <motion.div className={styles.textCon} style={{ height: "auto" }}>
+      <motion.div className={styles.textCon1} id={styles.textCon} style={{ height: "auto" }}>
         <div className={styles.frameRe} id={styles.frame}></div>
         <div className={styles.frame} id={styles.frame}></div>
         <motion.div

@@ -377,10 +377,11 @@ export default function Home({ data }) {
   return (
     <motion.div
       className={styles.mainContainer}
-      initial={{ height: height, overflow: "hidden" }}
+      initial={{ overflow: "hidden", paddingBottom: 0 }}
       animate={{
         height: "auto",
         overflow: "visible",
+        paddingBottom: "calc(45px + 1.2vw)",
         transition: { delay: 4, duration: 1.5 },
       }}
     >
@@ -528,7 +529,7 @@ export default function Home({ data }) {
                 fill="#E9007F"
               />
             </motion.svg>
-            <motion.svg
+            {/* <motion.svg
               className={styles.load_icon2}
               width="calc(30px + .8vw)"
               viewBox="0 0 847 723"
@@ -603,7 +604,7 @@ export default function Home({ data }) {
                 d="M370.045 207.815L371.664 216.096L349.091 220.508L347.472 212.227L370.045 207.815ZM344.196 175.104L352.925 219.759L342.16 221.863L333.431 177.208L344.196 175.104ZM379.228 168.256L387.957 212.911L377.222 215.009L368.494 170.355L379.228 168.256ZM410.689 197.546L413.309 161.595L425.362 159.239L419.032 206.837L411.242 208.36L410.689 197.546ZM395.582 165.06L411.548 197.378L415.168 207.592L407.286 209.133L383.591 167.404L395.582 165.06ZM466.799 188.903L468.418 197.184L444.618 201.836L442.999 193.555L466.799 188.903ZM439.723 156.432L448.452 201.086L437.687 203.191L428.958 158.536L439.723 156.432ZM460.087 170.855L461.652 178.86L440.919 182.913L439.355 174.908L460.087 170.855ZM459.781 152.511L461.406 160.822L437.514 165.492L435.89 157.181L459.781 152.511Z"
                 fill="white"
               />
-            </motion.svg>
+            </motion.svg> */}
           </div>
           {/* Transparent version */}
           {/* <motion.svg

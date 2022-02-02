@@ -1,7 +1,9 @@
 .mainContainer {
   position: relative;
-  display:block;
+  display: block;
   padding-bottom: calc(45px + 1.2vw);
+  height: 100vh;
+  min-height: 100vh;
 }
 
 .container {
@@ -41,7 +43,8 @@
   margin-bottom: 20px;
 }
 
-.textCon, .textCon1 {
+.textCon,
+.textCon1 {
   height: calc(250px + 20vh);
   overflow: hidden;
   position: relative;
@@ -49,8 +52,8 @@
   align-items: center;
 }
 
-#textCon{
-  background:rgb(14, 14, 14);
+#textCon {
+  background: rgb(14, 14, 14);
 }
 
 .textCon::before {
@@ -181,8 +184,8 @@
   font-size: calc(85px + 4vw);
 }
 
-#top{
-  font-weight:600;
+#top {
+  font-weight: 600;
 }
 
 #name {
@@ -226,14 +229,14 @@
 }
 
 .optionTitle {
-  font-size: calc(16px + .7vw);
+  font-size: calc(16px + .5vw);
   display: flex;
-  padding:0 calc(30px + 2vw);
+  padding: 0 calc(30px + 2vw);
 }
 
-.listCon{
-  display:flex;
-  position:relative;
+.listCon {
+  display: flex;
+  position: relative;
 }
 
 .showBox {
@@ -245,16 +248,17 @@
   overflow: scroll;
 }
 
-.showBox::-webkit-scrollbar, .showVideo::-webkit-scrollbar {
+.showBox::-webkit-scrollbar,
+.showVideo::-webkit-scrollbar {
   display: none;
 }
 
-.showVideo{
+.showVideo {
   display: flex;
   width: 100%;
   height: fit-content;
   position: absolute;
-  left:0;
+  left: 0;
   justify-content: space-between;
   margin-top: calc(1rem + .5vw);
   overflow: scroll;
@@ -277,19 +281,19 @@
   flex-shrink: 0;
 }
 
-.liveText{
+.liveText {
   position: absolute;
-  bottom:10px;
+  bottom: 10px;
   right: 10px;
-  width:35px;
+  width: 35px;
   height: 19px;
   border-radius: 2px;
   background-color: rgb(221, 25, 25);
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size:12px;
+  font-size: 12px;
   font-family: sans-serif;
 }
 
@@ -362,14 +366,14 @@
   font-family: 'Noto Sans HK', sans-serif;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto', sans-serif;
-  z-index:50;
+  z-index: 50;
 }
 
 .info::after {
   content: "";
   background-color: rgb(14, 14, 14);
   position: absolute;
-  display:block;
+  display: block;
   top: 0;
   left: 0;
   width: 100%;
@@ -612,11 +616,11 @@
     height: 30vw;
   }
 
-  .scroll{
+  .scroll {
     font-size: calc(50px + 1vw);
   }
 
-  .textCon{
+  .textCon {
     height: calc(350px + 10vw);
   }
 
@@ -657,12 +661,17 @@
     font-size: calc(19px + .2vw);
   }
 
-  .frame, .frameRe{
-    z-index:50;
+  .frame,
+  .frameRe {
+    z-index: 50;
   }
 
   .textCon::before {
     position: fixed;
     z-index: unset;
+  }
+
+  .mainContainer {
+    height: -webkit-fill-available;
   }
 }

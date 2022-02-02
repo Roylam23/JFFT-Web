@@ -436,9 +436,7 @@ export default function Home() {
                 originX: 0,
                 originY: 0,
                 opacity: 1,
-                x: "calc(10px + .8vw)",
-                rotate: 30,
-                y: -7,
+                x: "calc(-15px - .8vw)",
                 transition: { duration: 1.25, delay: 6 },
               }}
               onClick={clickTop}

@@ -50,7 +50,7 @@
 }
 
 #textCon{
-  background:rgb(20, 20, 20);
+  background:rgb(0, 0, 0);
 }
 
 .textCon::before {

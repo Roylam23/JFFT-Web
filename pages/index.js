@@ -236,7 +236,21 @@ for (let i = 0; i < 5; i++) {
     </motion.div>
   );
 }
-export default function Home() {
+
+const key = "AIzaSyAdG9n0Y_ojAJV6-ffClxb4W7EsCLUBhAk";
+export async function getServerSideProps() {
+  const res = await fetch(
+    `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC3aipgNToMvs2pFaQyaM_hg&eventType=live&type=video&key=${key}`
+  );
+  const data = await res.json();
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+export default function Home({ data }) {
   const { scrollY } = useViewportScroll();
   const x1 = useTransform(scrollY, [100, 2500], ["10%", "-80%"]);
   const x2 = useTransform(scrollY, [100, 5000], ["-70%", "20%"]);
@@ -260,6 +274,30 @@ export default function Home() {
   };
   const listLive = () => {
     showes = [];
+    if (data["items"]) {
+      showes.push(
+        <motion.a
+          className={styles.showImgA}
+          variants={shows}
+          initial="hidden"
+          animate={video ? "out" : show ? "visible" : "before"}
+          custom={-1}
+          href={
+            "https://www.youtube.com/watch?v=" +
+            data["items"][0]["id"]["videoId"]
+          }
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className={styles.liveText}>直播</div>
+          <motion.img
+            src={data["items"][0]["snippet"]["thumbnails"]["medium"]["url"]}
+            alt=""
+            className={styles.showImg}
+          />
+        </motion.a>
+      );
+    }
     livess.forEach((item, index) => {
       const a = "/" + item + ".webp";
       const b = liveListes[index];
@@ -1014,7 +1052,11 @@ export default function Home() {
           </motion.span>
         </motion.span>
       </motion.div> */}
-      <motion.div className={styles.textCon1} id={styles.textCon} style={{ height: "auto" }}>
+      <motion.div
+        className={styles.textCon1}
+        id={styles.textCon}
+        style={{ height: "auto" }}
+      >
         <div className={styles.frameRe} id={styles.frame}></div>
         <div className={styles.frame} id={styles.frame}></div>
         <motion.div

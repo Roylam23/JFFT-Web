@@ -272,6 +272,22 @@
   position: relative;
 }
 
+.liveText{
+  position: absolute;
+  bottom:10px;
+  right: 10px;
+  width:35px;
+  height: 19px;
+  border-radius: 2px;
+  background-color: rgb(221, 25, 25);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size:12px;
+  font-family: sans-serif;
+}
+
 .boxMargin {
   width: calc(30px + 2vw);
 }

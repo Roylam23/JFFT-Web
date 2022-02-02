@@ -250,6 +250,7 @@
   justify-content: space-between;
   margin-top: calc(1rem + .5vw);
   overflow: scroll;
+  scroll-behavior: smooth;
 }
 
 .showImg {
@@ -454,7 +455,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(20px + 1vw);
+  padding: 0 calc(20px + 1vw);
   width: 100%;
 }
 
@@ -533,7 +534,7 @@
   }
 
   .title {
-    bottom: calc(175px + 6vh);
+    bottom: calc(200px + 6vh);
   }
 
   .aceBox {
@@ -586,11 +587,19 @@
     height: 30vw;
   }
 
+  .scroll{
+    font-size: calc(38px + 1vw);
+  }
+
+  .textCon{
+    height: calc(200px + 10vw);
+  }
+
 }
 
 @media screen and (max-height: 768px) {
   .title {
-    bottom: calc(175px + 6vh);
+    bottom: calc(200px + 6vh);
   }
 
   .titleTop {
@@ -621,6 +630,10 @@
   .titleTop {
     line-height: calc(60px + .6vw);
     font-size: calc(19px + .2vw);
+  }
+
+  .frame, .frameRe{
+    z-index:50;
   }
 
   .textCon::before {

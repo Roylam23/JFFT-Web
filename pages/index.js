@@ -248,9 +248,11 @@ export default function Home() {
   const [video, setVideo] = useState(false);
   const handleVideo = () => {
     setVideo(true);
+    document.querySelector('#box1').scrollLeft = 0;
   };
   const handleLive = () => {
     setVideo(false);
+    document.querySelector('#box').scrollLeft = 0;
   };
   const handleClick = () => {
     setShow(true);
@@ -837,7 +839,7 @@ export default function Home() {
             </motion.div>
           </span>
           <div className={styles.listCon}>
-            <div className={styles.showBox}>
+            <div className={styles.showBox} id="box">
               <div
                 className={styles.boxMargin}
                 variants={shows}
@@ -856,7 +858,7 @@ export default function Home() {
                 custom={7}
               ></div>
             </div>
-            <div className={styles.showVideo}>
+            <div className={styles.showVideo} id="box1">
               <div
                 className={styles.boxMargin}
                 initial="hidden"
@@ -1037,7 +1039,8 @@ export default function Home() {
           更多內容將會陸續更新<br></br> <br></br>
           祝各位新年快樂 ! <br></br>
           <br></br>
-          加入JFFT永遠都唔會遲！
+          加入JFFT永遠都唔會遲！<br></br>
+          <br></br>
         </motion.div>
       </motion.div>
       <motion.footer

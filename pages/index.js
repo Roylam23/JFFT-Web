@@ -366,7 +366,7 @@ export default function Home() {
           />
           <meta
             name="robots"
-            content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+            content="index, follow"
           ></meta>
           <meta property="og:title" content="JFFT"></meta>
           <meta property="og:site_name" content="JFFT"></meta>

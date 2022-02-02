@@ -237,18 +237,22 @@ for (let i = 0; i < 5; i++) {
   );
 }
 
-const key = "AIzaSyAdG9n0Y_ojAJV6-ffClxb4W7EsCLUBhAk";
-export async function getServerSideProps() {
-  const res = await fetch(
-    `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC3aipgNToMvs2pFaQyaM_hg&eventType=live&type=video&key=${key}`
-  );
-  const data = await res.json();
-  return {
-    props: {
-      data,
-    },
-  };
-}
+// const key = "AIzaSyAdG9n0Y_ojAJV6-ffClxb4W7EsCLUBhAk";
+// const key = "AIzaSyDL0tDIGFd9ntWdIguLMLKLs0rP2e5-238";
+// let posts = 0;
+// export async function getStaticProps() {
+//   console.log(posts);
+//   posts = posts + 1;
+//   const res = await fetch(
+//     `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC3aipgNToMvs2pFaQyaM_hg&eventType=live&type=video&key=${key}`
+//   );
+//   const data = await res.json();
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }
 
 export default function Home({ data }) {
   const { scrollY } = useViewportScroll();
@@ -274,30 +278,30 @@ export default function Home({ data }) {
   };
   const listLive = () => {
     showes = [];
-    if (data["items"]) {
-      showes.push(
-        <motion.a
-          className={styles.showImgA}
-          variants={shows}
-          initial="hidden"
-          animate={video ? "out" : show ? "visible" : "before"}
-          custom={-1}
-          href={
-            "https://www.youtube.com/watch?v=" +
-            data["items"][0]["id"]["videoId"]
-          }
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className={styles.liveText}>直播</div>
-          <motion.img
-            src={data["items"][0]["snippet"]["thumbnails"]["medium"]["url"]}
-            alt=""
-            className={styles.showImg}
-          />
-        </motion.a>
-      );
-    }
+    // if (data["items"]) {
+    //   showes.push(
+    //     <motion.a
+    //       className={styles.showImgA}
+    //       variants={shows}
+    //       initial="hidden"
+    //       animate={video ? "out" : show ? "visible" : "before"}
+    //       custom={-1}
+    //       href={
+    //         "https://www.youtube.com/watch?v=" +
+    //         data["items"][0]["id"]["videoId"]
+    //       }
+    //       target="_blank"
+    //       rel="noreferrer"
+    //     >
+    //       <div className={styles.liveText}>直播</div>
+    //       <motion.img
+    //         src={data["items"][0]["snippet"]["thumbnails"]["medium"]["url"]}
+    //         alt=""
+    //         className={styles.showImg}
+    //       />
+    //     </motion.a>
+    //   );
+    // }
     livess.forEach((item, index) => {
       const a = "/" + item + ".webp";
       const b = liveListes[index];
@@ -406,6 +410,9 @@ export default function Home({ data }) {
           <meta property="og:title" content="JFFT"></meta>
           <meta property="og:site_name" content="JFFT"></meta>
           <meta name="author" content="RL"></meta>
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" href="/pwa192.png"></link>
+          <meta name="theme-color" content="#141414" />
           <link
             href="https://fonts.googleapis.com/css2?family=Dongle&family=Fjalla+One&family=Open+Sans&family=Roboto:wght@300;400&display=swap"
             rel="stylesheet"

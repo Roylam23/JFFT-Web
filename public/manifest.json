@@ -1,6 +1,6 @@
 {
-    "name": "JFFT APP",
-    "short_name": "App",
+    "name": "JFFT",
+    "short_name": "JFFT",
     "icons": [{
             "src": "/icons/pwa192.png",
             "sizes": "192x192",

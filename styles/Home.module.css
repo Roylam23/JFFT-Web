@@ -289,7 +289,7 @@
 }
 
 .boxMargin {
-  width: calc(30px + 2vw);
+  min-width: calc(30px + 2vw);
 }
 
 .frame {

@@ -265,11 +265,12 @@
 }
 
 .showImgA {
-  width: 15%;
+  width: 14%;
   min-width: 225px;
-  margin-right: 10px;
+  margin-right: calc(10px + 1vw);
   overflow: visible;
   position: relative;
+  flex-shrink: 0;
 }
 
 .liveText{

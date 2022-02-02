@@ -371,6 +371,16 @@ export default function Home({ data }) {
     };
 
     window.addEventListener("scroll", handleScroll);
+    let installPromptEvent;
+
+    window.addEventListener("beforeinstallprompt", (event) => {
+      // Prevent Chrome <= 67 from automatically showing the prompt
+      event.preventDefault();
+      // Stash the event so it can be triggered later.
+      installPromptEvent = event;
+      // Update the install UI to notify the user app can be installed
+      document.querySelector("#install-button").disabled = false;
+    });
   }, []);
   const height = use100vh();
 
@@ -413,6 +423,7 @@ export default function Home({ data }) {
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/pwa192.png"></link>
           <meta name="theme-color" content="#141414" />
+          <link rel="apple-touch-startup-image" href="/pwa192.png"></link>
           <link
             href="https://fonts.googleapis.com/css2?family=Dongle&family=Fjalla+One&family=Open+Sans&family=Roboto:wght@300;400&display=swap"
             rel="stylesheet"

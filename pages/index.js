@@ -925,7 +925,7 @@ export default function Home({ data }) {
             </motion.div>
             <motion.div
               id={styles.video}
-              style={{ marginLeft: "10px" }}
+              style={{ marginLeft: "calc(10px + .5vw)" }}
               variants={options}
               initial={{ opacity: 0.5 }}
               animate={

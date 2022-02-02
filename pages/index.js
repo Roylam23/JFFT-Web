@@ -404,6 +404,9 @@ export default function Home({ data }) {
           <meta name="description" content="JFFT" />
           <meta name="description" content="Jun For Fun Team" />
           <meta name="description" content="JFFLive" />
+          <meta name="description" content="加入JFFT永遠都唔會遲" />
+          <meta name="description" content="Firm" />
+          <meta name="description" content="JFFT Fanmade網站" />
           <meta
             name="google-site-verification"
             content="k3n1vQkq8AOOwF4G2R65vOQGeWg7Zovv0GPfKbp_ACo"
@@ -757,7 +760,7 @@ export default function Home({ data }) {
         `,
             }}
           ></div>
-          <img id={styles.back} src={"/back.jpg"}></img>
+          <img id={styles.back} src={"/back.jpg"} alt="JFFSong"></img>
           <div className={styles.filter}></div>
           <motion.div className={styles.title}>
             <motion.span
@@ -1003,6 +1006,7 @@ export default function Home({ data }) {
               <motion.div className={styles.memberPhotoCon}>
                 <motion.img
                   src={"/member/bedgor.jpg"}
+                  alt="床哥"
                   id={styles.bed}
                 ></motion.img>
               </motion.div>
@@ -1017,7 +1021,11 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <motion.img src={"/member/ge.jpg"} id={styles.ge}></motion.img>
+                <motion.img
+                  src={"/member/ge.jpg"}
+                  id={styles.ge}
+                  alt="GE"
+                ></motion.img>
               </motion.div>
               <motion.span className={styles.memberName}>雞翼</motion.span>
             </motion.div>
@@ -1033,6 +1041,7 @@ export default function Home({ data }) {
                 <motion.img
                   src={"/member/rice.jpg"}
                   id={styles.rice}
+                  alt="米爺"
                 ></motion.img>
               </motion.div>
               <motion.span className={styles.memberName}>米爺</motion.span>
@@ -1049,6 +1058,7 @@ export default function Home({ data }) {
                 <motion.img
                   src={"/member/leungsiu.jpg"}
                   id={styles.leung}
+                  alt="良少"
                 ></motion.img>
               </motion.div>
               <motion.span className={styles.memberName}>良少</motion.span>
@@ -1065,6 +1075,7 @@ export default function Home({ data }) {
                 <motion.img
                   src={"/member/garbriel.jpg"}
                   id={styles.garbriel}
+                  alt="比叔"
                 ></motion.img>
               </motion.div>
               <motion.span className={styles.memberName}>比叔</motion.span>

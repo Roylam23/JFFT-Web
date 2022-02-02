@@ -79,7 +79,7 @@
 
 .text1 {
   font-size: calc(18px + 1.2vw);
-  color: rgb(190, 190, 190);
+  color: rgb(255, 255, 255);
   width: fit-content;
   margin: 0 auto;
   text-align: center;
@@ -181,6 +181,10 @@
   font-size: calc(85px + 4vw);
 }
 
+#top{
+  font-weight:600;
+}
+
 #name {
   text-shadow: 10px 2px #533152;
   cursor: default;
@@ -201,7 +205,7 @@
 
 .aceBox {
   position: absolute;
-  bottom: calc(1.5rem + 1vw);
+  bottom: calc(2.25rem + 1vw);
   z-index: 55;
   color: #fff;
   width: 100%;
@@ -222,7 +226,7 @@
 }
 
 .optionTitle {
-  font-size: calc(14px + .7vw);
+  font-size: calc(16px + .7vw);
   display: flex;
   padding:0 calc(30px + 2vw);
 }
@@ -555,7 +559,7 @@
   }
 
   .title {
-    bottom: calc(200px + 6vh);
+    bottom: calc(210px + 6vh);
   }
 
   .aceBox {
@@ -620,7 +624,7 @@
 
 @media screen and (max-height: 768px) {
   .title {
-    bottom: calc(200px + 6vh);
+    bottom: calc(210px + 6vh);
   }
 
   .titleTop {
@@ -641,7 +645,7 @@
 
 @supports (-webkit-touch-callout: none) {
   .logoBox {
-    height: -webkit-fill-available;
+    /* height: -webkit-fill-available; */
   }
 
   .aceBox {

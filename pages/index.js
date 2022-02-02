@@ -58,7 +58,7 @@ const memberList = {
   },
 };
 
-const load1 = {
+const navLogo = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i) => {
     const delay = 6 + i * 0.5;
@@ -73,7 +73,7 @@ const load1 = {
   },
 };
 
-const hidden = {
+const logoHidden = {
   visible: {
     height: "calc(55px + 1vw)",
     backgroundImage:
@@ -81,12 +81,12 @@ const hidden = {
     transition: {
       delay: 4,
       duration: 1.5,
-      backgroundImage: { delay: 4.5, duration: 1 },
+      backgroundImage: { delay: 4, duration: 1.5 },
     },
   },
 };
 
-const end = {
+const loadIcon = {
   visible: {
     width: "0px",
     transition: {
@@ -377,7 +377,7 @@ export default function Home({ data }) {
   return (
     <motion.div
       className={styles.mainContainer}
-      initial={{ height: "100vh", overflow: "hidden" }}
+      initial={{ height: height, overflow: "hidden" }}
       animate={{
         height: "auto",
         overflow: "visible",
@@ -411,9 +411,65 @@ export default function Home({ data }) {
           <meta property="og:site_name" content="JFFT"></meta>
           <meta name="author" content="RL"></meta>
           <link rel="manifest" href="/manifest.json" />
-          <link rel="apple-touch-icon" href="/pwa192.png"></link>
-          <meta name="theme-color" content="#141414" />
-          <link rel="apple-touch-startup-image" href="/pwa192.png"></link>
+          <link rel="apple-touch-icon" href="/apple192.png"></link>
+          <meta name="theme-color" content="#000000" />
+          <meta name="application-name" content="JFFT" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="default"
+          />
+          <meta name="apple-mobile-web-app-title" content="JFFT" />
+          <link
+            href="/splashscreens/iphone5_splash.png"
+            media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+            rel="apple-touch-startup-image"
+          />
+          <link
+            href="/splashscreens/iphone6_splash.png"
+            media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+            rel="apple-touch-startup-image"
+          />
+          <link
+            href="/splashscreens/iphoneplus_splash.png"
+            media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+            rel="apple-touch-startup-image"
+          />
+          <link
+            href="/splashscreens/iphonex_splash.png"
+            media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+            rel="apple-touch-startup-image"
+          />
+          <link
+            href="/splashscreens/iphonexr_splash.png"
+            media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+            rel="apple-touch-startup-image"
+          />
+          <link
+            href="/splashscreens/iphonexsmax_splash.png"
+            media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+            rel="apple-touch-startup-image"
+          />
+          <link
+            href="/splashscreens/ipad_splash.png"
+            media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+            rel="apple-touch-startup-image"
+          />
+          <link
+            href="/splashscreens/ipadpro1_splash.png"
+            media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+            rel="apple-touch-startup-image"
+          />
+          <link
+            href="/splashscreens/ipadpro3_splash.png"
+            media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
+            rel="apple-touch-startup-image"
+          />
+          <link
+            href="/splashscreens/ipadpro2_splash.png"
+            media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+            rel="apple-touch-startup-image"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Dongle&family=Fjalla+One&family=Open+Sans&family=Roboto:wght@300;400&display=swap"
             rel="stylesheet"
@@ -424,7 +480,7 @@ export default function Home({ data }) {
         <motion.div
           className={("nav", styles.logoBox)}
           id="nav"
-          variants={hidden}
+          variants={logoHidden}
           animate="visible"
         >
           <div className={styles.iconCon}>
@@ -449,7 +505,7 @@ export default function Home({ data }) {
               <motion.path
                 d="M73.4463 50.0978C74.2121 49.2299 75.5364 49.1472 76.4043 49.9129C79.3874 52.545 83.1825 53.042 86.2558 50.4986C87.1475 49.7606 88.4685 49.8853 89.2065 50.7769C89.9444 51.6686 89.8198 52.9897 88.9281 53.7276C83.898 57.8904 77.7735 56.7108 73.6312 53.0558C72.7633 52.29 72.6806 50.9657 73.4463 50.0978Z"
                 fill="white"
-                variants={load1}
+                variants={navLogo}
               />
               <motion.path
                 d="M46.6653 52.2464C47.5566 52.9847 47.6807 54.3058 46.9423 55.1972C44.3386 58.3406 41.7569 60.8115 38.9367 62.085C35.9602 63.429 32.9068 63.3577 29.6902 61.8311C28.6446 61.3349 28.1992 60.0849 28.6954 59.0393C29.1917 57.9937 30.4416 57.5483 31.4873 58.0445C33.6863 59.0882 35.4492 59.0608 37.2118 58.265C39.1308 57.3985 41.2112 55.5456 43.7145 52.5235C44.4528 51.6321 45.774 51.5081 46.6653 52.2464Z"
@@ -620,7 +676,7 @@ export default function Home({ data }) {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className={styles.load_icon}
-            variants={end}
+            variants={loadIcon}
             initial="hidden"
             animate="visible"
             onClick={clickTop}

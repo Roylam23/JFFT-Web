@@ -7,12 +7,10 @@ import {
   useViewportScroll,
   motion,
   useTransform,
-  useMotionValue,
 } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import { use100vh } from "react-div-100vh";
-import Image from "next/image";
 
 const options = {
   unclick: {
@@ -236,7 +234,7 @@ export default function Home({ data }) {
           target="_blank"
           rel="noreferrer"
         >
-          <Image
+          <img
             layout="fill"
             alt=""
             src={"/showImg" + a}
@@ -263,7 +261,7 @@ export default function Home({ data }) {
           target="_blank"
           rel="noreferrer"
         >
-          <Image
+          <img
             layout="fill"
             alt=""
             src={"/liveImg" + a}
@@ -440,7 +438,7 @@ export default function Home({ data }) {
         `,
             }}
           ></div>
-          {/* <Image id={styles.back} src={"/back.jpg"} alt="JFFSong"></Image> */}
+          {/* <img id={styles.back} src={"/back.jpg"} alt="JFFSong"></img> */}
           <div className={styles.filter}></div>
           <motion.div
             className={styles.title}
@@ -697,12 +695,12 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <Image
+                <img
                   layout="fill"
                   src={"/member/bedgor.jpg"}
                   alt="床哥"
                   id={styles.bed}
-                ></Image>
+                ></img>
               </motion.div>
               <motion.span className={styles.memberName}>床哥</motion.span>
             </motion.div>
@@ -715,12 +713,12 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <Image
+                <img
                   layout="fill"
                   src={"/member/ge.jpg"}
                   id={styles.ge}
                   alt="GE"
-                ></Image>
+                ></img>
               </motion.div>
               <motion.span className={styles.memberName}>雞翼</motion.span>
             </motion.div>
@@ -733,12 +731,12 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <Image
+                <img
                   layout="fill"
                   src={"/member/rice.jpg"}
                   id={styles.rice}
                   alt="米爺"
-                ></Image>
+                ></img>
               </motion.div>
               <motion.span className={styles.memberName}>米爺</motion.span>
             </motion.div>
@@ -751,12 +749,12 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <Image
+                <img
                   layout="fill"
                   src={"/member/leungsiu.jpg"}
                   id={styles.leung}
                   alt="良少"
-                ></Image>
+                ></img>
               </motion.div>
               <motion.span className={styles.memberName}>良少</motion.span>
             </motion.div>
@@ -769,12 +767,12 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <Image
+                <img
                   layout="fill"
                   src={"/member/garbriel.jpg"}
                   id={styles.garbriel}
                   alt="比叔"
-                ></Image>
+                ></img>
               </motion.div>
               <motion.span className={styles.memberName}>比叔</motion.span>
             </motion.div>

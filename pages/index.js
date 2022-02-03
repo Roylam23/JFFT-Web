@@ -136,8 +136,22 @@ const lives = {
   },
 };
 
-let livess = ["j5", "j4", "j3", "j1", "j2", "j6"];
-let showss = ["v1", "v2", "v3", "v4", "v5", "v6"];
+let livess = [
+  "https://i.ytimg.com/vi/xsWB7FWrXlE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCgC4Vk5qc9iqi88eRZsOKOY_u0ZA",
+  "https://i.ytimg.com/vi/zIt9dj3b1-4/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDvL5xvDKcjPVQ2ANGvX1eSV_iWIg",
+  "https://i.ytimg.com/vi/UdzV0C5dMHc/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLATk-CfWQy4aMo7GLa-5JsvmvhxpA",
+  "https://i.ytimg.com/vi/58cWuzfqu7c/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD3aY8cP-j0U6mVRwYvCEFZG1TUmg",
+  "https://i.ytimg.com/vi/3LIcp4qE2zs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCy9-SFLk8TlcwX6DNCb6VCJXqUlQ",
+  "https://i.ytimg.com/vi/wFDgq1kValk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDeLZPsvcYUIVZDcbO-WvZaqusIpg",
+];
+let showss = [
+  "https://i.ytimg.com/vi/337wko5AmKY/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD-WxyDGOCeN5nc034911m21KXVAQ",
+  "https://i.ytimg.com/vi/PcXNQauOZ6c/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDIfUY2DgwTGEX2LZydUrB3TiEDIQ",
+  "https://i.ytimg.com/vi/yrAPJ_oQy4s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDfOEZDxPixF5J6tPAGCFmfyHcQAQ",
+  "https://i.ytimg.com/vi/2vqdiTbAbBI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBLqqEQZ8CkUa7Frach_2aDGUwWVQ",
+  "https://i.ytimg.com/vi/On0oWc_dV6A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTTxEVvQK0g043B71QnJeLseeROQ",
+  "https://i.ytimg.com/vi/DuUkR_ApJrY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA44hnCsP4drGqoBGMcNvjAvlZLZw",
+];
 let showListes = [
   "https://www.youtube.com/watch?v=337wko5AmKY",
   "https://www.youtube.com/watch?v=PcXNQauOZ6c",
@@ -217,7 +231,7 @@ export default function Home({ data }) {
   const listLive = () => {
     showes = [];
     livess.forEach((item, index) => {
-      const a = "/" + item + ".webp";
+      const a = item;
       const b = liveListes[index];
       showes.push(
         <motion.a
@@ -230,12 +244,7 @@ export default function Home({ data }) {
           target="_blank"
           rel="noreferrer"
         >
-          <img
-            layout="fill"
-            alt=""
-            src={"/showImg" + a}
-            className={styles.showImg}
-          />
+          <img layout="fill" alt="" src={a} className={styles.showImg} />
         </motion.a>
       );
     });
@@ -244,7 +253,7 @@ export default function Home({ data }) {
   const listShow = () => {
     showes = [];
     showss.forEach((item, index) => {
-      const a = "/" + item + ".webp";
+      const a = item;
       const b = showListes[index];
       showes.push(
         <motion.a
@@ -257,12 +266,7 @@ export default function Home({ data }) {
           target="_blank"
           rel="noreferrer"
         >
-          <img
-            layout="fill"
-            alt=""
-            src={"/liveImg" + a}
-            className={styles.showImg}
-          />
+          <img layout="fill" alt="" src={a} className={styles.showImg} />
         </motion.a>
       );
     });

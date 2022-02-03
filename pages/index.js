@@ -205,8 +205,8 @@ let showss = ["v1", "v2", "v3", "v4", "v5", "v6"];
 let showListes = [
   "https://www.youtube.com/watch?v=337wko5AmKY",
   "https://www.youtube.com/watch?v=PcXNQauOZ6c",
-  "https://www.youtube.com/watch?v=yrAPJ_oQy4s&t=206s",
-  "https://www.youtube.com/watch?v=2vqdiTbAbBI&t=8s",
+  "https://www.youtube.com/watch?v=yrAPJ_oQy4s",
+  "https://www.youtube.com/watch?v=2vqdiTbAbBI",
   "https://www.youtube.com/watch?v=On0oWc_dV6A",
   "https://www.youtube.com/watch?v=DuUkR_ApJrY",
 ];

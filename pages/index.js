@@ -3,11 +3,7 @@ import styles from "../styles/Home.module.css";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import Logo from "./components/logo";
-import {
-  useViewportScroll,
-  motion,
-  useTransform,
-} from "framer-motion";
+import { useViewportScroll, motion, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import { use100vh } from "react-div-100vh";
@@ -345,6 +341,10 @@ export default function Home({ data }) {
           <meta
             name="google-site-verification"
             content="k3n1vQkq8AOOwF4G2R65vOQGeWg7Zovv0GPfKbp_ACo"
+          />
+          <meta
+            name="google-site-verification"
+            content="vCL6k8FoD-HIXbN3aj6Q4syrfAt0l1cnqFIetE5tLsc"
           />
           <meta name="robots" content="index, follow"></meta>
           <meta property="og:title" content="JFFT"></meta>

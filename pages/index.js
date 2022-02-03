@@ -12,7 +12,7 @@ import {
 import { useState, useRef, useEffect } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import { use100vh } from "react-div-100vh";
-import YouTube from "react-youtube";
+import Image from "next/image";
 
 const options = {
   unclick: {
@@ -236,7 +236,12 @@ export default function Home({ data }) {
           target="_blank"
           rel="noreferrer"
         >
-          <motion.img src={"/showImg/" + a} alt="" className={styles.showImg} />
+          <Image
+            layout="fill"
+            alt=""
+            src={"/showImg" + a}
+            className={styles.showImg}
+          />
         </motion.a>
       );
     });
@@ -258,7 +263,12 @@ export default function Home({ data }) {
           target="_blank"
           rel="noreferrer"
         >
-          <motion.img src={"/liveImg/" + a} alt="" className={styles.showImg} />
+          <Image
+            layout="fill"
+            alt=""
+            src={"/liveImg" + a}
+            className={styles.showImg}
+          />
         </motion.a>
       );
     });
@@ -409,8 +419,7 @@ export default function Home({ data }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></Script>
-        <Logo/>
-
+        <Logo />
 
         <motion.div
           className={styles.mainBox}
@@ -431,7 +440,7 @@ export default function Home({ data }) {
         `,
             }}
           ></div>
-          <img id={styles.back} src={"/back.jpg"} alt="JFFSong"></img>
+          {/* <Image id={styles.back} src={"/back.jpg"} alt="JFFSong"></Image> */}
           <div className={styles.filter}></div>
           <motion.div
             className={styles.title}
@@ -688,11 +697,12 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <motion.img
+                <Image
+                  layout="fill"
                   src={"/member/bedgor.jpg"}
                   alt="床哥"
                   id={styles.bed}
-                ></motion.img>
+                ></Image>
               </motion.div>
               <motion.span className={styles.memberName}>床哥</motion.span>
             </motion.div>
@@ -705,11 +715,12 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <motion.img
+                <Image
+                  layout="fill"
                   src={"/member/ge.jpg"}
                   id={styles.ge}
                   alt="GE"
-                ></motion.img>
+                ></Image>
               </motion.div>
               <motion.span className={styles.memberName}>雞翼</motion.span>
             </motion.div>
@@ -722,11 +733,12 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <motion.img
+                <Image
+                  layout="fill"
                   src={"/member/rice.jpg"}
                   id={styles.rice}
                   alt="米爺"
-                ></motion.img>
+                ></Image>
               </motion.div>
               <motion.span className={styles.memberName}>米爺</motion.span>
             </motion.div>
@@ -739,11 +751,12 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <motion.img
+                <Image
+                  layout="fill"
                   src={"/member/leungsiu.jpg"}
                   id={styles.leung}
                   alt="良少"
-                ></motion.img>
+                ></Image>
               </motion.div>
               <motion.span className={styles.memberName}>良少</motion.span>
             </motion.div>
@@ -756,11 +769,12 @@ export default function Home({ data }) {
               viewport={{ once: true }}
             >
               <motion.div className={styles.memberPhotoCon}>
-                <motion.img
+                <Image
+                  layout="fill"
                   src={"/member/garbriel.jpg"}
                   id={styles.garbriel}
                   alt="比叔"
-                ></motion.img>
+                ></Image>
               </motion.div>
               <motion.span className={styles.memberName}>比叔</motion.span>
             </motion.div>

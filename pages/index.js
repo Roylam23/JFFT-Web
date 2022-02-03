@@ -140,7 +140,7 @@ const shows = {
     };
   },
   before: (i) => {
-    const delay = 6.5 + i * 0.15;
+    const delay = 12 + i * 0.15;
     return {
       opacity: 1,
       x: 0,
@@ -762,7 +762,15 @@ export default function Home({ data }) {
           ></div>
           <img id={styles.back} src={"/back.jpg"} alt="JFFSong"></img>
           <div className={styles.filter}></div>
-          <motion.div className={styles.title}>
+          <motion.div
+            className={styles.title}
+            initial={{ bottom: "calc(75px + 1vw)" }}
+            whileInView={{
+              bottom: "calc(200px + 11vw)",
+              transition: { delay: 6, duration: 1, ease: "easeInOut" },
+            }}
+            viewport={{ once: true }}
+          >
             <motion.span
               className={styles.titleTop}
               initial={{ opacity: 0, y: 0 }}
@@ -912,11 +920,17 @@ export default function Home({ data }) {
               </motion.a>
             </span>
           </motion.div>
+          <div className={styles.frame}></div>
         </motion.div>
         <motion.div
           className={styles.aceBox}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 6, duration: 1.5 } }}
+          initial={{ opacity: 0, display: "none" }}
+          animate={{
+            opacity: 1,
+            display: "block",
+            transition: { delay: 11.5, duration: 1.5 },
+          }}
+          viewport={{ once: true }}
         >
           <span className={styles.optionTitle}>
             <motion.div
@@ -979,7 +993,6 @@ export default function Home({ data }) {
             </div>
           </div>
         </motion.div>
-        <div className={styles.frame}></div>
       </motion.div>
       <motion.div className={styles.info}>
         <motion.div className={styles.memberBox}>

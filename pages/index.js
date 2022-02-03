@@ -432,7 +432,7 @@ export default function Home({ data }) {
             muted
             autoplay
             playsinline
-            src="https://i.imgur.com/CE4dVM9.mp4"
+            src="/main.mp4"
             class="${styles.video}"
           />,
         `,

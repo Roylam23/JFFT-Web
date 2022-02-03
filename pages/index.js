@@ -432,7 +432,7 @@ export default function Home({ data }) {
             muted
             autoplay
             playsinline
-            src="/JFFSong.mp4"
+            src="https://i.imgur.com/CE4dVM9.mp4"
             class="${styles.video}"
           />,
         `,

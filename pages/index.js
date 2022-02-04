@@ -60,13 +60,13 @@ const icon = {
 const shows = {
   hidden: {
     opacity: 0,
-    x: 20,
+    x: -20,
   },
   out: (i) => {
     const delay = i * 0.15;
     return {
       opacity: 0,
-      x: -20,
+      x: 20,
       zIndex: 70,
       transition: {
         delay: delay,
@@ -217,11 +217,11 @@ export default function Home({ data }) {
 
   const handleVideo = () => {
     setVideo(true);
-    document.querySelector("#box1").scrollLeft = 0;
+    document.querySelector("#listCon").scrollLeft = 0;
   };
   const handleLive = () => {
     setVideo(false);
-    document.querySelector("#box").scrollLeft = 0;
+    document.querySelector("#listCon").scrollLeft = 0;
   };
   const handleClick = () => {
     setShow(true);
@@ -275,7 +275,7 @@ export default function Home({ data }) {
       if (index / 5 == 1) {
         showes.push(
           <motion.a
-            className={`${styles.showImgA} ${styles.noMargin}`}
+            className={styles.showImgA}
             variants={lives}
             initial="hidden"
             animate={video ? "out" : "visible"}
@@ -284,7 +284,7 @@ export default function Home({ data }) {
             target="_blank"
             rel="noreferrer"
           >
-            <img layout="fill" alt="" src={a} className={styles.showImg} />
+            <img layout="fill" alt="" src={a} className={`${styles.showImg} ${styles.noMargin}`} />
           </motion.a>
         );
       } else {
@@ -671,42 +671,12 @@ export default function Home({ data }) {
               影片
             </motion.div>
           </span>
-          <div className={styles.listCon}>
+          <div className={styles.listCon} id="listCon">
             <div className={styles.showBox} id="box">
-              <div
-                className={styles.boxMargin}
-                variants={shows}
-                initial="hidden"
-                whileInView={video ? "out" : "visible"}
-                viewport={{ once: true }}
-                custom={0}
-              ></div>
-              <div className={styles.listCons}>{listLive(video)}</div>
-              <div
-                className={styles.boxMargin}
-                variants={shows}
-                initial="hidden"
-                whileInView={video ? "out" : "visible"}
-                viewport={{ once: true }}
-                custom={7}
-              ></div>
+              {listLive(video)}
             </div>
             <div className={styles.showVideo} id="box1">
-              <div
-                className={styles.boxMargin}
-                initial="hidden"
-                whileInView={video ? "out" : "visible"}
-                viewport={{ once: true }}
-                custom={0}
-              ></div>
-              <div className={styles.listCons}>{listShow(video)}</div>
-              <div
-                className={styles.boxMargin}
-                initial="hidden"
-                whileInView={video ? "out" : "visible"}
-                viewport={{ once: true }}
-                custom={7}
-              ></div>
+              {listShow(video)}
             </div>
           </div>
         </motion.div>

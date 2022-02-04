@@ -238,15 +238,22 @@
 .listCon {
   display: flex;
   position: relative;
+  padding: 0 calc(30px + 2vw);
+  overflow: scroll;
+  scroll-behavior: smooth;
 }
 
-.showBox {
+.listCon::-webkit-scrollbar {
+  display: none;
+}
+
+.showBox, .showVideo {
   display: flex;
   width: 100%;
   height: fit-content;
   justify-content: space-between;
   margin-top: calc(1rem + .5vw);
-  overflow: scroll;
+  overflow: visible;
 }
 
 .showBox::-webkit-scrollbar,
@@ -255,20 +262,13 @@
 }
 
 .showVideo {
-  display: flex;
-  width: 100%;
-  height: fit-content;
-  position: absolute;
-  left: 0;
-  justify-content: space-between;
-  margin-top: calc(1rem + .5vw);
-  overflow: scroll;
   scroll-behavior: smooth;
+  margin-left: -100%;
 }
 
-.listCons{
+.listCons {
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -286,11 +286,11 @@
   overflow: visible;
   position: relative;
   flex-shrink: 0;
-  display:inline-block;
+  display: inline-block;
 }
 
-.noMargin{
-  margin-right:0;
+.noMargin {
+  margin-right: 0;
 }
 
 .liveText {
@@ -323,7 +323,7 @@
   background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 13, 1) 100%);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(14, 14, 14));
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#0d0d0d", GradientType=1);
-  z-index:60;
+  z-index: 60;
 }
 
 #frame {

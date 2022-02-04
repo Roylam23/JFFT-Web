@@ -54,6 +54,7 @@
 
 #textCon {
   background: rgb(10, 10, 10);
+  height: calc(100vh - calc(45px + 1.2vw)) !important;
 }
 
 .textCon::before {
@@ -282,7 +283,7 @@
 
 .showImgA {
   width: 14%;
-  min-width: 225px;
+  min-width: 205px;
   margin-right: calc(10px + 1vw);
   overflow: visible;
   position: relative;
@@ -440,8 +441,8 @@
 .memberPhotoCon {
   border-radius: 50%;
   overflow: hidden;
-  width: 15vw;
-  height: 15vw;
+  width: calc(75px + 7.5vw);
+  height: calc(75px + 7.5vw);
   min-width: 100px;
   min-height: 100px;
   max-width: 225px;
@@ -620,11 +621,6 @@
     display: flex;
     align-items: center;
     margin-right: 30px;
-  }
-
-  .memberPhotoCon {
-    width: 30vw;
-    height: 30vw;
   }
 
   .scroll {

@@ -266,6 +266,12 @@
   scroll-behavior: smooth;
 }
 
+.listCons{
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+}
+
 .showImg {
   border-radius: 7px;
   width: 100%;
@@ -280,6 +286,11 @@
   overflow: visible;
   position: relative;
   flex-shrink: 0;
+  display:inline-block;
+}
+
+.noMargin{
+  margin-right:0;
 }
 
 .liveText {

@@ -45,7 +45,7 @@ const icon = {
     y: 0,
   },
   visible: (i) => {
-    const delay = 2.5 + i * 0.15;
+    const delay = 1.75 + i * 0.15;
     return {
       opacity: 1,
       y: -20,
@@ -76,7 +76,7 @@ const shows = {
     };
   },
   before: (i) => {
-    const delay = 12 + i * 0.15;
+    const delay = 11 + i * 0.15;
     return {
       opacity: 1,
       x: 0,
@@ -233,20 +233,37 @@ export default function Home({ data }) {
     livess.forEach((item, index) => {
       const a = item;
       const b = liveListes[index];
-      showes.push(
-        <motion.a
-          className={styles.showImgA}
-          variants={shows}
-          initial="hidden"
-          animate={video ? "out" : show ? "visible" : "before"}
-          custom={index}
-          href={b}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img layout="fill" alt="" src={a} className={styles.showImg} />
-        </motion.a>
-      );
+      if (index / 5 == 1) {
+        showes.push(
+          <motion.a
+            className={`${styles.showImgA} ${styles.noMargin}`}
+            variants={shows}
+            initial="hidden"
+            animate={video ? "out" : show ? "visible" : "before"}
+            custom={index}
+            href={b}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img layout="fill" alt="" src={a} className={styles.showImg} />
+          </motion.a>
+        );
+      } else {
+        showes.push(
+          <motion.a
+            className={styles.showImgA}
+            variants={shows}
+            initial="hidden"
+            animate={video ? "out" : show ? "visible" : "before"}
+            custom={index}
+            href={b}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img layout="fill" alt="" src={a} className={styles.showImg} />
+          </motion.a>
+        );
+      }
     });
     return showes;
   };
@@ -255,31 +272,48 @@ export default function Home({ data }) {
     showss.forEach((item, index) => {
       const a = item;
       const b = showListes[index];
-      showes.push(
-        <motion.a
-          className={styles.showImgA}
-          variants={lives}
-          initial="hidden"
-          animate={video ? "out" : "visible"}
-          custom={index}
-          href={b}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img layout="fill" alt="" src={a} className={styles.showImg} />
-        </motion.a>
-      );
+      if(index / 5 == 1){
+        showes.push(
+          <motion.a
+            className={`${styles.showImgA} ${styles.noMargin}`}
+            variants={lives}
+            initial="hidden"
+            animate={video ? "out" : "visible"}
+            custom={index}
+            href={b}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img layout="fill" alt="" src={a} className={styles.showImg} />
+          </motion.a>
+        );
+      }else{
+        showes.push(
+          <motion.a
+            className={styles.showImgA}
+            variants={lives}
+            initial="hidden"
+            animate={video ? "out" : "visible"}
+            custom={index}
+            href={b}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img layout="fill" alt="" src={a} className={styles.showImg} />
+          </motion.a>
+        );
+      }
     });
     return showes;
   };
 
-  const onPlayerReady = (event) => {
-    var embedCode = event.target.getVideoEmbedCode();
-    event.target.playVideo();
-    if (document.getElementById("embed-code")) {
-      document.getElementById("embed-code").innerHTML = embedCode;
-    }
-  };
+  // const onPlayerReady = (event) => {
+  //   var embedCode = event.target.getVideoEmbedCode();
+  //   event.target.playVideo();
+  //   if (document.getElementById("embed-code")) {
+  //     document.getElementById("embed-code").innerHTML = embedCode;
+  //   }
+  // };
 
   useEffect(() => {
     initGA();
@@ -307,6 +341,7 @@ export default function Home({ data }) {
     };
     window.addEventListener("scroll", handleScroll);
   }, []);
+
   const height = use100vh();
 
   return (
@@ -420,7 +455,6 @@ export default function Home({ data }) {
           ></link>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></Script>
         <Logo />
 
         <motion.div
@@ -446,10 +480,10 @@ export default function Home({ data }) {
           <div className={styles.filter}></div>
           <motion.div
             className={styles.title}
-            initial={{ bottom: "calc(75px + 1vw)" }}
+            initial={{ bottom: "calc(125px + 1vw)" }}
             whileInView={{
               bottom: "calc(200px + 11vw)",
-              transition: { delay: 6, duration: 1, ease: "easeInOut" },
+              transition: { delay: 6, duration: 1 },
             }}
             viewport={{ once: true }}
           >
@@ -478,7 +512,7 @@ export default function Home({ data }) {
                 y: -30,
                 transition: {
                   duration: 0.75,
-                  delay: 1.5,
+                  delay: 1.25,
                   // width: { delay: 6, duration: 1.5, ease: "easeInOut" },
                 },
               }}
@@ -500,7 +534,7 @@ export default function Home({ data }) {
               whileInView={{
                 opacity: 1,
                 y: -30,
-                transition: { duration: 0.75, delay: 2 },
+                transition: { duration: 0.75, delay: 1.5 },
               }}
               viewport={{ once: true }}
             >
@@ -610,7 +644,7 @@ export default function Home({ data }) {
           animate={{
             opacity: 1,
             display: "block",
-            transition: { delay: 11.5, duration: 1.5 },
+            transition: { delay: 10.5, duration: 1.5 },
           }}
           viewport={{ once: true }}
         >
@@ -646,7 +680,7 @@ export default function Home({ data }) {
                 viewport={{ once: true }}
                 custom={0}
               ></div>
-              {listLive(video)}
+              <div className={styles.listCons}>{listLive(video)}</div>
               <div
                 className={styles.boxMargin}
                 variants={shows}
@@ -664,7 +698,7 @@ export default function Home({ data }) {
                 viewport={{ once: true }}
                 custom={0}
               ></div>
-              {listShow(video)}
+              <div className={styles.listCons}>{listShow(video)}</div>
               <div
                 className={styles.boxMargin}
                 initial="hidden"
@@ -796,7 +830,8 @@ export default function Home({ data }) {
         <motion.div className={styles.text1}>
           <motion.span className={styles.scroll} style={{ x: x1, opacity: op }}>
             Firm&nbsp; 0尊&nbsp; 是&nbsp; Can Cheaper ?&nbsp; 不如?&nbsp;
-            就係咁囉&nbsp; is侮辱&nbsp; 就係咁囉
+            就係咁囉&nbsp; is侮辱&nbsp; 就係咁囉&nbsp; 好撚棘&nbsp; 咩老環&nbsp;
+            拍定手先啦
           </motion.span>
           <motion.span className={styles.scroll} style={{ x: x2, opacity: op }}>
             酒仙酒仙&nbsp; 拿拿趣&nbsp; 做畀你&nbsp; 我屌你老母呀 ?&nbsp; 不如
@@ -805,7 +840,7 @@ export default function Home({ data }) {
           </motion.span>
           <motion.span className={styles.scroll} style={{ x: x3, opacity: op }}>
             0興&nbsp; 小癲&nbsp; 咩老環&nbsp; Don’t know 做 what&nbsp;
-            日向0似&nbsp; 招&nbsp; 62520
+            日向0似&nbsp; 招&nbsp; 62520&nbsp; 加分哦
           </motion.span>
         </motion.div>
       </motion.div>

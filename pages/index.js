@@ -272,7 +272,7 @@ export default function Home({ data }) {
     showss.forEach((item, index) => {
       const a = item;
       const b = showListes[index];
-      if(index / 5 == 1){
+      if (index / 5 == 1) {
         showes.push(
           <motion.a
             className={`${styles.showImgA} ${styles.noMargin}`}
@@ -287,7 +287,7 @@ export default function Home({ data }) {
             <img layout="fill" alt="" src={a} className={styles.showImg} />
           </motion.a>
         );
-      }else{
+      } else {
         showes.push(
           <motion.a
             className={styles.showImgA}
@@ -454,6 +454,7 @@ export default function Home({ data }) {
             rel="stylesheet"
           ></link>
           <link rel="icon" href="/favicon.ico" />
+          <link rel="shortcut icon" href="/favicon.ico"></link>
         </Head>
         <Logo />
 

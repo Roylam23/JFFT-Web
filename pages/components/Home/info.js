@@ -24,7 +24,7 @@ let img = [
   "/member/rice.jpg",
   "/member/leungsiu.jpg",
   "/member/garbriel.jpg",
-  "/icons/pwa512.png"
+  "/icons/pwa512.png",
 ];
 let id = [
   `${styles.bed}`,
@@ -39,21 +39,50 @@ const Info = () => {
   const members = () => {
     const memberes = [];
     member.forEach((item, index) => {
-      memberes.push(
-        <motion.div
-          className={styles.memberPhotoBox}
-          variants={memberList}
-          initial="hidden"
-          whileInView="visible"
-          custom={2}
-          viewport={{ once: true }}
-        >
-          <motion.div className={styles.memberPhotoCon}>
-            <img layout="fill" src={img[index]} alt="床哥" id={id[index]}></img>
+      if (index == 5) {
+        memberes.push(
+          <motion.div
+            className={styles.memberPhotoBox}
+            id={styles.memberPadding}
+            variants={memberList}
+            initial="hidden"
+            whileInView="visible"
+            custom={index}
+            viewport={{ once: true }}
+          >
+            <motion.div className={styles.memberPhotoCon}>
+              <img
+                layout="fill"
+                src={img[index]}
+                alt={member[index]}
+                id={id[index]}
+              ></img>
+            </motion.div>
+            <motion.span className={styles.memberName}>{item}</motion.span>
           </motion.div>
-          <motion.span className={styles.memberName}>{item}</motion.span>
-        </motion.div>
-      );
+        );
+      } else {
+        memberes.push(
+          <motion.div
+            className={styles.memberPhotoBox}
+            variants={memberList}
+            initial="hidden"
+            whileInView="visible"
+            custom={index}
+            viewport={{ once: true }}
+          >
+            <motion.div className={styles.memberPhotoCon}>
+              <img
+                layout="fill"
+                src={img[index]}
+                alt={member[index]}
+                id={id[index]}
+              ></img>
+            </motion.div>
+            <motion.span className={styles.memberName}>{item}</motion.span>
+          </motion.div>
+        );
+      }
     });
     return memberes;
   };
@@ -71,9 +100,9 @@ const Info = () => {
           成員
         </motion.span>
         <motion.span className={styles.memberBoxes}>
-          <div className={styles.photoMargin}></div>
-          {members()}
-          <div className={styles.photoMargin}></div>
+          <div className={styles.memberInner}>
+            {members()}
+          </div>
         </motion.span>
         <motion.div className={styles.memberinfoOut}>
           <motion.div className={styles.memberinfoCon}>

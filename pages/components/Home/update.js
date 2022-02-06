@@ -24,7 +24,7 @@ const Update = () => {
           fontWeight: "600",
         }}
       >
-        更多內容將會陸續更新<br></br> <br></br>
+        內容將會因應功課進度而更新<br></br> <br></br>
         祝各位新年快樂 ! <br></br>
         <br></br>
         加入JFFT永遠都唔會遲！

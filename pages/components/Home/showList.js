@@ -106,6 +106,10 @@ let livess = [
   "https://i.ytimg.com/vi/3LIcp4qE2zs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCy9-SFLk8TlcwX6DNCb6VCJXqUlQ",
   "https://i.ytimg.com/vi/wFDgq1kValk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDeLZPsvcYUIVZDcbO-WvZaqusIpg",
 ];
+
+let showAlt = ["床哥心事台", "我屌你老", "思淫信箱", "音樂擂台", "米比雞翼走"];
+let liveAlt = ["JFFSONG", "沉鹿期", "Fancy勁舞團", "米爺徐晃", "聖誕啓示錄"];
+
 let showss = [
   "https://i.ytimg.com/vi/337wko5AmKY/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD-WxyDGOCeN5nc034911m21KXVAQ",
   "https://i.ytimg.com/vi/PcXNQauOZ6c/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDIfUY2DgwTGEX2LZydUrB3TiEDIQ",
@@ -147,6 +151,7 @@ const ShowList = () => {
   const handleClick = () => {
     setShow(true);
     setVideo(true);
+    document.querySelector("#listCon").scrollLeft = 0;
   };
 
   const listLive = () => {
@@ -166,7 +171,12 @@ const ShowList = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img layout="fill" alt="" src={a} className={styles.showImg} />
+            <img
+              layout="fill"
+              alt={showAlt[index]}
+              src={a}
+              className={styles.showImg}
+            />
           </motion.a>
         );
       } else {
@@ -181,7 +191,12 @@ const ShowList = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img layout="fill" alt="" src={a} className={styles.showImg} />
+            <img
+              layout="fill"
+              alt={showAlt[index]}
+              src={a}
+              className={styles.showImg}
+            />
           </motion.a>
         );
       }
@@ -207,7 +222,7 @@ const ShowList = () => {
           >
             <img
               layout="fill"
-              alt=""
+              alt={liveAlt[index]}
               src={a}
               className={`${styles.showImg} ${styles.noMargin}`}
             />
@@ -225,7 +240,12 @@ const ShowList = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img layout="fill" alt="" src={a} className={styles.showImg} />
+            <img
+              layout="fill"
+              alt={liveAlt[index]}
+              src={a}
+              className={styles.showImg}
+            />
           </motion.a>
         );
       }

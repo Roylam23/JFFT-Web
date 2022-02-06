@@ -5,17 +5,20 @@ import Head from "next/head";
 const Heads = () => {
   return (
     <Head>
-      <title>JFFT - Home</title>
+      <title>JFFT - 會然維基</title>
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi"
       />
+      <meta charset="utf-8"></meta>
       <meta name="description" content="JFFT" />
       <meta name="description" content="Jun For Fun Team" />
       <meta name="description" content="JFFLive" />
       <meta name="description" content="加入JFFT永遠都唔會遲" />
       <meta name="description" content="Firm" />
       <meta name="description" content="JFFT Fanmade網站" />
+      <meta name="description" content="JFFT網站" />
+      <meta name="description" content="JFFT會然維基" />
       <meta
         name="google-site-verification"
         content="k3n1vQkq8AOOwF4G2R65vOQGeWg7Zovv0GPfKbp_ACo"
@@ -25,8 +28,6 @@ const Heads = () => {
         content="vCL6k8FoD-HIXbN3aj6Q4syrfAt0l1cnqFIetE5tLsc"
       />
       <meta name="robots" content="index, follow"></meta>
-      <meta property="og:title" content="JFFT"></meta>
-      <meta property="og:site_name" content="JFFT"></meta>
       <meta name="author" content="RL"></meta>
       <link rel="manifest" href="/manifest.json" />
       <link rel="apple-touch-icon" href="/apple192.png"></link>

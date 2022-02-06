@@ -172,7 +172,7 @@ export default function Home({ data }) {
             >
               加入JFFT永遠都唔會遲
             </motion.span>
-            <IconBox/>
+            <IconBox />
           </motion.div>
           <div className={styles.frame}></div>
         </motion.div>

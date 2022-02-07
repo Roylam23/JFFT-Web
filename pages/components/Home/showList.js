@@ -22,14 +22,14 @@ const shows = {
     };
   },
   before: (i) => {
-    const delay = 9 + i * 0.15;
+    const delay = 9.5 + i * 0.15;
     return {
       opacity: 1,
       x: 0,
       zIndex: 80,
       transition: {
         delay: delay,
-        duration: 0.5,
+        duration: 0.75,
         zIndex: { delay: 0 },
       },
     };

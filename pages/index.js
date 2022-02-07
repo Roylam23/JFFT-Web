@@ -115,7 +115,7 @@ export default function Home({ data }) {
             initial={{ bottom: "calc(100px + 1vw)" }}
             whileInView={{
               bottom: "calc(200px + 11vw)",
-              transition: { delay: 6, duration: 1 },
+              transition: { delay: 4, duration: 1 },
             }}
             viewport={{ once: true }}
           >

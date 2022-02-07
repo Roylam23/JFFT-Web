@@ -5,7 +5,7 @@ import Head from "next/head";
 const Heads = () => {
   return (
     <Head>
-      <title>JFFT - 會然維基</title>
+      <title>JFFT - 會然Wiki</title>
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi"
@@ -19,6 +19,7 @@ const Heads = () => {
       <meta name="description" content="JFFT Fanmade網站" />
       <meta name="description" content="JFFT網站" />
       <meta name="description" content="JFFT會然維基" />
+      <meta name="description" content="JFFT會然Wiki"/>
       <meta
         name="google-site-verification"
         content="k3n1vQkq8AOOwF4G2R65vOQGeWg7Zovv0GPfKbp_ACo"

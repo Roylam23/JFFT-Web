@@ -29,7 +29,7 @@ const shows = {
       zIndex: 80,
       transition: {
         delay: delay,
-        duration: 0.75,
+        duration: 0.5,
         zIndex: { delay: 0 },
       },
     };

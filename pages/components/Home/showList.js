@@ -22,7 +22,7 @@ const shows = {
     };
   },
   before: (i) => {
-    const delay = 9.5 + i * 0.15;
+    const delay = 9.25 + i * 0.15;
     return {
       opacity: 1,
       x: 0,

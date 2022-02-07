@@ -452,12 +452,12 @@
 .memberPhotoCon {
   border-radius: 50%;
   overflow: hidden;
-  width: calc(75px + 7.5vw);
-  height: calc(75px + 7.5vw);
+  width: calc(75px + 6vw);
+  height: calc(75px + 6vw);
   min-width: 100px;
   min-height: 100px;
-  max-width: 225px;
-  max-height: 225px;
+  max-width: 190px;
+  max-height: 190px;
   position: relative;
 }
 

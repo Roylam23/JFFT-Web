@@ -2,15 +2,14 @@
   position: relative;
   display: block;
   padding-bottom: calc(45px + 1.2vw);
-  height: 100vh;
-  min-height: 100vh;
 }
 
 .container {
+  display: block;
   background-color: #090a0a;
   position: relative;
-  /* height: 100vh;
-  min-height: 100vh; */
+  height: 100vh;
+  min-height: 100vh;
   z-index: 100;
 }
 
@@ -670,10 +669,12 @@
 
 @supports (-webkit-touch-callout: none) {
   .logoBox {
-    /* height: -webkit-fill-available; */
+    height: -webkit-fill-available;
   }
 
-  .showBox > :last-child, .showVideo > :last-child, .memberBoxes > :last-child {
+  .showBox> :last-child,
+  .showVideo> :last-child,
+  .memberBoxes> :last-child {
     padding-right: 20px;
     box-sizing: unset;
   }
@@ -695,10 +696,6 @@
   .textCon::before {
     position: fixed;
     z-index: unset;
-  }
-
-  .mainContainer {
-    height: -webkit-fill-available;
   }
 
 }

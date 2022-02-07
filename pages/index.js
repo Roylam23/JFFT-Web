@@ -71,7 +71,6 @@ export default function Home({ data }) {
       className={styles.mainContainer}
       initial={{ overflow: "hidden", paddingBottom: 0 }}
       animate={{
-        height: "auto",
         overflow: "visible",
         paddingBottom: "calc(45px + 1.2vw)",
         transition: { delay: 4, duration: 1.5 },
@@ -79,13 +78,7 @@ export default function Home({ data }) {
     >
       <motion.div
         className={styles.container}
-        id="container"
         style={{ height: height }}
-        initial={{ overflow: "hidden" }}
-        animate={{
-          overflow: "visible",
-          transition: { delay: 4, duration: 1.5, ease: "easeInOut" },
-        }}
       >
         <Heads />
         <Logo />

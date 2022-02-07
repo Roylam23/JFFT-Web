@@ -140,18 +140,23 @@ const ShowList = () => {
   const [show, setShow] = useState(false);
   const [video, setVideo] = useState(false);
 
+  const sl = () =>{
+    document.querySelector("#box").scrollLeft = 0;
+    document.querySelector("#box1").scrollLeft = 0;
+  }
+
   const handleVideo = () => {
     setVideo(true);
-    document.querySelector("#listCon").scrollLeft = 0;
+    sl();
   };
   const handleLive = () => {
     setVideo(false);
-    document.querySelector("#listCon").scrollLeft = 0;
+    sl();
   };
   const handleClick = () => {
     setShow(true);
     setVideo(true);
-    document.querySelector("#listCon").scrollLeft = 0;
+    sl();
   };
 
   const listLive = () => {

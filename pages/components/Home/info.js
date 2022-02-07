@@ -43,7 +43,6 @@ const Info = () => {
         memberes.push(
           <motion.div
             className={styles.memberPhotoBox}
-            id={styles.memberPadding}
             variants={memberList}
             initial="hidden"
             whileInView="visible"
@@ -100,9 +99,7 @@ const Info = () => {
           成員
         </motion.span>
         <motion.span className={styles.memberBoxes}>
-          <div className={styles.memberInner}>
             {members()}
-          </div>
         </motion.span>
         <motion.div className={styles.memberinfoOut}>
           <motion.div className={styles.memberinfoCon}>

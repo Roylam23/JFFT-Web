@@ -239,9 +239,6 @@
 .listCon {
   display: flex;
   position: relative;
-  padding: 0 calc(30px + 2vw);
-  overflow: scroll;
-  scroll-behavior: smooth;
 }
 
 .listCon::-webkit-scrollbar {
@@ -250,12 +247,16 @@
 
 .showBox,
 .showVideo {
-  display: flex;
+  display: inline-flex;
   width: 100%;
   height: fit-content;
   justify-content: space-between;
   margin-top: calc(1rem + .5vw);
-  overflow: visible;
+  overflow: scroll;
+  padding: 0 calc(30px + 2vw);
+  grid-gap: 20px;
+  scroll-behavior: smooth;
+  position: relative;
 }
 
 .showBox::-webkit-scrollbar,
@@ -284,7 +285,6 @@
 .showImgA {
   width: 14%;
   min-width: 205px;
-  margin-right: calc(10px + 1vw);
   overflow: visible;
   position: relative;
   flex-shrink: 0;
@@ -413,21 +413,25 @@
   color: #fff;
   z-index: 100;
   width: 100%;
-  padding: 0 calc(30px + 2vw);
   display: flex;
   flex-direction: column;
 }
 
 .memberBoxes {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   margin: calc(25px + 1vw) 0;
+  padding: 0 calc(30px + 2vw);
+  grid-gap: 20px;
+  overflow: scroll;
 }
 
 .memberInner {
   width: 100%;
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
+  gap: 20px;
+  overflow: visible;
 }
 
 .memberBoxes::-webkit-scrollbar {
@@ -437,6 +441,7 @@
 .memberTitle {
   font-size: calc(14px + .7vw);
   font-weight: 600;
+  padding-left: calc(30px + 2vw);
 }
 
 .memberPhotoBox {
@@ -519,7 +524,7 @@
   display: flex;
 }
 
-#memberPadding{
+#memberPadding {
   padding-right: 0;
 }
 
@@ -619,7 +624,7 @@
     padding: 0;
   }
 
-  #memberPadding{
+  #memberPadding {
     padding-right: 20px;
   }
 
@@ -630,12 +635,6 @@
     overflow-x: scroll;
     overflow-y: hidden;
     padding: 0 calc(30px + 2vw);
-  }
-
-  .memberPhotoBox {
-    display: flex;
-    align-items: center;
-    margin-right: 30px;
   }
 
   .scroll {
@@ -674,6 +673,11 @@
     /* height: -webkit-fill-available; */
   }
 
+  .showBox > :last-child, .showVideo > :last-child, .memberBoxes > :last-child {
+    padding-right: 20px;
+    box-sizing: unset;
+  }
+
   .aceBox {
     margin-bottom: 0;
   }
@@ -696,4 +700,5 @@
   .mainContainer {
     height: -webkit-fill-available;
   }
+
 }

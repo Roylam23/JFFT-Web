@@ -17,7 +17,7 @@ const memberList = {
   },
 };
 
-let member = ["床哥", "GE", "米爺", "良少", "比叔", "含爺"];
+let member = ["床哥", "雞翼", "米爺", "良少", "比叔", "含爺"];
 let img = [
   "/member/bedgor.jpg",
   "/member/ge.jpg",

@@ -12,8 +12,7 @@ import Title from "./components/Home/title";
 import { useViewportScroll, motion, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { initGA, logPageView } from "../utils/analytics";
-import Div100vh from "react-div-100vh";
-import Script from "next/script";
+import { use100vh } from "react-div-100vh";
 
 export default function Home() {
   const { scrollY } = useViewportScroll();
@@ -61,6 +60,7 @@ export default function Home() {
     };
     window.addEventListener("scroll", handleScroll);
   }, []);
+  const height = use100vh();
   return (
     <motion.div
       className={styles.mainContainer}
@@ -78,16 +78,41 @@ export default function Home() {
           <motion.div
             className="insta"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 5.5, duration: 1.5} }}
+            animate={{ opacity: 1, transition: { delay: 5, duration: 1 } }}
           >
             <img className="noticeImg" src="/jffticon.png"></img>
-            <span>建議使用Safari, Chrome等瀏覽器以達致最佳觀賞效果</span>
+            <span>
+              建議使用Safari, Chrome瀏覽器以達到最佳觀賞效果 <br></br>
+              <br></br>{" "}
+              <span
+                style={{
+                  color: "#E9007F",
+                  fontSize: "24px",
+                  fontWeight: "600",
+                }}
+              >
+                Instagram
+              </span>
+              <br></br> 點擊右上按鈕，並按以瀏覽器開啓<br></br>
+              <br></br>
+              <span
+                style={{
+                  color: "#E9007F",
+                  fontSize: "24px",
+                  fontWeight: "600",
+                }}
+              >
+                其他
+              </span>{" "}
+              <br></br>
+              點擊分享按鈕，並按以Safari瀏覽
+            </span>
           </motion.div>
           <div className="instaBack"></div>
         </>
       ) : null}
       <Logo />
-      <Div100vh className={styles.container}>
+      <div className={styles.container} style={{ height: height }}>
         <Heads />
         <motion.div
           className={styles.mainBox}
@@ -113,7 +138,7 @@ export default function Home() {
         </motion.div>
         <Title />
         <ShowList />
-      </Div100vh>
+      </div>
       <Info />
       <Scrollbar />
       <Sub />

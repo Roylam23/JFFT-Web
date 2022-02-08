@@ -61,7 +61,7 @@ export default function Home() {
       }}
     >
       <Logo />
-      <motion.div className={styles.container} style={{ height: height }}>
+      <motion.div className={styles.container}>
         <Heads />
         <motion.div
           className={styles.mainBox}

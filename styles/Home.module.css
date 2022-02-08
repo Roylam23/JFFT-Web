@@ -9,6 +9,7 @@
   background-color: #090a0a;
   position: relative;
   z-index: 100;
+  height: 100vh;
 }
 
 .video {
@@ -712,7 +713,9 @@
 }
 
 @supports (-webkit-touch-callout: none) {
-  .mainContainer {
+
+  .mainContainer,
+  .container {
     height: fill-available;
   }
 

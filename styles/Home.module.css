@@ -58,13 +58,13 @@
   position: relative;
   display: flex;
   align-items: center;
+  padding: calc(50px + 2.5vw) 0;
 }
 
 .subCon {
   flex-direction: column;
   background: rgb(10, 10, 10);
   gap: 15px;
-  padding: calc(50px + 2.5vw) 0;
 }
 
 .subConInner {
@@ -328,7 +328,7 @@
 
 .showImgA {
   width: 14%;
-  min-width: 205px;
+  min-width: 225px;
   overflow: visible;
   position: relative;
   flex-shrink: 0;

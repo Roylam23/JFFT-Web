@@ -86,7 +86,7 @@ export default function Home() {
             className={styles.title}
             initial={{ bottom: "calc(100px + 1vw)" }}
             whileInView={{
-              bottom: "calc(200px + 11vw)",
+              bottom: "calc(200px + 10vw)",
               transition: { delay: 4, duration: 1 },
             }}
             viewport={{ once: true }}

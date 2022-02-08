@@ -716,7 +716,7 @@
 
   .mainContainer,
   .container {
-    height: fill-available;
+    height: -webkit-fill-available;
   }
 
   .mainBox {
@@ -728,10 +728,6 @@
   .memberBoxes> :last-child {
     padding-right: 20px;
     box-sizing: unset;
-  }
-
-  .aceBox {
-    margin-bottom: 0;
   }
 
   .titleTop {

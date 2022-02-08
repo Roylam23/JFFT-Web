@@ -1,31 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../../styles/Home.module.css";
+import SubItem from "./sub/subItem";
 
 const Sub = () => {
   return (
-    <motion.div
-      className={styles.subCon}
-      style={{ height: "auto" }}
-    >
-      <motion.div
-        className={styles.text1}
-        initial={{ y: 25, opacity: 0 }}
-        whileInView={{
-          y: 0,
-          opacity: 1,
-          transition: { duration: 1.5 },
-        }}
-        viewport={{ once: true }}
-        style={{
-          fontWeight: "600",
-        }}
-      >
-        內容將會因應功課進度而更新<br></br> <br></br>
-        祝各位新年快樂 ! <br></br>
-        <br></br>
-        加入JFFT永遠都唔會遲！
-      </motion.div>
+    <motion.div className={styles.subCon} style={{ height: "auto" }}>
+      <div className={styles.subTitle}>
+        訂閲{" "}
+        <span style={{ fontWeight: 500, fontSize: "18px" }}>
+          beta
+        </span>
+      </div>
+      <div className={styles.subConInner}>
+        <SubItem
+          url="https://api.socialcounts.org/youtube-live-subscriber-count/UCcrhFT95jH5XqVVPyBhRbrA"
+          img="/jffticon.png"
+          name="JFFT"
+        />
+        <SubItem
+          url="https://api.socialcounts.org/youtube-live-subscriber-count/UC3aipgNToMvs2pFaQyaM_hg"
+          img="/jfflive.png"
+          name="JFFLive"
+        />
+      </div>
     </motion.div>
   );
 };

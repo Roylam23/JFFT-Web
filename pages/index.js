@@ -12,10 +12,6 @@ import { useViewportScroll, motion, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import { use100vh } from "react-div-100vh";
-import dynamic from "next/dynamic";
-import useSWR from "swr";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 // const key = "AIzaSyAdG9n0Y_ojAJV6-ffClxb4W7EsCLUBhAk";
 // const key = "AIzaSyDL0tDIGFd9ntWdIguLMLKLs0rP2e5-238";
@@ -34,12 +30,6 @@ import 'aos/dist/aos.css';
 //   };
 // }
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
-
-const Odometer = dynamic(import("react-odometerjs"), {
-  ssr: false,
-  loading: () => 0,
-});
 
 export default function Home() {
   const { scrollY } = useViewportScroll();
@@ -48,14 +38,6 @@ export default function Home() {
   const x3 = useTransform(scrollY, [100, 2500], ["5%", "-20%"]);
   const op = useTransform(scrollY, [180, 450], [0, 1]);
   const router = useRouter();
-  AOS.init();
-  const { data, error } = useSWR(
-    "https://api.socialcounts.org/youtube-live-subscriber-count/UC3aipgNToMvs2pFaQyaM_hg",
-    fetcher,
-    {
-      refreshInterval: 5000,
-    }
-  );
 
   useEffect(() => {
     initGA();
@@ -84,7 +66,6 @@ export default function Home() {
   }, []);
 
   const height = use100vh();
-  if (!data) return null;
   return (
     <motion.div
       className={styles.mainContainer}
@@ -189,7 +170,7 @@ export default function Home() {
       </motion.div>
       <Info />
       <Scrollbar />
-      {/* <Sub /> */}
+      <Sub />
       <Update />
       <motion.footer
         className={styles.footer}

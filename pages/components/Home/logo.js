@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styles from "../../../styles/Home.module.css";
-import dynamic from "next/dynamic";
-import useSWR from "swr";
 
 const navLogo = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -64,23 +62,7 @@ const clickTop = () => {
   });
 };
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
-
-const Odometer = dynamic(import("react-odometerjs"), {
-  ssr: false,
-  loading: () => 0,
-});
-
 const Logo = (props) => {
-  const { data, error } = useSWR(
-    "https://api.socialcounts.org/youtube-live-subscriber-count/UC3aipgNToMvs2pFaQyaM_hg",
-    fetcher,
-    {
-      refreshInterval: 5000,
-    }
-  );
-
-  if (!data) return null;
   return (
     <motion.div
       className={("nav", styles.logoBox)}
@@ -210,14 +192,6 @@ const Logo = (props) => {
               />
             </motion.svg> */}
       </div>
-      {/* <div className={styles.odoCon}>
-        <Odometer
-          className={styles.odometer}
-          id={styles.odometer}
-          value={data["est_sub"]}
-          format="(,ddd)"
-        />
-      </div> */}
 
       {/* Transparent version */}
       {/* <motion.svg

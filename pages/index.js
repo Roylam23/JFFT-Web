@@ -25,9 +25,10 @@ export default function Home() {
     var ua = navigator.userAgent || navigator.vendor || window.opera;
     var isSafari = ua.indexOf("Safari") > -1 ? true : false;
     var isWebkit = ua.indexOf("WebKit") > -1 ? true : false;
+    var isInstagram = ua.indexOf("Instagram") > -1 ? true : false;
 
     if (document.documentElement.classList) {
-      if (isWebkit && !isSafari) {
+      if (isWebkit && (!isSafari || !isInstagram)) {
         setNotice(true);
       }
     }
@@ -47,7 +48,10 @@ export default function Home() {
     };
   }, [router.events]);
   useEffect(() => {
-    document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
+    document.documentElement.style.setProperty(
+      "--app-height",
+      `${window.innerHeight}px`
+    );
     const handleScroll = () => {
       const scrollY = window.scrollY;
       if (scrollY > 0) {
@@ -75,8 +79,8 @@ export default function Home() {
       id="mainContainer"
       initial={{ overflow: "hidden", paddingBottom: 0 }}
       animate={{
-        height: "auto",
-        overflow: "visible",
+        height: notice ? "100vh" : "auto",
+        overflow: notice ? "hidden" : "visible",
         paddingBottom: "calc(45px + 1.2vw)",
         transition: { delay: 4, duration: 1.5 },
       }}

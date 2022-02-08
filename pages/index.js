@@ -112,7 +112,7 @@ export default function Home() {
         </>
       ) : null}
       <Logo />
-      <div className={styles.container} style={{ height: height }}>
+      <div className={styles.container} >
         <Heads />
         <motion.div
           className={styles.mainBox}

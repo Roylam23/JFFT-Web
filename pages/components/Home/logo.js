@@ -23,10 +23,12 @@ const logoHidden = {
     height: "calc(55px + 1vw)",
     backgroundImage:
       "linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))",
+    zIndex: 105,
     transition: {
       delay: 4,
       duration: 1.5,
       backgroundImage: { delay: 4, duration: 1.5 },
+      zIndex: { delay: 5.5 },
     },
   },
 };

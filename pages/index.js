@@ -10,7 +10,7 @@ import IconBox from "./components/Home/iconBox";
 import Sub from "./components/Home/sub";
 import Title from "./components/Home/title";
 import { useViewportScroll, motion, useTransform } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import Div100vh from "react-div-100vh";
 import Script from "next/script";
@@ -22,6 +22,19 @@ export default function Home() {
   // const x3 = useTransform(scrollY, [100, 2500], ["5%", "-20%"]);
   // const op = useTransform(scrollY, [180, 450], [0, 1]);
   const router = useRouter();
+  const [notice, setNotice] = useState(false);
+
+  useEffect(() => {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    var isSafari = ua.indexOf("Safari") > -1 ? true : false;
+    var isWebkit = ua.indexOf("WebKit") > -1 ? true : false;
+
+    if (document.documentElement.classList) {
+      if (isWebkit && !isSafari) {
+        setNotice(true);
+      }
+    }
+  });
 
   useEffect(() => {
     initGA();
@@ -51,6 +64,7 @@ export default function Home() {
   return (
     <motion.div
       className={styles.mainContainer}
+      id="mainContainer"
       initial={{ overflow: "hidden", paddingBottom: 0 }}
       animate={{
         height: "auto",
@@ -59,8 +73,19 @@ export default function Home() {
         transition: { delay: 4, duration: 1.5 },
       }}
     >
-      <Script src="/js/instagram.js" />
-      
+      {notice ? (
+        <>
+          <motion.div
+            className="insta"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 5.5, duration: 1.5} }}
+          >
+            <img className="noticeImg" src="/jffticon.png"></img>
+            <span>建議使用Safari, Chrome等瀏覽器以達致最佳觀賞效果</span>
+          </motion.div>
+          <div className="instaBack"></div>
+        </>
+      ) : null}
       <Logo />
       <Div100vh className={styles.container}>
         <Heads />

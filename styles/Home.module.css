@@ -8,8 +8,6 @@
   display: block;
   background-color: #090a0a;
   position: relative;
-  height: 100vh;
-  max-height: 100vh;
   z-index: 100;
 }
 

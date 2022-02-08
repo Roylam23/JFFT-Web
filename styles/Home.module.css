@@ -11,6 +11,27 @@
   z-index: 100;
 }
 
+.insta {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: calc(40px + 1vw);
+  background: rgb(14, 14, 14);
+  z-index: 200;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  border-radius: 7px;
+}
+
+.noticeImg {
+  width: calc(100px + 5vw);
+}
+
 .video {
   z-index: 0;
 }

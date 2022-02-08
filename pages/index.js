@@ -13,6 +13,7 @@ import { useViewportScroll, motion, useTransform } from "framer-motion";
 import { useEffect } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import Div100vh from "react-div-100vh";
+import Script from "next/script";
 
 export default function Home() {
   const { scrollY } = useViewportScroll();
@@ -47,8 +48,6 @@ export default function Home() {
     };
     window.addEventListener("scroll", handleScroll);
   }, []);
-
-  // const height = use100vh();
   return (
     <motion.div
       className={styles.mainContainer}
@@ -60,6 +59,8 @@ export default function Home() {
         transition: { delay: 4, duration: 1.5 },
       }}
     >
+      <Script src="/js/instagram.js" />
+      
       <Logo />
       <Div100vh className={styles.container}>
         <Heads />

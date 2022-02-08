@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../../../styles/Home.module.css";
 import Head from "next/head";
 
 const Heads = () => {
@@ -19,7 +18,7 @@ const Heads = () => {
       <meta name="description" content="JFFT Fanmade網站" />
       <meta name="description" content="JFFT網站" />
       <meta name="description" content="JFFT會然維基" />
-      <meta name="description" content="JFFT會然Wiki"/>
+      <meta name="description" content="JFFT會然Wiki" />
       <meta
         name="google-site-verification"
         content="k3n1vQkq8AOOwF4G2R65vOQGeWg7Zovv0GPfKbp_ACo"

@@ -79,6 +79,7 @@ const clickTop = () => {
 };
 
 const Logo = () => {
+  const height = use100vh();
   return (
     <motion.div
       className={("nav", styles.logoBox)}

@@ -60,9 +60,9 @@ export default function Home() {
         transition: { delay: 4, duration: 1.5 },
       }}
     >
+      <Logo />
       <motion.div className={styles.container} style={{ height: height }}>
         <Heads />
-        <Logo />
         <motion.div
           className={styles.mainBox}
           initial={{ y: "100vh" }}

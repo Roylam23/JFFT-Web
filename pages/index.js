@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <motion.div
       className={styles.mainContainer}
-      initial={{ overflow: "hidden", paddingBottom: 0, height: height }}
+      initial={{ overflow: "hidden", paddingBottom: 0 }}
       animate={{
         height: "auto",
         overflow: "visible",

@@ -4,7 +4,7 @@ import styles from "../../../styles/Home.module.css";
 import IconBox from "./iconBox";
 
 const Title = () => {
-  const sec = 6;
+  const sec = 5;
   return (
     <motion.div
       className={styles.title}

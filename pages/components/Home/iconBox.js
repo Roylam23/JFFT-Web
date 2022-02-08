@@ -8,7 +8,7 @@ const icon = {
     y: 20,
   },
   visible: (i) => {
-    const delay = 6 + 1.5 + i * 0.15;
+    const delay = 5 + 1.5 + i * 0.15;
     return {
       opacity: 1,
       y: 0,

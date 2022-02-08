@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styles from "../../../styles/Home.module.css";
+import { use100vh } from "react-div-100vh";
 
 const navLogo = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -77,7 +78,7 @@ const clickTop = () => {
   });
 };
 
-const Logo = (props) => {
+const Logo = () => {
   return (
     <motion.div
       className={("nav", styles.logoBox)}

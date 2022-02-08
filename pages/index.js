@@ -59,7 +59,7 @@ export default function Home() {
         transition: { delay: 4, duration: 1.5 },
       }}
     >
-      <motion.div className={styles.container} style={{ height: height }}>
+      <motion.div className={styles.container}>
         <Heads />
         <Logo />
         <motion.div
@@ -84,7 +84,7 @@ export default function Home() {
           <div className={styles.filter}></div>
           <motion.div
             className={styles.title}
-            initial={{ bottom: "calc(100px + 1vw)" }}
+            initial={{ bottom: "calc(75px + 1vw)" }}
             whileInView={{
               bottom: "calc(200px + 10vw)",
               transition: { delay: 4, duration: 1 },

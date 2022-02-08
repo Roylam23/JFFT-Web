@@ -9,6 +9,28 @@
   background-color: #090a0a;
   position: relative;
   z-index: 100;
+  height: 100vh;
+}
+
+.logoBox {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#090a0a, #090a0a);
+  transition: background-color 0.5s;
+  padding: 0 calc(30px + 2vw);
+  z-index: 100;
+}
+
+.mainBox {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-bottom: 100px;
+  overflow: hidden;
 }
 
 .load_icon {
@@ -156,26 +178,6 @@
 
 #mean {
   font-size: 12px;
-}
-
-.logoBox {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(#090a0a, #090a0a);
-  transition: background-color 0.5s;
-  padding: 0 calc(30px + 2vw);
-  z-index: 100;
-}
-
-.mainBox {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 100px;
 }
 
 .video {
@@ -626,13 +628,6 @@
     flex-direction: column;
   }
 
-  .mainBox {
-    width: 100%;
-    /* height: 85vh; */
-    position: relative;
-    overflow: hidden;
-  }
-
   .title {
     bottom: calc(210px + 6vh);
   }
@@ -722,6 +717,10 @@
 }
 
 @supports (-webkit-touch-callout: none) {
+  .mainBox {
+    height: -webkit-fill-available;
+  }
+
 
   .showBox> :last-child,
   .showVideo> :last-child,

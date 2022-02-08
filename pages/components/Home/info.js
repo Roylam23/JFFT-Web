@@ -90,11 +90,6 @@ const Info = () => {
       <motion.div className={styles.memberBox}>
         <motion.span
           className={styles.memberTitle}
-          variants={memberList}
-          initial="hidden"
-          whileInView="visible"
-          custom={1}
-          viewport={{ once: true }}
         >
           成員
         </motion.span>

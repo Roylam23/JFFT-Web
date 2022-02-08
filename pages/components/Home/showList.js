@@ -260,7 +260,7 @@ const ShowList = () => {
   return (
     <motion.div
       className={styles.aceBox}
-      initial={{ opacity: 0, display: "none" }}
+      initial={{ opacity: 0}}
       animate={{
         opacity: 1,
         display: "block",

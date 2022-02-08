@@ -103,20 +103,9 @@ export default function Home() {
                   fontWeight: "600",
                 }}
               >
-                Instagram
+                LIHKG<br></br>
               </span>
-              <br></br> 點擊右上按鈕，並按以瀏覽器開啓<br></br>
-              <br></br>
-              <span
-                style={{
-                  color: "#E9007F",
-                  fontSize: "24px",
-                  fontWeight: "600",
-                }}
-              >
-                其他
-              </span>{" "}
-              <br></br>
+              <br></br> 
               點擊分享按鈕，並按以Safari瀏覽
             </span>
           </motion.div>

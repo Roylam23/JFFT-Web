@@ -1,7 +1,7 @@
 
 var ua = navigator.userAgent || navigator.vendor || window.opera;
 var isSafari = (ua.indexOf('Safari') > -1) ? true : false;
-var isWebkit = (ua.indexOf('Webkit') > -1) ? true : false;
+var isWebkit = (ua.indexOf('WebKit') > -1) ? true : false;
 
 if (document.documentElement.classList ){
 	if (isWebkit && !isSafari) {

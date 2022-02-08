@@ -11,8 +11,8 @@
   z-index: 100;
 }
 
-.video{
-  z-index:0;
+.video {
+  z-index: 0;
 }
 
 .logoBox {
@@ -37,13 +37,13 @@
 }
 
 .title {
-  position:absolute;
+  position: absolute;
   font-size: calc(20px + 1.2vw);
   padding: 0 calc(30px + 2vw);
   color: #fff;
   display: flex;
   flex-direction: column;
-  z-index:50;
+  z-index: 50;
 }
 
 .load_icon {
@@ -118,7 +118,7 @@
 
 .subTitle {
   width: 100%;
-  font-size: calc(14px + .7vw);
+  font-size: calc(16px + .45vw);
   padding-left: calc(30px + 2vw);
   font-weight: 600;
 }
@@ -278,7 +278,7 @@
 }
 
 .optionTitle {
-  font-size: calc(16px + .5vw);
+  font-size: calc(16px + .45vw);
   display: flex;
   padding: 0 calc(30px + 2vw);
 }
@@ -486,7 +486,7 @@
 }
 
 .memberTitle {
-  font-size: calc(14px + .7vw);
+  font-size: calc(16px + .45vw);
   font-weight: 600;
   padding-left: calc(30px + 2vw);
 }

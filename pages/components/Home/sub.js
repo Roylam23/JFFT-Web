@@ -7,10 +7,7 @@ const Sub = () => {
   return (
     <motion.div className={styles.subCon} style={{ height: "auto" }}>
       <div className={styles.subTitle}>
-        實時訂閲&nbsp;
-        <span style={{ fontWeight: 500, fontSize: "calc(12px + .5vw)" }}>
-          beta
-        </span>
+        實時訂閲
       </div>
       <div className={styles.subConInner}>
         <SubItem

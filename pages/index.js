@@ -8,8 +8,9 @@ import Scrollbar from "./components/Home/scrollbar";
 import Update from "./components/Home/update";
 import IconBox from "./components/Home/iconBox";
 import Sub from "./components/Home/sub";
+import Title from "./components/Home/title";
 import { useViewportScroll, motion, useTransform } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import { use100vh } from "react-div-100vh";
 
@@ -59,7 +60,7 @@ export default function Home() {
         transition: { delay: 4, duration: 1.5 },
       }}
     >
-      <motion.div className={styles.container} style={{height: height}}>
+      <motion.div className={styles.container} style={{ height: height }}>
         <Heads />
         <Logo />
         <motion.div
@@ -82,72 +83,9 @@ export default function Home() {
             }}
           ></div>
           <div className={styles.filter}></div>
-          <motion.div
-            className={styles.title}
-            initial={{ bottom: "calc(75px + 1vw)" }}
-            whileInView={{
-              bottom: "calc(200px + 10vw)",
-              transition: { delay: 4, duration: 1 },
-            }}
-            viewport={{ once: true }}
-          >
-            <motion.span
-              className={styles.titleTop}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 0.75,
-                  delay: 1,
-                },
-              }}
-              viewport={{ once: true }}
-              id={styles.top}
-            >
-              全港最大黃賭毒邪教
-            </motion.span>
-            <motion.span
-              className={styles.titleTop}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{
-                // width: ["30vw", "20vw"],
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 0.75,
-                  delay: 1.25,
-                  // width: { delay: 6, duration: 1.5, ease: "easeInOut" },
-                },
-              }}
-              viewport={{ once: true }}
-            >
-              <motion.span
-                id={styles.name}
-                className={styles.name}
-                whileInView={{
-                  color: "#E9007F",
-                }}
-              >
-                JFFT
-              </motion.span>
-            </motion.span>
-            <motion.span
-              className={styles.titleMain}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.75, delay: 1.5 },
-              }}
-              viewport={{ once: true }}
-            >
-              加入JFFT永遠都唔會遲
-            </motion.span>
-            <IconBox />
-          </motion.div>
           <div className={styles.frame}></div>
         </motion.div>
+        <Title />
         <ShowList />
       </motion.div>
       <Info />

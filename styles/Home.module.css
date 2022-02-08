@@ -11,6 +11,10 @@
   z-index: 100;
 }
 
+.video{
+  z-index:0;
+}
+
 .logoBox {
   position: fixed;
   display: flex;
@@ -24,12 +28,22 @@
 }
 
 .mainBox {
-  display: block;
+  display: flex;
   width: 100%;
   height: 100%;
   position: relative;
-  margin-bottom: 100px;
   overflow: hidden;
+  align-items: center;
+}
+
+.title {
+  position:absolute;
+  font-size: calc(20px + 1.2vw);
+  padding: 0 calc(30px + 2vw);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  z-index:50;
 }
 
 .load_icon {
@@ -201,18 +215,6 @@
   height: auto;
   width: min-content;
   z-index: 200;
-}
-
-.title {
-  position: absolute;
-  z-index: 200;
-  font-size: calc(20px + 1.2vw);
-  padding: 0 calc(30px + 2vw);
-  bottom: calc(200px + 11vw);
-  bottom: calc(2.25rem + 1vw);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
 }
 
 .titleTop {
@@ -627,10 +629,6 @@
     flex-direction: column;
   }
 
-  .title {
-    bottom: calc(210px + 6vh);
-  }
-
   .aceBox {
     padding: 0;
   }
@@ -695,9 +693,6 @@
 }
 
 @media screen and (max-height: 768px) {
-  .title {
-    bottom: calc(210px + 6vh);
-  }
 
   .titleTop {
     font-size: calc(10px + 1.1vh);

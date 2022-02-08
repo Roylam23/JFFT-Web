@@ -712,10 +712,13 @@
 }
 
 @supports (-webkit-touch-callout: none) {
+  .mainContainer {
+    height: fill-available;
+  }
+
   .mainBox {
     height: -webkit-fill-available;
   }
-
 
   .showBox> :last-child,
   .showVideo> :last-child,

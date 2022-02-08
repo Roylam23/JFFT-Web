@@ -1,40 +1,44 @@
+.container,
 .mainContainer {
-  position: relative;
   display: block;
-  height: 100vh;
+  position: relative
+}
+
+.mainContainer {
+  height: 100vh
 }
 
 .container {
-  display: block;
   background-color: #090a0a;
-  position: relative;
-  z-index: 100;
+  z-index: 100
 }
 
-.video {
-  z-index: 0;
+.logoBox,
+.textCon::before {
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+
+.logoBox,
+.mainBox {
+  display: flex;
+  align-items: center
 }
 
 .logoBox {
   position: fixed;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  top: 0;
   background-image: linear-gradient(#090a0a, #090a0a);
-  transition: background-color 0.5s;
+  transition: background-color .5s;
   padding: 0 calc(30px + 2vw);
-  z-index: 120;
+  z-index: 120
 }
 
 .mainBox {
-  display: flex;
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden;
-  align-items: center;
+  overflow: hidden
 }
 
 .title {
@@ -44,132 +48,129 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  z-index: 50;
+  z-index: 50
 }
 
 .load_icon {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
 }
 
 .odoCon {
   display: flex;
   margin-left: 10px;
-  align-items: center;
+  align-items: center
 }
 
 .odoCon>span {
-  font-family: sans-serif;
+  font-family: sans-serif
 }
 
 .load_icon1 {
   cursor: pointer;
-  z-index: 110;
+  z-index: 110
 }
 
 .load_icon2 {
-  cursor: pointer;
   margin-left: calc(-30px - .8vw);
-  z-index: 100;
+  z-index: 100
 }
 
 #live,
-#video {
+#video,
+.load_icon2 {
   cursor: pointer
 }
 
 .jffsong {
   width: 100%;
   min-width: 200px;
-  margin-bottom: 20px;
+  margin-bottom: 20px
 }
 
+.subCon,
 .textCon,
-.textCon1,
-.subCon {
+.textCon1 {
   height: calc(250px + 40vh);
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
-  padding: calc(50px + 2.5vw) 0;
+  padding: calc(50px + 2.5vw)0
+}
+
+#textCon,
+.subCon {
+  background: #0a0a0a
 }
 
 .subCon {
   flex-direction: column;
-  background: rgb(10, 10, 10);
-  gap: 15px;
+  gap: 15px
 }
 
 .subConInner {
   display: flex;
   width: 80%;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 50px
 }
 
 .subLive {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 30px
 }
 
 .subTitle {
   width: 100%;
   font-size: calc(16px + .45vw);
   padding-left: calc(30px + 2vw);
-  font-weight: 600;
+  font-weight: 600
 }
 
 .subImgLive {
-  width: calc(100px + 5vw);
+  width: calc(100px + 5vw)
 }
 
 .subTitleLive {
   font-size: calc(20px + 3vw);
-  font-weight: 600;
+  font-weight: 600
 }
 
 #textCon {
-  background: rgb(10, 10, 10);
-  height: calc(80vh - calc(45px + 1.2vw)) !important;
+  height: calc(80vh - calc(45px + 1.2vw)) !important
 }
 
 .textCon::before {
   content: "";
-  background: url('/jffticon.png');
-  /* position: absolute; */
-  /* background-repeat: no-repeat; */
+  background: url(/jffticon.png);
   background-attachment: fixed;
   background-size: calc(200px + 5vw);
   background-position: center 65%;
   position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   opacity: .3;
-  z-index: 0;
+  z-index: 0
 }
 
 .text {
   font-size: calc(24px + 2vw);
-  color: rgb(255, 255, 255);
-  position: absolute;
+  color: #fff;
+  position: absolute
 }
-
 
 .text1 {
   font-size: calc(18px + 1.2vw);
-  color: rgb(255, 255, 255);
+  color: #fff;
   width: fit-content;
   margin: 0 auto;
   text-align: center;
   overflow: hidden;
-  z-index: 1;
+  z-index: 1
 }
 
 .scroll {
@@ -178,82 +179,83 @@
   white-space: nowrap;
   color: #fff;
   font-weight: 600;
-  text-shadow: 5px 2px #E9007F;
-  z-index: 100;
+  text-shadow: 5px 2px #e9007f;
+  z-index: 100
 }
 
 #t1 {
-  left: calc(30px + 2vw);
+  left: calc(30px + 2vw)
 }
 
 #t2 {
-  right: calc(30px + 2vw);
+  right: calc(30px + 2vw)
 }
 
 #mean {
-  font-size: 12px;
+  font-size: 12px
+}
+
+.filter,
+.video {
+  position: absolute;
+  min-width: 100%
 }
 
 .video {
-  position: absolute;
-  min-width: 100%;
   min-height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 10
 }
 
 .filter {
-  position: absolute;
-  min-width: 100%;
   height: 100%;
   background-color: #090a0a4f;
-  z-index: 20;
+  z-index: 20
 }
 
 .a {
   height: auto;
   width: min-content;
-  z-index: 200;
+  z-index: 200
 }
 
 .titleTop {
   width: calc(150px + 20vw);
   line-height: calc(50px + 2.5vw);
-  font-size: calc(15px + .8vw);
+  font-size: calc(15px + .8vw)
 }
 
 .titleMain {
   letter-spacing: 5px;
-  font-size: calc(10px + .5vw);
+  font-size: calc(10px + .5vw)
 }
 
 .name {
-  font-size: calc(85px + 4vw);
+  font-size: calc(85px + 4vw)
 }
 
 #top {
-  font-weight: 600;
+  font-weight: 600
 }
 
 #name {
   text-shadow: 10px 2px #533152;
-  cursor: default;
+  cursor: default
 }
-
 
 .iconBox {
   display: flex;
   min-width: 100px;
   width: calc(50px + 4vw);
   justify-content: space-between;
-  margin-top: 5px;
+  margin-top: 5px
 }
 
 .icon {
   width: calc(20px + .3vw);
-  z-index: 100;
+  z-index: 100
 }
 
 .aceBox {
@@ -264,70 +266,74 @@
   width: 100%;
   align-items: space-between;
   font-weight: 600;
-  box-sizing: border-box;
+  box-sizing: border-box
+}
+
+.aceBox2,
+.optionTitle {
+  padding: 0 calc(30px + 2vw)
 }
 
 .aceBox2 {
   z-index: 55;
   color: #fff;
-  padding: 0 calc(30px + 2vw);
   width: 100%;
   align-items: space-between;
   font-weight: 600;
   margin-bottom: 60px;
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 .optionTitle {
   font-size: calc(16px + .45vw);
-  display: flex;
-  padding: 0 calc(30px + 2vw);
+  display: flex
 }
 
 .listCon {
   display: flex;
-  position: relative;
+  position: relative
 }
 
-.listCon::-webkit-scrollbar {
-  display: none;
+.listCon::-webkit-scrollbar,
+.memberBoxes::-webkit-scrollbar,
+.showBox::-webkit-scrollbar,
+.showVideo::-webkit-scrollbar {
+  display: none
 }
 
 .showBox,
 .showVideo {
-  display: flex;
-  width: 100%;
   height: fit-content;
-  justify-content: space-between;
   margin-top: calc(1rem + .5vw);
   overflow: scroll;
   padding: 0 calc(30px + 2vw);
   grid-gap: 20px;
-  scroll-behavior: smooth;
   position: relative;
+  scroll-behavior: smooth
 }
 
-.showBox::-webkit-scrollbar,
-.showVideo::-webkit-scrollbar {
-  display: none;
+.showBox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between
 }
 
 .showVideo {
-  scroll-behavior: smooth;
-  margin-left: -100%;
+  margin-left: -100%
 }
 
-.listCons {
+.listCons,
+.showVideo {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between
 }
 
 .showImg {
   border-radius: 7px;
   width: 100%;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, .16)0 3px 6px, rgba(0, 0, 0, .23)0 3px 6px
 }
 
 .showImgA {
@@ -336,11 +342,11 @@
   overflow: visible;
   position: relative;
   flex-shrink: 0;
-  display: inline-block;
+  display: inline-block
 }
 
 .noMargin {
-  margin-right: 0;
+  margin-right: 0
 }
 
 .liveText {
@@ -350,101 +356,94 @@
   width: 35px;
   height: 19px;
   border-radius: 2px;
-  background-color: rgb(221, 25, 25);
+  background-color: #dd1919;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 12px;
-  font-family: sans-serif;
+  font-family: sans-serif
 }
 
 .boxMargin {
-  min-width: calc(30px + 2vw);
+  min-width: calc(30px + 2vw)
+}
+
+.frame,
+.frameRe {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#0d0d0d", GradientType=1)
 }
 
 .frame {
-  position: absolute;
   bottom: -1px;
-  width: 100%;
-  height: 300px;
-  background: rgb(0, 0, 0);
-  background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 13, 1) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 13, 1) 100%);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(10, 10, 10));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#0d0d0d", GradientType=1);
-  z-index: 60;
+  background: linear-gradient(180deg, transparent, #0a0a0a);
+  z-index: 60
 }
 
 #frame {
-  height: 100px;
+  height: 100px
 }
 
 .frameRe {
-  position: absolute;
   top: -15px;
-  width: 100%;
-  height: 300px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(10, 10, 10));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#0d0d0d", GradientType=1);
+  background: linear-gradient(0deg, transparent, #0a0a0a)
 }
 
 .footer {
-  position: absolute;
   bottom: 0;
   height: calc(45px + 1.2vw);
-  width: 100%;
-  background: #E9007F;
+  background: #e9007f;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 calc(30px + 2vw);
   color: #fff;
   font-size: calc(7px + .35vw);
-  font-weight: 600;
+  font-weight: 600
+}
+
+#back,
+.footer,
+.info,
+.memberPhotoCon>img {
+  position: absolute;
+  width: 100%
 }
 
 #back {
-  position: absolute;
   left: 50%;
-  top: 0%;
-  transform: translate(-50%, 0);
-  width: 100%;
+  top: 0;
+  transform: translate(-50%, 0)
 }
 
 .info {
-  color: #E9007F;
-  width: 100%;
+  color: #e9007f;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: calc(50px + 2.5vw) 0;
-  padding-top:calc(50px + 2.5vw);
-  background: rgb(0, 0, 0);
+  padding: calc(50px + 2.5vw)0;
+  padding-top: calc(50px + 2.5vw);
+  background: #0a0a0a;
   position: relative;
-  font-family: 'Dongle', sans-serif;
-  font-family: 'Fjalla One', sans-serif;
-  font-family: 'Noto Sans HK', sans-serif;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
-  z-index: 50;
+  font-family: "Roboto", sans-serif;
+  z-index: 50
 }
-
 
 .infoName {
   font-size: calc(45px + .5vw);
   font-weight: 600;
-  /* text-shadow: 5px 2px #ffffff; */
   z-index: 60;
   letter-spacing: 1px;
   overflow: hidden;
-  width: fit-content;
+  width: fit-content
 }
 
 .infoNameIn {
   font-size: calc(50px + 2vw);
-  color: rgb(255, 255, 255);
-  /* text-shadow: 5px 2px #E9007F; */
+  color: #fff
 }
 
 .memberBox {
@@ -452,39 +451,37 @@
   z-index: 100;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column
+}
+
+.memberBoxes,
+.memberInner {
+  display: inline-flex;
+  justify-content: space-between
 }
 
 .memberBoxes {
-  display: inline-flex;
-  justify-content: space-between;
-  margin: calc(25px + 1vw) 0;
+  margin: calc(25px + 1vw)0;
   padding: 0 calc(30px + 2vw);
   grid-gap: 30px;
-  overflow: scroll;
+  overflow: scroll
 }
 
 .memberInner {
   width: 100%;
-  display: inline-flex;
-  justify-content: space-between;
   gap: 20px;
-  overflow: visible;
-}
-
-.memberBoxes::-webkit-scrollbar {
-  display: none;
+  overflow: visible
 }
 
 .memberTitle {
   font-size: calc(16px + .45vw);
   font-weight: 600;
-  padding-left: calc(30px + 2vw);
+  padding-left: calc(30px + 2vw)
 }
 
 .memberPhotoBox {
   display: flex;
-  flex-direction: column;
+  flex-direction: column
 }
 
 .memberPhotoCon {
@@ -496,49 +493,44 @@
   min-height: 125px;
   max-width: 190px;
   max-height: 190px;
-  position: relative;
+  position: relative
 }
 
 .memberPhotoCon>img {
-  position: absolute;
-  width: 100%;
-  top: -50px;
+  top: -50px
 }
 
 .memberName {
   text-align: center;
   margin-top: calc(20px + .5vw);
   font-size: calc(14px + .5vw);
-  font-weight: 600;
+  font-weight: 600
 }
 
 #bed {
   top: -20%;
   transform: scale(2.5);
-  left: -40%;
+  left: -40%
 }
 
 #ge {
   top: 35%;
   transform: scale(3.2);
-  left: -50%;
+  left: -50%
 }
 
 #rice {
   top: -10%;
-  transform: scale(2);
+  transform: scale(2)
 }
 
+#garbriel,
 #leung {
-  top: 1%;
-}
-
-#garbriel {
-  top: 1%;
+  top: 1%
 }
 
 .photoMargin {
-  display: none;
+  display: none
 }
 
 .memberinfoOut {
@@ -546,122 +538,120 @@
   align-items: center;
   justify-content: center;
   padding: 0 calc(20px + 1vw);
-  width: 100%;
+  width: 100%
 }
 
 .memberinfoCon {
-  display: flex;
+  display: flex
 }
 
 .memberinfoLeft {
-  width: 50%;
+  width: 50%
 }
 
 .iconCon {
   position: relative;
-  display: flex;
+  display: flex
 }
 
 #memberPadding {
-  padding-right: 0;
+  padding-right: 0
 }
 
 @media (max-width:1700px) {
   .optionTitle {
-    padding: 0 calc(30px + 2vw);
+    padding: 0 calc(30px + 2vw)
   }
 
   .boxMargin {
     min-width: calc(30px + 2vw);
     height: 1px;
     box-sizing: border-box;
-    display: block;
+    display: block
   }
 
   .aceBox,
   .aceBox2 {
     padding: 0;
-    justify-content: unset;
+    justify-content: unset
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width:1200px) {
   .boxMargin {
     min-width: calc(30px + 2vw);
     height: 1px;
     box-sizing: border-box;
-    display: block;
+    display: block
   }
 
   .optionTitle {
-    padding: 0 calc(30px + 2vw);
+    padding: 0 calc(30px + 2vw)
   }
 
   .aceBox,
   .aceBox2 {
     padding: 0;
-    justify-content: unset;
+    justify-content: unset
   }
 
   #name {
-    text-shadow: 4px 2px #533152;
+    text-shadow: 4px 2px #533152
   }
 
   #back {
     top: 10%;
-    width: 100%;
+    width: 100%
   }
 }
 
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width:1024px) {
   .grid {
     width: 100%;
-    flex-direction: column;
+    flex-direction: column
   }
 
   .aceBox {
-    padding: 0;
+    padding: 0
   }
 
   .frame,
   .frameRe {
-    height: 200px;
+    height: 200px
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width:768px) {
   .subCon {
-    height: auto !important;
+    height: auto !important
   }
 
   .subConInner {
     flex-direction: column;
-    gap: 75px;
+    gap: 75px
   }
 
   .logoBox {
-    justify-content: center;
+    justify-content: center
   }
 
   .photoMargin {
     min-width: calc(30px + 2vw);
     height: 1px;
     box-sizing: border-box;
-    display: block;
+    display: block
   }
 
   .memberTitle {
-    padding-left: calc(30px + 2vw);
+    padding-left: calc(30px + 2vw)
   }
 
-
   .memberBox {
-    padding: 0;
+    padding: 0
   }
 
   #memberPadding {
-    padding-right: 20px;
+    padding-right: 20px
   }
 
   .memberBoxes {
@@ -670,67 +660,61 @@
     margin-top: 30px;
     overflow-x: scroll;
     overflow-y: hidden;
-    padding: 0 calc(30px + 2vw);
+    padding: 0 calc(30px + 2vw)
   }
 
   .scroll {
-    font-size: calc(50px + 1vw);
+    font-size: calc(50px + 1vw)
   }
 
   .textCon {
-    height: calc(350px + 10vw);
+    height: calc(350px + 10vw)
   }
-
 }
 
-@media screen and (max-height: 768px) {
-
+@media screen and (max-height:768px) {
   .titleTop {
     font-size: calc(10px + 1.1vh);
     height: auto;
-    line-height: calc(40px + 2.25vh);
+    line-height: calc(40px + 2.25vh)
   }
 
   .name {
-    font-size: calc(50px + 6vh);
+    font-size: calc(50px + 6vh)
   }
 
   .titleMain {
     letter-spacing: 5px;
-    font-size: calc(10px + .5vh);
+    font-size: calc(10px + .5vh)
   }
 }
 
-@supports (-webkit-touch-callout: none) {
+@supports (-webkit-touch-callout:none) {
 
+  .mainBox,
   .mainContainer {
-    height: -webkit-fill-available;
+    height: -webkit-fill-available
   }
 
-  .mainBox {
-    height: -webkit-fill-available;
-  }
-
-  .showBox> :last-child,
-  .showVideo> :last-child,
-  .memberBoxes> :last-child {
+  .memberBoxes>:last-child,
+  .showBox>:last-child,
+  .showVideo>:last-child {
     padding-right: 20px;
-    box-sizing: unset;
+    box-sizing: unset
   }
 
   .titleTop {
     line-height: calc(60px + .6vw);
-    font-size: calc(19px + .2vw);
+    font-size: calc(19px + .2vw)
   }
 
   .frame,
   .frameRe {
-    z-index: 50;
+    z-index: 50
   }
 
   .textCon::before {
     position: fixed;
-    z-index: unset;
+    z-index: unset
   }
-
 }

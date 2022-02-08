@@ -1,14 +1,15 @@
 import React from "react";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import styles from "../../../styles/Home.module.css";
 
 const Update = () => {
   return (
     <motion.div
-      className={styles.textCon1}
+      className={styles.textCon}
       id={styles.textCon}
       style={{ height: "auto" }}
     >
+      <div className={styles.frameRe} id={styles.frame}></div>
       <div className={styles.frame} id={styles.frame}></div>
       <motion.div
         className={styles.text1}
@@ -23,8 +24,9 @@ const Update = () => {
           fontWeight: "600",
         }}
       >
-        內容將會因應功課進度而更新<br></br> <br></br>
-        祝各位新年快樂 ! <br></br>
+        網站初期設計簡陋敬請見諒 <br></br>
+        <br></br>
+        內容會因應功課進度而更新<br></br>
         <br></br>
         加入JFFT永遠都唔會遲！
       </motion.div>

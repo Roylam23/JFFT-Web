@@ -12,7 +12,6 @@ import Title from "./components/Home/title";
 import { useViewportScroll, motion, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { initGA, logPageView } from "../utils/analytics";
-import { use100vh } from "react-div-100vh";
 
 export default function Home() {
   const { scrollY } = useViewportScroll();
@@ -22,7 +21,6 @@ export default function Home() {
   // const op = useTransform(scrollY, [180, 450], [0, 1]);
   const router = useRouter();
   const [notice, setNotice] = useState(false);
-
   useEffect(() => {
     var ua = navigator.userAgent || navigator.vendor || window.opera;
     var isSafari = ua.indexOf("Safari") > -1 ? true : false;
@@ -48,19 +46,29 @@ export default function Home() {
       router.events.off("routeChangeComplete", logPageView);
     };
   }, [router.events]);
-
   useEffect(() => {
+    document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
     const handleScroll = () => {
       const scrollY = window.scrollY;
       if (scrollY > 0) {
         document.querySelector("#nav").classList.add("black");
       } else if (scrollY == 0) {
         document.querySelector("#nav").classList.remove("black");
+        const doc = document.documentElement;
+        doc.style.setProperty("--app-height", `${window.innerHeight}px`);
       }
     };
     window.addEventListener("scroll", handleScroll);
   }, []);
-  const height = use100vh();
+
+  // useEffect(() => {
+  //   const appHeight = () => {
+  //     const doc = document.documentElement;
+  //     doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+  //   };
+  //   window.addEventListener("resize", appHeight);
+  //   appHeight();
+  // });
   return (
     <motion.div
       className={styles.mainContainer}
@@ -112,7 +120,7 @@ export default function Home() {
         </>
       ) : null}
       <Logo />
-      <div className={styles.container} >
+      <div className={styles.container}>
         <Heads />
         <motion.div
           className={styles.mainBox}

@@ -694,8 +694,11 @@
 @supports (-webkit-touch-callout:none) {
 
   .mainBox,
-  .mainContainer,
   .container {
+    height: var(--app-height);
+  }
+
+  .mainContainer{
     height: -webkit-fill-available
   }
 

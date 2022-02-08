@@ -22,7 +22,7 @@ const shows = {
     };
   },
   before: (i) => {
-    const delay = 9.25 + i * 0.15;
+    const delay = 8.75 + i * 0.15;
     return {
       opacity: 1,
       x: 0,
@@ -264,7 +264,7 @@ const ShowList = () => {
       animate={{
         opacity: 1,
         display: "block",
-        transition: { delay: 9, duration: 1.5 },
+        transition: { delay: 8.5, duration: 1 },
       }}
       viewport={{ once: true }}
     >

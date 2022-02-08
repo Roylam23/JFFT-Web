@@ -59,7 +59,7 @@ export default function Home() {
         transition: { delay: 4, duration: 1.5 },
       }}
     >
-      <motion.div className={styles.container}>
+      <motion.div className={styles.container} style={{height: height}}>
         <Heads />
         <Logo />
         <motion.div

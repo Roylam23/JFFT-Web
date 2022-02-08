@@ -12,7 +12,7 @@ import Title from "./components/Home/title";
 import { useViewportScroll, motion, useTransform } from "framer-motion";
 import { useEffect } from "react";
 import { initGA, logPageView } from "../utils/analytics";
-import { use100vh } from "react-div-100vh";
+import Div100vh from "react-div-100vh";
 
 export default function Home() {
   const { scrollY } = useViewportScroll();
@@ -48,7 +48,7 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  const height = use100vh();
+  // const height = use100vh();
   return (
     <motion.div
       className={styles.mainContainer}
@@ -61,7 +61,7 @@ export default function Home() {
       }}
     >
       <Logo />
-      <motion.div className={styles.container}>
+      <Div100vh className={styles.container}>
         <Heads />
         <motion.div
           className={styles.mainBox}
@@ -87,7 +87,7 @@ export default function Home() {
         </motion.div>
         <Title />
         <ShowList />
-      </motion.div>
+      </Div100vh>
       <Info />
       <Scrollbar />
       <Sub />

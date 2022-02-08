@@ -13,30 +13,12 @@ import { useState, useEffect } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import { use100vh } from "react-div-100vh";
 
-// const key = "AIzaSyAdG9n0Y_ojAJV6-ffClxb4W7EsCLUBhAk";
-// const key = "AIzaSyDL0tDIGFd9ntWdIguLMLKLs0rP2e5-238";
-// let posts = 0;
-// export async function getStaticProps() {
-//   console.log(posts);
-//   posts = posts + 1;
-//   const res = await fetch(
-//     `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC3aipgNToMvs2pFaQyaM_hg&eventType=live&type=video&key=${key}`
-//   );
-//   const data = await res.json();
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
-
-
 export default function Home() {
   const { scrollY } = useViewportScroll();
-  const x1 = useTransform(scrollY, [100, 2500], ["10%", "-80%"]);
-  const x2 = useTransform(scrollY, [100, 5000], ["-70%", "20%"]);
-  const x3 = useTransform(scrollY, [100, 2500], ["5%", "-20%"]);
-  const op = useTransform(scrollY, [180, 450], [0, 1]);
+  // const x1 = useTransform(scrollY, [100, 2500], ["10%", "-80%"]);
+  // const x2 = useTransform(scrollY, [100, 5000], ["-70%", "20%"]);
+  // const x3 = useTransform(scrollY, [100, 2500], ["5%", "-20%"]);
+  // const op = useTransform(scrollY, [180, 450], [0, 1]);
   const router = useRouter();
 
   useEffect(() => {
@@ -69,7 +51,7 @@ export default function Home() {
   return (
     <motion.div
       className={styles.mainContainer}
-      initial={{ overflow: "hidden", paddingBottom: 0, height: height, }}
+      initial={{ overflow: "hidden", paddingBottom: 0, height: height }}
       animate={{
         height: "auto",
         overflow: "visible",
@@ -102,7 +84,7 @@ export default function Home() {
           <div className={styles.filter}></div>
           <motion.div
             className={styles.title}
-            initial={{ bottom: "calc(100px + 1vw)" }}
+            initial={{ bottom: "calc(75px + 1vw)" }}
             whileInView={{
               bottom: "calc(200px + 11vw)",
               transition: { delay: 4, duration: 1 },

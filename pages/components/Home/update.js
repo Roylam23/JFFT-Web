@@ -9,7 +9,6 @@ const Update = () => {
       id={styles.textCon}
       style={{ height: "auto" }}
     >
-      <div className={styles.frameRe} id={styles.frame}></div>
       <div className={styles.frame} id={styles.frame}></div>
       <motion.div
         className={styles.text1}

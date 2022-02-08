@@ -1,16 +1,13 @@
 import React from "react";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import styles from "../../../styles/Home.module.css";
 
-const Update = () => {
+const Sub = () => {
   return (
     <motion.div
-      className={styles.textCon1}
-      id={styles.textCon}
+      className={styles.subCon}
       style={{ height: "auto" }}
     >
-      <div className={styles.frameRe} id={styles.frame}></div>
-      <div className={styles.frame} id={styles.frame}></div>
       <motion.div
         className={styles.text1}
         initial={{ y: 25, opacity: 0 }}
@@ -33,4 +30,4 @@ const Update = () => {
   );
 };
 
-export default Update;
+export default Sub;

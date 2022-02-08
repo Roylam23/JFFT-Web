@@ -1,5 +1,4 @@
 import styles from "../styles/Home.module.css";
-import Script from "next/script";
 import { useRouter } from "next/router";
 import Logo from "./components/Home/logo";
 import Heads from "./components/Home/head";
@@ -8,10 +7,15 @@ import ShowList from "./components/Home/showList";
 import Scrollbar from "./components/Home/scrollbar";
 import Update from "./components/Home/update";
 import IconBox from "./components/Home/iconBox";
+import Sub from "./components/Home/sub";
 import { useViewportScroll, motion, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import { use100vh } from "react-div-100vh";
+import dynamic from "next/dynamic";
+import useSWR from "swr";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // const key = "AIzaSyAdG9n0Y_ojAJV6-ffClxb4W7EsCLUBhAk";
 // const key = "AIzaSyDL0tDIGFd9ntWdIguLMLKLs0rP2e5-238";
@@ -30,13 +34,28 @@ import { use100vh } from "react-div-100vh";
 //   };
 // }
 
-export default function Home({ data }) {
+const fetcher = (url) => fetch(url).then((r) => r.json());
+
+const Odometer = dynamic(import("react-odometerjs"), {
+  ssr: false,
+  loading: () => 0,
+});
+
+export default function Home() {
   const { scrollY } = useViewportScroll();
   const x1 = useTransform(scrollY, [100, 2500], ["10%", "-80%"]);
   const x2 = useTransform(scrollY, [100, 5000], ["-70%", "20%"]);
   const x3 = useTransform(scrollY, [100, 2500], ["5%", "-20%"]);
   const op = useTransform(scrollY, [180, 450], [0, 1]);
   const router = useRouter();
+  AOS.init();
+  const { data, error } = useSWR(
+    "https://api.socialcounts.org/youtube-live-subscriber-count/UC3aipgNToMvs2pFaQyaM_hg",
+    fetcher,
+    {
+      refreshInterval: 5000,
+    }
+  );
 
   useEffect(() => {
     initGA();
@@ -65,24 +84,21 @@ export default function Home({ data }) {
   }, []);
 
   const height = use100vh();
-
+  if (!data) return null;
   return (
     <motion.div
       className={styles.mainContainer}
-      initial={{ overflow: "hidden", paddingBottom: 0 }}
+      initial={{ overflow: "hidden", paddingBottom: 0, height: "100vh" }}
       animate={{
+        height: "auto",
         overflow: "visible",
         paddingBottom: "calc(45px + 1.2vw)",
         transition: { delay: 4, duration: 1.5 },
       }}
     >
-      <motion.div
-        className={styles.container}
-        style={{ height: height }}
-      >
+      <motion.div className={styles.container} style={{ height: height }}>
         <Heads />
         <Logo />
-
         <motion.div
           className={styles.mainBox}
           initial={{ y: "100vh" }}
@@ -114,10 +130,10 @@ export default function Home({ data }) {
           >
             <motion.span
               className={styles.titleTop}
-              initial={{ opacity: 0, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{
                 opacity: 1,
-                y: -30,
+                y: 0,
                 transition: {
                   duration: 0.75,
                   delay: 1,
@@ -130,11 +146,11 @@ export default function Home({ data }) {
             </motion.span>
             <motion.span
               className={styles.titleTop}
-              initial={{ opacity: 0, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{
                 // width: ["30vw", "20vw"],
                 opacity: 1,
-                y: -30,
+                y: 0,
                 transition: {
                   duration: 0.75,
                   delay: 1.25,
@@ -155,10 +171,10 @@ export default function Home({ data }) {
             </motion.span>
             <motion.span
               className={styles.titleMain}
-              initial={{ opacity: 0, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{
                 opacity: 1,
-                y: -30,
+                y: 0,
                 transition: { duration: 0.75, delay: 1.5 },
               }}
               viewport={{ once: true }}
@@ -173,6 +189,7 @@ export default function Home({ data }) {
       </motion.div>
       <Info />
       <Scrollbar />
+      {/* <Sub /> */}
       <Update />
       <motion.footer
         className={styles.footer}

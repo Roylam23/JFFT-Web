@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styles from "../../../styles/Home.module.css";
+import dynamic from "next/dynamic";
+import useSWR from "swr";
 
 const navLogo = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -41,28 +43,44 @@ const loadIcon = {
 };
 
 const load = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: (i) => {
-      const delay = i * 0.5;
-      return {
-        opacity: 1,
-        pathLength: 1,
-        transition: {
-          pathLength: { delay, duration: 1.25 },
-          opacity: { delay, duration: 0.5 },
-        },
-      };
-    },
-  };
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (i) => {
+    const delay = i * 0.5;
+    return {
+      opacity: 1,
+      pathLength: 1,
+      transition: {
+        pathLength: { delay, duration: 1.25 },
+        opacity: { delay, duration: 0.5 },
+      },
+    };
+  },
+};
 
 const clickTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 
-const Logo = () => {
+const fetcher = (url) => fetch(url).then((r) => r.json());
+
+const Odometer = dynamic(import("react-odometerjs"), {
+  ssr: false,
+  loading: () => 0,
+});
+
+const Logo = (props) => {
+  const { data, error } = useSWR(
+    "https://api.socialcounts.org/youtube-live-subscriber-count/UC3aipgNToMvs2pFaQyaM_hg",
+    fetcher,
+    {
+      refreshInterval: 5000,
+    }
+  );
+
+  if (!data) return null;
   return (
     <motion.div
       className={("nav", styles.logoBox)}
@@ -192,6 +210,15 @@ const Logo = () => {
               />
             </motion.svg> */}
       </div>
+      {/* <div className={styles.odoCon}>
+        <Odometer
+          className={styles.odometer}
+          id={styles.odometer}
+          value={data["est_sub"]}
+          format="(,ddd)"
+        />
+      </div> */}
+
       {/* Transparent version */}
       {/* <motion.svg
             width="calc(30px + .8vw)"

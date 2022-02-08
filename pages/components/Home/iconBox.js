@@ -5,13 +5,13 @@ import styles from "../../../styles/Home.module.css";
 const icon = {
   hidden: {
     opacity: 0,
-    y: 0,
+    y: 20,
   },
   visible: (i) => {
     const delay = 1.75 + i * 0.15;
     return {
       opacity: 1,
-      y: -20,
+      y: 0,
       transition: {
         duration: 1,
         delay: delay,

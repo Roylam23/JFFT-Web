@@ -20,6 +20,16 @@
   transform: translate(-50%, -50%);
 }
 
+.odoCon{
+  display:flex;
+  margin-left:10px;
+  align-items: center;
+}
+
+.odoCon > span{
+  font-family: sans-serif;
+}
+
 .load_icon1 {
   cursor: pointer;
   z-index: 110;
@@ -43,12 +53,18 @@
 }
 
 .textCon,
-.textCon1 {
+.textCon1,
+.subCon {
   height: calc(250px + 40vh);
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
+}
+
+.subCon{
+  background: #E9007F;
+  height: calc(100vh - calc(45px + 1.2vw)) !important;
 }
 
 #textCon {
@@ -153,7 +169,7 @@
 }
 
 .a {
-  height: 0px;
+  height: auto;
   width: min-content;
   z-index: 200;
 }
@@ -200,6 +216,7 @@
   min-width: 100px;
   width: calc(50px + 4vw);
   justify-content: space-between;
+  margin-top:5px;
 }
 
 .icon {

@@ -45,7 +45,7 @@ a {
 }
 
 .black {
-  background-color: rgb(10, 10, 10);
+  background-color: rgba(10, 10, 10, 0.95);
   background-image: unset !important;
 }
 

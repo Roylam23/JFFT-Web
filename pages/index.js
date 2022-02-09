@@ -29,7 +29,7 @@ export default function Home() {
     var isInstagram = ua.indexOf("Instagram") > -1 ? true : false;
 
     if (document.documentElement.classList) {
-      if (isWebkit && !isSafari && !isInstagram) {
+      if (isWebkit && !isSafari) {
         setNotice(true);
       }
       if (isInstagram) {

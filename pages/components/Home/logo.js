@@ -34,9 +34,9 @@ const logoHidden = {
 
 const loadIcon = {
   visible: {
-    width: ["calc(65px + 3.5vw)", "calc(85px + 3.5vw)", "calc(0)"],
+    width: ["calc(65px + 3.5vw)", "calc(90px + 3.5vw)", "calc(1px)", "calc(0)"],
     transition: {
-      times: [0, 0.7, 1],
+      times: [0, 0.7, 0.99, 1],
       delay: 4,
       duration: 0.75,
     },

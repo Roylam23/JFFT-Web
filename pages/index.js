@@ -53,13 +53,15 @@ export default function Home() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const conHeight = document.querySelector("#container").scrollHeight;
-      if (scrollY > preScroll + 10) {
+
+      if (scrollY > preScroll + 30) {
         document.querySelector("#nav").classList.add("hidden");
         preScroll = scrollY;
-      } else if (scrollY < preScroll) {
+      } else if (scrollY < preScroll && scrollY > 0) {
         document.querySelector("#nav").classList.remove("hidden");
         preScroll = scrollY;
       }
+
       if (scrollY > 0) {
         document.querySelector("#nav").classList.add("black");
       } else if (scrollY == 0) {
@@ -69,6 +71,7 @@ export default function Home() {
           `${window.visualViewport.height}px`
         );
       }
+
       if (scrollY < conHeight) {
         document.documentElement.style.setProperty(
           "--vh",

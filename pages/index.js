@@ -127,7 +127,7 @@ export default function Home() {
           <div className="instaBack"></div>
         </>
       ) : null}
-      <Logo height={height} />
+      <Logo />
       <div className={styles.container}>
         <Heads />
         <motion.div

@@ -86,6 +86,10 @@ const Heads = () => {
         media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
         rel="apple-touch-startup-image"
       /> */}
+      <meta property="og:title" content="JFFT 會然Wiki"></meta>
+      <meta property="og:description" content="加入JFFT永遠都唔會遲"></meta>
+      <meta property="og:url" content="https://jfft.pages.dev/"></meta>
+      <meta property="og:image" content="https://jfft.pages.dev/jffticon.png" />
       <link
         href="https://fonts.googleapis.com/css2?family=Dongle&family=Fjalla+One&family=Open+Sans&family=Roboto:wght@300;400&display=swap"
         rel="stylesheet"

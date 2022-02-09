@@ -28,7 +28,7 @@ export default function Home() {
     var isInstagram = ua.indexOf("Instagram") > -1 ? true : false;
 
     if (document.documentElement.classList) {
-      if (isWebkit && (!isSafari || !isInstagram)) {
+      if (isWebkit && !isSafari && !isInstagram) {
         setNotice(true);
       }
     }
@@ -105,7 +105,7 @@ export default function Home() {
               >
                 LIHKG<br></br>
               </span>
-              <br></br> 
+              <br></br>
               點擊分享按鈕，並按以Safari瀏覽
             </span>
           </motion.div>

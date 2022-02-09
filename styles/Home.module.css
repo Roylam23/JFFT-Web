@@ -34,7 +34,7 @@
 .logoBox {
   position: fixed;
   background-image: linear-gradient(#090a0a, #090a0a);
-  transition: all .5s;
+  transition: transform .5s;
   padding: 0 calc(30px + 2vw);
   z-index: 120;
   top: 0;
@@ -106,7 +106,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: calc(50px + 2.5vw)0
+  padding: calc(50px + 2.5vw)0;
 }
 
 .textCon{
@@ -120,15 +120,14 @@
 
 .subCon {
   flex-direction: column;
-  gap: 15px;
-  z-index: 100
+  gap:calc(50px + 1.5vw);
+  z-index: 100;
 }
 
 .subConInner {
   display: flex;
   width: 80%;
   justify-content: space-around;
-  margin-top: 50px
 }
 
 .subLive {
@@ -490,8 +489,8 @@
 .memberPhotoCon {
   border-radius: 50%;
   overflow: hidden;
-  width: calc(75px + 8vw);
-  height: calc(75px + 8vw);
+  width: calc(75px + 7vw);
+  height: calc(75px + 7vw);
   min-width: 125px;
   min-height: 125px;
   max-width: 250px;

@@ -9,7 +9,7 @@ const shows = {
     x: -20,
   },
   out: (i) => {
-    const delay = i * 0.15;
+    const delay = i * 0.1;
     return {
       opacity: 0,
       x: 20,
@@ -22,7 +22,7 @@ const shows = {
     };
   },
   before: (i) => {
-    const delay = 8.75 + i * 0.15;
+    const delay = 8.75 + i * 0.1;
     return {
       opacity: 1,
       x: 0,
@@ -35,7 +35,7 @@ const shows = {
     };
   },
   visible: (i) => {
-    const delay = 0.5 + i * 0.15;
+    const delay = 0.5 + i * 0.1;
     return {
       opacity: 1,
       x: 0,
@@ -55,7 +55,7 @@ const lives = {
     x: -20,
   },
   visible: (i) => {
-    const delay = i * 0.15;
+    const delay = i * 0.1;
     return {
       opacity: 0,
       x: 20,
@@ -68,7 +68,7 @@ const lives = {
     };
   },
   out: (i) => {
-    const delay = 0.5 + i * 0.15;
+    const delay = 0.5 + i * 0.1;
     return {
       opacity: 1,
       x: 0,

@@ -24,9 +24,9 @@ const logoHidden = {
       "linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))",
     zIndex: 105,
     transition: {
-      delay: 4,
-      duration: 1.5,
-      backgroundImage: { delay: 4, duration: 1.5 },
+      delay: 5.5,
+      duration: 1,
+      backgroundImage: { delay: 5, duration: 1.5 },
       zIndex: { delay: 5.5 },
     },
   },
@@ -36,9 +36,9 @@ const loadIcon = {
   visible: {
     width: ["calc(65px + 3.5vw)", "calc(90px + 3.5vw)", "calc(1px)", "calc(0)"],
     transition: {
-      times: [0, 0.7, 0.99, 1],
-      delay: 4,
-      duration: 0.75,
+      times: [0, 0.8, 0.9, 1],
+      delay: 3.25,
+      duration: 1,
     },
   },
 };
@@ -159,7 +159,7 @@ const Logo = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: 1.25, delay: 6 } }}
+          animate={{ opacity: 1, transition: { duration: 1.25, delay: 6.5 } }}
           onClick={clickTop}
         >
           <motion.path

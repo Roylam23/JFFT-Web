@@ -51,7 +51,7 @@ export default function Home() {
   let preScroll = 0;
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY)
+      console.log(window.scrollY);
       const scrollY = window.scrollY;
       const conHeight = document.querySelector("#container").scrollHeight;
 
@@ -119,7 +119,7 @@ export default function Home() {
           height: notice ? height : "auto",
           overflow: notice ? "hidden" : "visible",
           paddingBottom: "calc(45px + 1.2vw)",
-          transition: { delay: 4, duration: 1.5 },
+          transition: { delay: 11, duration: 1.5 },
         }}
       >
         {notice ? (

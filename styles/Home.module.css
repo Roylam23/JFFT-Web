@@ -39,7 +39,7 @@
   z-index: 120;
   top: 0;
   width: 100%;
-  height: var(--app-height);
+  height: 100vh;
 }
 
 .mainBox {
@@ -714,5 +714,9 @@
   .textCon::before {
     position: fixed;
     z-index: unset
+  }
+
+  .logoBox {
+    height: var(--app-height);
   }
 }

@@ -67,12 +67,6 @@ export default function Home() {
     window.addEventListener("resize", () => {
       height = window.innerHeight;
     });
-    window.addEventListener("load", () => {
-      document.documentElement.style.setProperty(
-        "--app-height",
-        `${window.innerHeight}px`
-      );
-    });
   }, []);
 
   //Safari Viewport fix

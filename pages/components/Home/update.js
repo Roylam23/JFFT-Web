@@ -24,7 +24,7 @@ const Update = () => {
           fontWeight: "600",
         }}
       >
-        網站初期設計簡陋敬請見諒 <br></br>
+        網站初期設計少柒敬請見諒 <br></br>
         <br></br>
         內容會因應功課進度而更新<br></br>
         <br></br>

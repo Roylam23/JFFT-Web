@@ -35,6 +35,7 @@ export default function Home() {
   useEffect(() => {
     initGA();
     if (!router.asPath.includes("?")) {
+      7;
       logPageView();
     }
   }, []);
@@ -81,6 +82,12 @@ export default function Home() {
       }
     };
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", () => {
+      document.documentElement.style.setProperty(
+        "--vh",
+        `${window.visualViewport.height}px`
+      );
+    });
   }, []);
 
   //Safari Viewport fix
@@ -169,9 +176,7 @@ export default function Home() {
         ) : null}
         <div className={styles.container} id="container">
           <Heads />
-          <motion.div
-            className={styles.mainBox}
-          >
+          <motion.div className={styles.mainBox}>
             <div
               dangerouslySetInnerHTML={{
                 __html: `

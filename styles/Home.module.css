@@ -17,7 +17,7 @@
 .textCon::before {
   top: 0;
   width: 100%;
-  height: 100%
+  height: 100%;
 }
 
 .logoBox,
@@ -723,7 +723,4 @@
     z-index: unset
   }
 
-  /* .logoBox {
-    height: var(--app-height) !important;
-  } */
 }

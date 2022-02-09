@@ -47,9 +47,9 @@ export default function Home() {
       router.events.off("routeChangeComplete", logPageView);
     };
   }, [router.events]);
+
   let height;
   useEffect(() => {
-    height = window.innerHeight;
     const handleScroll = () => {
       const scrollY = window.scrollY;
       if (scrollY > 0) {
@@ -65,6 +65,8 @@ export default function Home() {
       height = window.innerHeight;
     });
   }, []);
+
+  //Safari Viewport fix
   if (typeof window !== "undefined") {
     document.documentElement.style.setProperty(
       "--app-height",
@@ -72,14 +74,7 @@ export default function Home() {
     );
     height = window.innerHeight;
   }
-  // useEffect(() => {
-  //   const appHeight = () => {
-  //     const doc = document.documentElement;
-  //     doc.style.setProperty("--app-height", `${window.innerHeight}px`);
-  //   };
-  //   window.addEventListener("resize", appHeight);
-  //   appHeight();
-  // });
+
   return (
     <motion.div
       className={styles.mainContainer}
@@ -122,7 +117,7 @@ export default function Home() {
           <div className="instaBack"></div>
         </>
       ) : null}
-      <Logo />
+      <Logo height={height} />
       <div className={styles.container}>
         <Heads />
         <motion.div

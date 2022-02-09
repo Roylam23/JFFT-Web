@@ -83,77 +83,78 @@ export default function Home() {
   }
 
   return (
-    <motion.div
-      className={styles.mainContainer}
-      id="mainContainer"
-      initial={{
-        overflow: "hidden",
-        paddingBottom: 0,
-        height: height,
-      }}
-      animate={{
-        height: notice ? height : "auto",
-        overflow: notice ? "hidden" : "visible",
-        paddingBottom: "calc(45px + 1.2vw)",
-        transition: { delay: 4, duration: 1.5 },
-      }}
-    >
-      {notice ? (
-        <>
-          <motion.div
-            className="insta"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 5, duration: 1 } }}
-          >
-            <img className="noticeImg" src="/jffticon.png"></img>
-            <span>
-              建議使用Safari, Chrome瀏覽器以達到最佳觀賞效果 <br></br>
-              <br></br>{" "}
-              {insta ? (
-                <>
-                  <span
-                    style={{
-                      color: "#E9007F",
-                      fontSize: "24px",
-                      fontWeight: "600",
-                    }}
-                  >
-                    Instagram<br></br>
-                  </span>
-                  <br></br>
-                  點擊右上按鈕，並按以瀏覽器開啓
-                </>
-              ) : (
-                <>
-                  <span
-                    style={{
-                      color: "#E9007F",
-                      fontSize: "24px",
-                      fontWeight: "600",
-                    }}
-                  >
-                    LIHKG<br></br>
-                  </span>
-                  <br></br>
-                  點擊分享按鈕，並按以Safari瀏覽
-                </>
-              )}
-            </span>
-          </motion.div>
-          <div className="instaBack"></div>
-        </>
-      ) : null}
+    <>
       <Logo />
-      <div className={styles.container}>
-        <Heads />
-        <motion.div
-          className={styles.mainBox}
-          initial={{ y: "100vh" }}
-          animate={{ y: 0, transition: { delay: 3.5, duration: 1.5 } }}
-        >
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `
+      <motion.div
+        className={styles.mainContainer}
+        id="mainContainer"
+        initial={{
+          overflow: "hidden",
+          paddingBottom: 0,
+          height: height,
+        }}
+        animate={{
+          height: notice ? height : "auto",
+          overflow: notice ? "hidden" : "visible",
+          paddingBottom: "calc(45px + 1.2vw)",
+          transition: { delay: 4, duration: 1.5 },
+        }}
+      >
+        {notice ? (
+          <>
+            <motion.div
+              className="insta"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { delay: 5, duration: 1 } }}
+            >
+              <img className="noticeImg" src="/jffticon.png"></img>
+              <span>
+                建議使用Safari, Chrome瀏覽器以達到最佳觀賞效果 <br></br>
+                <br></br>{" "}
+                {insta ? (
+                  <>
+                    <span
+                      style={{
+                        color: "#E9007F",
+                        fontSize: "24px",
+                        fontWeight: "600",
+                      }}
+                    >
+                      Instagram<br></br>
+                    </span>
+                    <br></br>
+                    點擊右上按鈕，並按以瀏覽器開啓
+                  </>
+                ) : (
+                  <>
+                    <span
+                      style={{
+                        color: "#E9007F",
+                        fontSize: "24px",
+                        fontWeight: "600",
+                      }}
+                    >
+                      LIHKG<br></br>
+                    </span>
+                    <br></br>
+                    點擊分享按鈕，並按以Safari瀏覽
+                  </>
+                )}
+              </span>
+            </motion.div>
+            <div className="instaBack"></div>
+          </>
+        ) : null}
+        <div className={styles.container}>
+          <Heads />
+          <motion.div
+            className={styles.mainBox}
+            initial={{ y: "100vh" }}
+            animate={{ y: 0, transition: { delay: 3.5, duration: 1.5 } }}
+          >
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
           <video
             loop
             muted
@@ -163,29 +164,30 @@ export default function Home() {
             class="${styles.video}"
           />,
         `,
-            }}
-          ></div>
-          <div className={styles.filter}></div>
-          <div className={styles.frame}></div>
-        </motion.div>
-        <Title />
-        <ShowList />
-      </div>
-      <Info />
-      <Scrollbar />
-      <Sub />
-      <Update />
-      <motion.footer
-        className={styles.footer}
-        animate={{
-          opacity: [0, 1],
-          transition: { delay: 6, duration: 1 },
-        }}
-      >
-        <span>© 2022 JFFT</span>
-        <span></span>
-        <span>JFFT世一</span>
-      </motion.footer>
-    </motion.div>
+              }}
+            ></div>
+            <div className={styles.filter}></div>
+            <div className={styles.frame}></div>
+          </motion.div>
+          <Title />
+          <ShowList />
+        </div>
+        <Info />
+        <Scrollbar />
+        <Sub />
+        <Update />
+        <motion.footer
+          className={styles.footer}
+          animate={{
+            opacity: [0, 1],
+            transition: { delay: 6, duration: 1 },
+          }}
+        >
+          <span>© 2022 JFFT</span>
+          <span></span>
+          <span>JFFT世一</span>
+        </motion.footer>
+      </motion.div>
+    </>
   );
 }

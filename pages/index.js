@@ -6,19 +6,13 @@ import Info from "./components/Home/info";
 import ShowList from "./components/Home/showList";
 import Scrollbar from "./components/Home/scrollbar";
 import Update from "./components/Home/update";
-import IconBox from "./components/Home/iconBox";
 import Sub from "./components/Home/sub";
 import Title from "./components/Home/title";
-import { useViewportScroll, motion, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 
 export default function Home() {
-  const { scrollY } = useViewportScroll();
-  // const x1 = useTransform(scrollY, [100, 2500], ["10%", "-80%"]);
-  // const x2 = useTransform(scrollY, [100, 5000], ["-70%", "20%"]);
-  // const x3 = useTransform(scrollY, [100, 2500], ["5%", "-20%"]);
-  // const op = useTransform(scrollY, [180, 450], [0, 1]);
   const router = useRouter();
   const [notice, setNotice] = useState(false);
   const [insta, setInsta] = useState(false);
@@ -54,9 +48,18 @@ export default function Home() {
 
   //Onscroll resize view height
   let height;
+  let preScroll = 0;
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
+      const conHeight = document.querySelector("#container").scrollHeight;
+      if (scrollY > preScroll + 10) {
+        document.querySelector("#nav").classList.add("hidden");
+        preScroll = scrollY;
+      } else if (scrollY < preScroll) {
+        document.querySelector("#nav").classList.remove("hidden");
+        preScroll = scrollY;
+      }
       if (scrollY > 0) {
         document.querySelector("#nav").classList.add("black");
       } else if (scrollY == 0) {
@@ -66,18 +69,14 @@ export default function Home() {
           `${window.visualViewport.height}px`
         );
       }
-    };
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", () => {
-      height = window.visualViewport.height;
-    });
-    window.addEventListener("load", () => {
-      document.documentElement.style.setProperty(
+      if (scrollY < conHeight) {
+        document.documentElement.style.setProperty(
           "--vh",
           `${window.visualViewport.height}px`
         );
-      height = window.visualViewport.height;
-    });
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
   }, []);
 
   //Safari Viewport fix
@@ -87,10 +86,22 @@ export default function Home() {
       `${window.visualViewport.height}px`
     );
     height = window.visualViewport.height;
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          for (let registration of registrations) {
+            registration.unregister().then((bool) => {
+              console.log("unregister: ", bool);
+            });
+          }
+        });
+      });
+    }
   }
 
   return (
     <>
+      {/* <div style={{position:"fixed",bottom:0,width:"100%",height:"50px",background:"#000",zIndex:200}}></div> */}
       <Logo />
       <motion.div
         className={styles.mainContainer}
@@ -152,7 +163,7 @@ export default function Home() {
             <div className="instaBack"></div>
           </>
         ) : null}
-        <div className={styles.container}>
+        <div className={styles.container} id="container">
           <Heads />
           <motion.div
             className={styles.mainBox}

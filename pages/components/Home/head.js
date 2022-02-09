@@ -29,7 +29,7 @@ const Heads = () => {
       />
       <meta name="robots" content="index, follow"></meta>
       <meta name="author" content="RL"></meta>
-      <link rel="manifest" href="/manifest.json" />
+      {/* <link rel="manifest" href="/manifest.json" />
       <link rel="apple-touch-icon" href="/apple192.png"></link>
       <meta name="theme-color" content="#000000" />
       <meta name="application-name" content="JFFT" />
@@ -85,7 +85,7 @@ const Heads = () => {
         href="/splashscreens/ipadpro2_splash.png"
         media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
         rel="apple-touch-startup-image"
-      />
+      /> */}
       <link
         href="https://fonts.googleapis.com/css2?family=Dongle&family=Fjalla+One&family=Open+Sans&family=Roboto:wght@300;400&display=swap"
         rel="stylesheet"

@@ -49,6 +49,10 @@ a {
   background-image: unset !important;
 }
 
+.hidden{
+  transform: translateY(-100%);
+}
+
 .instaBack{
   position: fixed;
   top: 0;

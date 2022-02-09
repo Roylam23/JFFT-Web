@@ -24,9 +24,9 @@ const logoHidden = {
       "linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))",
     zIndex: 105,
     transition: {
-      delay: 5,
+      delay: 6,
       duration: 1,
-      backgroundImage: { delay: 4.5, duration: 1.5 },
+      backgroundImage: { delay: 5, duration: 1.5 },
       zIndex: { delay: 5.5 },
     },
   },
@@ -159,7 +159,7 @@ const Logo = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: 1.25, delay: 6 } }}
+          animate={{ opacity: 1, transition: { duration: 1.25, delay: 7 } }}
           onClick={clickTop}
         >
           <motion.path

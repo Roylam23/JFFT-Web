@@ -34,7 +34,7 @@
 .logoBox {
   position: fixed;
   background-image: linear-gradient(#090a0a, #090a0a);
-  transition: transform .5s;
+  transition: transform .5s, background-color .5s;
   padding: 0 calc(30px + 2vw);
   z-index: 120;
   top: 0;

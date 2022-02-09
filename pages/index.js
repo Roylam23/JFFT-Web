@@ -48,6 +48,7 @@ export default function Home() {
     };
   }, [router.events]);
 
+  //Onscroll resize view height
   let height;
   useEffect(() => {
     const handleScroll = () => {
@@ -56,13 +57,21 @@ export default function Home() {
         document.querySelector("#nav").classList.add("black");
       } else if (scrollY == 0) {
         document.querySelector("#nav").classList.remove("black");
-        const doc = document.documentElement;
-        doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+        document.documentElement.style.setProperty(
+          "--app-height",
+          `${window.innerHeight}px`
+        );
       }
     };
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", () => {
       height = window.innerHeight;
+    });
+    window.addEventListener("load", () => {
+      document.documentElement.style.setProperty(
+        "--app-height",
+        `${window.innerHeight}px`
+      );
     });
   }, []);
 

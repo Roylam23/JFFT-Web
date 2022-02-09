@@ -47,11 +47,9 @@ export default function Home() {
       router.events.off("routeChangeComplete", logPageView);
     };
   }, [router.events]);
+  let height;
   useEffect(() => {
-    document.documentElement.style.setProperty(
-      "--app-height",
-      `${window.innerHeight}px`
-    );
+    height = window.innerHeight;
     const handleScroll = () => {
       const scrollY = window.scrollY;
       if (scrollY > 0) {
@@ -63,8 +61,17 @@ export default function Home() {
       }
     };
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", () => {
+      height = window.innerHeight;
+    });
   }, []);
-
+  if (typeof window !== "undefined") {
+    document.documentElement.style.setProperty(
+      "--app-height",
+      `${window.innerHeight}px`
+    );
+    height = window.innerHeight;
+  }
   // useEffect(() => {
   //   const appHeight = () => {
   //     const doc = document.documentElement;
@@ -77,9 +84,12 @@ export default function Home() {
     <motion.div
       className={styles.mainContainer}
       id="mainContainer"
-      initial={{ overflow: "hidden", paddingBottom: 0 }}
+      initial={{
+        overflow: "hidden",
+        paddingBottom: 0,
+      }}
       animate={{
-        height: notice ? "100vh" : "auto",
+        height: notice ? height : "auto",
         overflow: notice ? "hidden" : "visible",
         paddingBottom: "calc(45px + 1.2vw)",
         transition: { delay: 4, duration: 1.5 },

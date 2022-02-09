@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styles from "../../../styles/Home.module.css";
-import { use100vh } from "react-div-100vh";
+import { useEffect, useState } from "react";
 
 const navLogo = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -23,7 +23,7 @@ const logoHidden = {
     height: "calc(55px + 1vw)",
     backgroundImage:
       "linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))",
-    zIndex: 105,
+    zIndex: 110,
     transition: {
       delay: 4,
       duration: 1.5,
@@ -79,14 +79,20 @@ const clickTop = () => {
     behavior: "smooth",
   });
 };
-
 const Logo = () => {
-  const height = use100vh();
+  let heights;
+  if (typeof window !== "undefined") {
+    heights =  window.innerHeight;
+    window.addEventListener("resize", () => {
+      heights =  window.innerHeight;
+    });
+  }
   return (
     <motion.div
-      className={("nav", styles.logoBox)}
+      className={styles.logoBox}
       id="nav"
       variants={logoHidden}
+      initial={{ height: heights + "px" }}
       animate="visible"
     >
       <div className={styles.iconCon}>

@@ -14,7 +14,6 @@
   height: 100vh;
 }
 
-.logoBox,
 .textCon::before {
   top: 0;
   width: 100%;
@@ -32,7 +31,10 @@
   background-image: linear-gradient(#090a0a, #090a0a);
   transition: background-color .5s;
   padding: 0 calc(30px + 2vw);
-  z-index: 120
+  z-index: 120;
+  top: 0;
+  width: 100%;
+  height: var(--app-height);
 }
 
 .mainBox {
@@ -694,12 +696,9 @@
 @supports (-webkit-touch-callout:none) {
 
   .mainBox,
-  .container {
+  .container,
+  .mainContainer {
     height: var(--app-height);
-  }
-
-  .mainContainer{
-    height: -webkit-fill-available
   }
 
   .memberBoxes>:last-child,
@@ -723,4 +722,8 @@
     position: fixed;
     z-index: unset
   }
+
+  /* .logoBox {
+    height: var(--app-height) !important;
+  } */
 }

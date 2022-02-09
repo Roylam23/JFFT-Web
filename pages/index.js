@@ -107,6 +107,10 @@ export default function Home() {
         });
       });
     }
+    var video = document.getElementById("video");
+    setTimeout(function () {
+      video.play();
+    }, 4500);
   }
 
   return (
@@ -176,20 +180,20 @@ export default function Home() {
         <div className={styles.container} id="container">
           <Heads />
           <motion.div className={styles.mainBox}>
-            <div
+            <motion.div
               dangerouslySetInnerHTML={{
                 __html: `
           <video
+            id="video"
             loop
             muted
-            autoplay
             playsinline
             src="https://i.imgur.com/CE4dVM9.mp4"
             class="${styles.video}"
           />,
         `,
               }}
-            ></div>
+            ></motion.div>
             <div className={styles.filter}></div>
             <div className={styles.frame}></div>
           </motion.div>

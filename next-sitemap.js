@@ -1,11 +1,6 @@
+/** @type {import('next-sitemap').IConfig} */
+
 module.exports = {
-    siteUrl: 'https://jfft.pages.dev',
-    changefreq: 'daily',
-    generateRobotsTxt: true,
-    robotsTxtOptions: {
-        policies: [{
-            userAgent: '*',
-            allow: '/',
-        }, ],
-    },
-}
+  siteUrl: process.env.SITE_URL || "https://jfft.pages.dev",
+  generateRobotsTxt: true,
+};

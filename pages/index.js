@@ -62,24 +62,31 @@ export default function Home() {
       } else if (scrollY == 0) {
         document.querySelector("#nav").classList.remove("black");
         document.documentElement.style.setProperty(
-          "--app-height",
-          `${window.innerHeight}px`
+          "--vh",
+          `${window.visualViewport.height}px`
         );
       }
     };
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", () => {
-      height = window.innerHeight;
+      height = window.visualViewport.height;
+    });
+    window.addEventListener("load", () => {
+      document.documentElement.style.setProperty(
+          "--vh",
+          `${window.visualViewport.height}px`
+        );
+      height = window.visualViewport.height;
     });
   }, []);
 
   //Safari Viewport fix
   if (typeof window !== "undefined") {
     document.documentElement.style.setProperty(
-      "--app-height",
-      `${window.innerHeight}px`
+      "--vh",
+      `${window.visualViewport.height}px`
     );
-    height = window.innerHeight;
+    height = window.visualViewport.height;
   }
 
   return (

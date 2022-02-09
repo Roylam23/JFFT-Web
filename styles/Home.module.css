@@ -691,11 +691,11 @@
   .container,
   .mainBox,
   .mainContainer {
-    height: var(--app-height)
+    height: var(--vh)
   }
 
   .logoBox {
-    height: var(--app-height);
+    height: var(--vh);
   }
 
   .memberBoxes>:last-child,

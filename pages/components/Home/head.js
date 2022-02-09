@@ -89,7 +89,10 @@ const Heads = () => {
       <meta property="og:title" content="JFFT 會然Wiki"></meta>
       <meta property="og:description" content="加入JFFT永遠都唔會遲"></meta>
       <meta property="og:url" content="https://jfft.pages.dev/"></meta>
-      <meta property="og:image" content="https://jfft.pages.dev/jffticon.png" />
+      <meta
+        property="og:image"
+        content="https://jfft.pages.dev/icons/pwa512.png"
+      />
       <link
         href="https://fonts.googleapis.com/css2?family=Dongle&family=Fjalla+One&family=Open+Sans&family=Roboto:wght@300;400&display=swap"
         rel="stylesheet"

@@ -119,7 +119,7 @@ export default function Home() {
           height: notice ? height : "auto",
           overflow: notice ? "hidden" : "visible",
           paddingBottom: "calc(45px + 1.2vw)",
-          transition: { delay: 11, duration: 1.5 },
+          transition: { delay: 10, duration: 1.5 },
         }}
       >
         {notice ? (

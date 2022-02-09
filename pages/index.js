@@ -105,7 +105,7 @@ export default function Home() {
             <motion.div
               className="insta"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { delay: 5, duration: 1 } }}
+              animate={{ opacity: 1, transition: { delay: 0.5, duration: 1 } }}
             >
               <img className="noticeImg" src="/jffticon.png"></img>
               <span>

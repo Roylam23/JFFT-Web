@@ -694,6 +694,10 @@
     height: var(--app-height)
   }
 
+  .logoBox {
+    height: var(--app-height);
+  }
+
   .memberBoxes>:last-child,
   .showBox>:last-child,
   .showVideo>:last-child {
@@ -716,7 +720,4 @@
     z-index: unset
   }
 
-  .logoBox {
-    height: var(--app-height);
-  }
 }

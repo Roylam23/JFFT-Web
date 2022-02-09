@@ -56,7 +56,7 @@ a {
   width: 100vw;
   height: 100vh;
   background: #141414bb;
-  z-index:110;
+  z-index:125;
 }
 
 .insta {
@@ -69,7 +69,7 @@ a {
   transform: translate(-50%, -50%);
   padding: calc(40px + 1vw);
   background: rgb(14, 14, 14);
-  z-index: 115;
+  z-index: 130;
   align-items: center;
   gap: 25px;
   text-align: center;

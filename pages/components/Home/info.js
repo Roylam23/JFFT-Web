@@ -16,72 +16,63 @@ const memberList = {
     };
   },
 };
-
-let member = ["床哥", "雞翼", "米爺", "良少", "比叔", "含爺"];
+let member = ["床哥", "雞翼", "米爺", "良少", "比叔"];
+// let member = ["床哥", "雞翼", "米爺", "良少", "比叔", "含爺"];
 let img = [
   "/member/bedgor.jpg",
   "/member/ge.jpg",
   "/member/rice.jpg",
   "/member/leungsiu.jpg",
   "/member/garbriel.jpg",
-  "/icons/pwa512.png",
 ];
+// let img = [
+//   "/member/bedgor.jpg",
+//   "/member/ge.jpg",
+//   "/member/rice.jpg",
+//   "/member/leungsiu.jpg",
+//   "/member/garbriel.jpg",
+//   "/icons/pwa512.png",
+// ];
 let id = [
   `${styles.bed}`,
   `${styles.ge}`,
   `${styles.rice}`,
   `${styles.leung}`,
   `${styles.garbriel}`,
-  `${styles.garbriel}`,
 ];
+// let id = [
+//   `${styles.bed}`,
+//   `${styles.ge}`,
+//   `${styles.rice}`,
+//   `${styles.leung}`,
+//   `${styles.garbriel}`,
+//   `${styles.garbriel}`,
+// ];
 
 const Info = () => {
   const members = () => {
     const memberes = [];
     member.forEach((item, index) => {
-      if (index == 5) {
-        memberes.push(
-          <motion.div
-            className={styles.memberPhotoBox}
-            variants={memberList}
-            initial="hidden"
-            whileInView="visible"
-            custom={index}
-            viewport={{ once: true }}
-          >
-            <motion.div className={styles.memberPhotoCon}>
-              <img
-                layout="fill"
-                src={img[index]}
-                alt={member[index]}
-                id={id[index]}
-              ></img>
-            </motion.div>
-            <motion.span className={styles.memberName}>{item}</motion.span>
+      memberes.push(
+        <motion.div
+          className={styles.memberPhotoBox}
+          variants={memberList}
+          initial="hidden"
+          whileInView="visible"
+          custom={index}
+          viewport={{ once: true }}
+        >
+          <motion.div className={styles.memberPhotoCon}>
+            <img
+              layout="fill"
+              src={img[index]}
+              alt={member[index]}
+              id={id[index]}
+            ></img>
           </motion.div>
-        );
-      } else {
-        memberes.push(
-          <motion.div
-            className={styles.memberPhotoBox}
-            variants={memberList}
-            initial="hidden"
-            whileInView="visible"
-            custom={index}
-            viewport={{ once: true }}
-          >
-            <motion.div className={styles.memberPhotoCon}>
-              <img
-                layout="fill"
-                src={img[index]}
-                alt={member[index]}
-                id={id[index]}
-              ></img>
-            </motion.div>
-            <motion.span className={styles.memberName}>{item}</motion.span>
-          </motion.div>
-        );
-      }
+          <motion.span className={styles.memberName}>{item}</motion.span>
+        </motion.div>
+      );
     });
     return memberes;
   };

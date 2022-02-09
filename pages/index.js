@@ -51,6 +51,7 @@ export default function Home() {
   let preScroll = 0;
   useEffect(() => {
     const handleScroll = () => {
+      console.log(window.scrollY)
       const scrollY = window.scrollY;
       const conHeight = document.querySelector("#container").scrollHeight;
 

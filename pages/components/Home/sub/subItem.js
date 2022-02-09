@@ -6,6 +6,18 @@ import styles from "../../../../styles/Home.module.css";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
+const display = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 const Odometer = dynamic(import("react-odometerjs"), {
   ssr: false,
   loading: () => 0,
@@ -27,7 +39,13 @@ const SubItem = (props) => {
   });
   if (!data) return null;
   return (
-    <div className={styles.subLive}>
+    <motion.div
+      className={styles.subLive}
+      variants={display}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <img
         className={styles.subImgLive}
         src={props.img}
@@ -42,7 +60,7 @@ const SubItem = (props) => {
           format="(,ddd)"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

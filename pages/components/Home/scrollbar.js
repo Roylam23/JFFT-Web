@@ -1,14 +1,8 @@
 import React from "react";
-import { useViewportScroll, motion, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import styles from "../../../styles/Home.module.css";
-import { useEffect } from "react";
 
 const Scrollbar = () => {
-  const { scrollY } = useViewportScroll();
-  const x1 = useTransform(scrollY, [100, 2500], ["10%", "-80%"]);
-  const x2 = useTransform(scrollY, [100, 5000], ["-70%", "20%"]);
-  const x3 = useTransform(scrollY, [100, 2500], ["5%", "-20%"]);
-  const op = useTransform(scrollY, [180, 450], [0, 1]);
   let width;
   let width1;
   let width2;

@@ -109,6 +109,10 @@
   padding: calc(50px + 2.5vw)0
 }
 
+.textCon{
+  height:auto;
+}
+
 #textCon,
 .subCon {
   background: #0a0a0a
@@ -204,7 +208,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10
+  z-index: 10;
+  object-fit:cover
 }
 
 .filter {
@@ -485,12 +490,12 @@
 .memberPhotoCon {
   border-radius: 50%;
   overflow: hidden;
-  width: calc(75px + 6vw);
-  height: calc(75px + 6vw);
+  width: calc(75px + 8vw);
+  height: calc(75px + 8vw);
   min-width: 125px;
   min-height: 125px;
-  max-width: 190px;
-  max-height: 190px;
+  max-width: 250px;
+  max-height: 250px;
   position: relative
 }
 

@@ -91,13 +91,11 @@ const Info = () => {
         <motion.span
           className={styles.memberTitle}
           initial={{ opacity: 0 }}
-          animate={{opacity: 1,transition:{delay:6}}}
+          animate={{ opacity: 1, transition: { delay: 6 } }}
         >
           成員
         </motion.span>
-        <motion.span className={styles.memberBoxes}>
-            {members()}
-        </motion.span>
+        <motion.span className={styles.memberBoxes}>{members()}</motion.span>
         <motion.div className={styles.memberinfoOut}>
           <motion.div className={styles.memberinfoCon}>
             <motion.div className={styles.memberinfoLeft}></motion.div>

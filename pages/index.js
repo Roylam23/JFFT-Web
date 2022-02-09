@@ -21,6 +21,7 @@ export default function Home() {
   // const op = useTransform(scrollY, [180, 450], [0, 1]);
   const router = useRouter();
   const [notice, setNotice] = useState(false);
+  const [insta, setInsta] = useState(false);
   useEffect(() => {
     var ua = navigator.userAgent || navigator.vendor || window.opera;
     var isSafari = ua.indexOf("Safari") > -1 ? true : false;
@@ -32,13 +33,7 @@ export default function Home() {
         setNotice(true);
       }
       if (isInstagram) {
-        if (typeof window !== "undefined") {
-          document.documentElement.style.setProperty(
-            "--app-height",
-            `${window.innerHeight}px`
-          );
-          height = window.innerHeight;
-        }
+        setInsta(true);
       }
     }
   });
@@ -114,17 +109,35 @@ export default function Home() {
             <span>
               建議使用Safari, Chrome瀏覽器以達到最佳觀賞效果 <br></br>
               <br></br>{" "}
-              <span
-                style={{
-                  color: "#E9007F",
-                  fontSize: "24px",
-                  fontWeight: "600",
-                }}
-              >
-                LIHKG<br></br>
-              </span>
-              <br></br>
-              點擊分享按鈕，並按以Safari瀏覽
+              {insta ? (
+                <>
+                  <span
+                    style={{
+                      color: "#E9007F",
+                      fontSize: "24px",
+                      fontWeight: "600",
+                    }}
+                  >
+                    Instagram<br></br>
+                  </span>
+                  <br></br>
+                  點擊右上按鈕，並按以瀏覽器開啓
+                </>
+              ) : (
+                <>
+                  <span
+                    style={{
+                      color: "#E9007F",
+                      fontSize: "24px",
+                      fontWeight: "600",
+                    }}
+                  >
+                    LIHKG<br></br>
+                  </span>
+                  <br></br>
+                  點擊分享按鈕，並按以Safari瀏覽
+                </>
+              )}
             </span>
           </motion.div>
           <div className="instaBack"></div>

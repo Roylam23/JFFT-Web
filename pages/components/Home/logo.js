@@ -78,13 +78,12 @@ const clickTop = () => {
     behavior: "smooth",
   });
 };
-const Logo = (props) => {
+const Logo = () => {
   return (
     <motion.div
       className={styles.logoBox}
       id="nav"
       variants={logoHidden}
-      initial={{ height: props.height }}
       animate="visible"
     >
       <div className={styles.iconCon}>

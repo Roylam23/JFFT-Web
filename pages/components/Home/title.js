@@ -22,17 +22,17 @@ const icon = {
 
 const Title = () => {
   const sec = 5;
-  const { scrollY } = useViewportScroll();
-  const movement = ["0", "100px"];
-  const opacity = [1, 0];
-  const x1 = useTransform(scrollY, [0, 500], movement);
-  const x2 = useTransform(scrollY, [100, 700], movement);
-  const x3 = useTransform(scrollY, [200, 900], movement);
-  const x4 = useTransform(scrollY, [300, 1100], movement);
-  const op1 = useTransform(scrollY, [0, 100], opacity);
-  const op2 = useTransform(scrollY, [50, 200], opacity);
-  const op3 = useTransform(scrollY, [100, 300], opacity);
-  const op4 = useTransform(scrollY, [150, 400], opacity);
+  // const { scrollY } = useViewportScroll();
+  // const movement = ["0", "100px"];
+  // const opacity = [1, 0];
+  // const x1 = useTransform(scrollY, [0, 500], movement);
+  // const x2 = useTransform(scrollY, [100, 700], movement);
+  // const x3 = useTransform(scrollY, [200, 900], movement);
+  // const x4 = useTransform(scrollY, [300, 1100], movement);
+  // const op1 = useTransform(scrollY, [0, 200], opacity);
+  // const op2 = useTransform(scrollY, [50, 300], opacity);
+  // const op3 = useTransform(scrollY, [100, 400], opacity);
+  // const op4 = useTransform(scrollY, [150, 500], opacity);
   return (
     <motion.div
       className={styles.title}
@@ -56,7 +56,7 @@ const Title = () => {
         }}
         viewport={{ once: true }}
         id={styles.top}
-        style={{ x: x1, opacity: op1 }}
+        // style={{ x: x1, opacity: op1 }}
       >
         全港最大黃賭毒邪教
       </motion.span>
@@ -74,7 +74,7 @@ const Title = () => {
           },
         }}
         viewport={{ once: true }}
-        style={{ x: x2, opacity: op2 }}
+        // style={{ x: x2, opacity: op2 }}
       >
         <motion.span
           id={styles.name}
@@ -95,11 +95,14 @@ const Title = () => {
           transition: { duration: 0.75, delay: sec + 1 },
         }}
         viewport={{ once: true }}
-        style={{ x: x3, opacity: op3 }}
+        // style={{ x: x3, opacity: op3 }}
       >
         加入JFFT永遠都唔會遲
       </motion.span>
-      <motion.span className={styles.iconBox} style={{ x: x4, opacity: op4 }}>
+      <motion.span
+        className={styles.iconBox}
+        // style={{ x: x4, opacity: op4 }}
+      >
         <motion.a
           className={styles.a}
           href="https://www.youtube.com/channel/UC3aipgNToMvs2pFaQyaM_hg"

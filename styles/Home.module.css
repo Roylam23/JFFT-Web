@@ -263,7 +263,7 @@
 .aceBox {
   position: absolute;
   bottom: calc(2.25rem + 1vw);
-  z-index: 55;
+  z-index: 70;
   color: #fff;
   width: 100%;
   align-items: space-between;

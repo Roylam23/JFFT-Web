@@ -171,8 +171,6 @@ export default function Home() {
           <Heads />
           <motion.div
             className={styles.mainBox}
-            initial={{ y: "100vh" }}
-            animate={{ y: 0, transition: { delay: 3.5, duration: 1.5 } }}
           >
             <div
               dangerouslySetInnerHTML={{

@@ -130,7 +130,7 @@ export default function Home() {
             >
               <img className="noticeImg" src="/jffticon.png"></img>
               <span>
-                建議使用Safari, Chrome瀏覽器以達到最佳觀賞效果 <br></br>
+                建議使用Safari瀏覽器以達到最佳觀賞效果 <br></br>
                 <br></br>{" "}
                 {insta ? (
                   <>

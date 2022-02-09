@@ -31,6 +31,15 @@ export default function Home() {
       if (isWebkit && !isSafari && !isInstagram) {
         setNotice(true);
       }
+      if (isInstagram) {
+        if (typeof window !== "undefined") {
+          document.documentElement.style.setProperty(
+            "--app-height",
+            `${window.innerHeight}px`
+          );
+          height = window.innerHeight;
+        }
+      }
     }
   });
 

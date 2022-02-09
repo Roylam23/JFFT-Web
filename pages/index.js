@@ -91,6 +91,7 @@ export default function Home() {
       initial={{
         overflow: "hidden",
         paddingBottom: 0,
+        height: height,
       }}
       animate={{
         height: notice ? height : "auto",

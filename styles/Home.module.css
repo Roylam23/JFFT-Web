@@ -142,7 +142,8 @@
 }
 
 .subImgLive {
-  width: calc(100px + 5vw)
+  width: calc(100px + 5vw);
+  cursor:pointer;
 }
 
 .subTitleLive {

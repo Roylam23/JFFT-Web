@@ -63,15 +63,14 @@ export default function Home() {
         document.querySelector("#nav").classList.remove("hidden");
         preScroll = scrollY;
       }
-
+      document.documentElement.style.setProperty(
+        "--vh",
+        `${window.visualViewport.height}px`
+      );
       if (scrollY > 0) {
         document.querySelector("#nav").classList.add("black");
       } else if (scrollY == 0) {
         document.querySelector("#nav").classList.remove("black");
-        document.documentElement.style.setProperty(
-          "--vh",
-          `${window.visualViewport.height}px`
-        );
       }
 
       if (scrollY < conHeight) {

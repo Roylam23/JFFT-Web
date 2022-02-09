@@ -23,12 +23,12 @@ export default function Home() {
     var isInstagram = ua.indexOf("Instagram") > -1 ? true : false;
 
     if (document.documentElement.classList) {
-      if (isWebkit && !isSafari) {
+      if (isWebkit && !isSafari && !isInstagram) {
         setNotice(true);
       }
-      if (isInstagram) {
-        setInsta(true);
-      }
+      // if (isInstagram) {
+      //   setInsta(true);
+      // }
     }
   });
 

@@ -129,7 +129,7 @@ export default function Home() {
           overflow: notice ? "hidden" : "visible",
           paddingBottom: "calc(45px + 1.2vw)",
           transition: {
-            delay: 10,
+            delay: 6,
             duration: 1.5,
           },
         }}

@@ -26,13 +26,7 @@ if ("serviceWorker" in navigator) {
     });
   });
 }
-// Play Video Delay 4.5s
-var video = document.getElementById("video");
-setTimeout(function () {
-  video.play().catch(() => {
-    isLow = true;
-  });
-}, 4500);
+
 function handleScroll() {
   var scrollY = window.scrollY;
   if (scrollY > preScroll + 30) {

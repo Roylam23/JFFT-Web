@@ -4,12 +4,12 @@ import Head from "next/head";
 const Heads = () => {
   return (
     <Head>
+      <meta http-equiv="refresh" content="0; url=https://jfft.pages.dev/" />
       <title>JFFT - 會然Wiki</title>
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi"
       />
-      <meta httpEquiv="refresh" content="0; url=https://jfft.pages.dev/" />
       <meta charset="utf-8"></meta>
       <meta name="description" content="JFFT" />
       <meta name="description" content="Jun For Fun Team" />

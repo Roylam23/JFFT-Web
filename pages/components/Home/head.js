@@ -6,7 +6,7 @@ const Heads = () => {
     <Head>
       <meta
         httpEquiv="refresh"
-        content="0; url=https://example.com/newlocation"
+        content="0; url=https://jfft.pages.dev/"
       />
       <title>JFFT - 會然Wiki</title>
       <meta

@@ -70,23 +70,23 @@ export default function Home() {
 
       document.documentElement.style.setProperty(
         "--vh",
-        `${window.visualViewport.height}px`
+        `${window.innerHeight}px`
       );
-      height = window.visualViewport.height;
+      height = window.innerHeight;
 
       // if (scrollY < conHeight) {
       //   document.documentElement.style.setProperty(
       //     "--vh",
-      //     `${window.visualViewport.height}px`
+      //     `${window.innerHeight}px`
       //   );
-      //   height = window.visualViewport.height;
+      //   height = window.innerHeight;
       // }
     };
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", () => {
       document.documentElement.style.setProperty(
         "--vh",
-        `${window.visualViewport.height}px`
+        `${window.innerHeight}px`
       );
     });
   }, []);
@@ -95,16 +95,16 @@ export default function Home() {
   if (typeof window !== "undefined") {
     document.documentElement.style.setProperty(
       "--vh",
-      `${window.visualViewport.height}px`
+      `${window.innerHeight}px`
     );
-    height = window.visualViewport.height;
+    height = window.innerHeight;
 
     setTimeout(() => {
       document.documentElement.style.setProperty(
         "--vh",
-        `${window.visualViewport.height}px`
+        `${window.innerHeight}px`
       );
-      height = window.visualViewport.height;
+      height = window.innerHeight;
     }, 1000);
 
     console.log(

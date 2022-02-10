@@ -8,24 +8,13 @@ function resizeCon() {
   );
 }
 resizeCon();
+setTimeout(resizeCon, 2000);
 height = window.visualViewport.height;
 console.log(
   "%c%s",
   "border-radius: 6px; padding: 8px; color: #ffffff; background: #4801ff;",
   "✨ Developed by: RL — https://jfft.pages.dev"
 );
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.getRegistrations().then((registrations) => {
-      for (let registration of registrations) {
-        registration.unregister().then((bool) => {
-          console.log("unregister: ", bool);
-        });
-      }
-    });
-  });
-}
 
 function handleScroll() {
   var scrollY = window.scrollY;
@@ -42,9 +31,8 @@ function handleScroll() {
   } else if (scrollY == 0) {
     document.querySelector("#nav").classList.remove("black");
   }
-
   resizeCon();
 }
+
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("resize", resizeCon);
-document.addEventListener("load", resizeCon);

@@ -87,7 +87,7 @@ export default function Home() {
                   <br></br>
                   點擊右上按鈕，並按以瀏覽器開啓<br></br>
                   Height:
-                  {document.documentElement.style.getPropertyValue("--vh")}
+                  {height}
                 </>
               ) : (
                 <>
@@ -129,7 +129,7 @@ export default function Home() {
           overflow: notice ? "hidden" : "visible",
           paddingBottom: "calc(45px + 1.2vw)",
           transition: {
-            delay: 6,
+            delay: 10,
             duration: 1.5,
           },
         }}

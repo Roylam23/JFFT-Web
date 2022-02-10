@@ -99,6 +99,7 @@ const Heads = () => {
       ></link>
       <link rel="icon" href="/favicon.ico" />
       <link rel="shortcut icon" href="/favicon.ico"></link>
+      <link rel="canonical" href="https://jfft.pages.dev/" />
     </Head>
   );
 };

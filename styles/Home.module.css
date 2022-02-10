@@ -125,8 +125,9 @@
 
 .subCon {
   flex-direction: column;
-  gap: calc(50px + 1.5vw);
+  gap:50px;
   z-index: 100;
+  padding: calc(50px + 2.5vw)0;
 }
 
 .subConInner {
@@ -180,7 +181,7 @@
 }
 
 .scroll {
-  font-size: 50px;
+  font-size: calc(50px + 2vw);
   display: flex;
   white-space: nowrap;
   color: #fff;
@@ -498,8 +499,8 @@
   height: calc(75px + 7vw);
   min-width: 125px;
   min-height: 125px;
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 225px;
+  max-height: 225px;
   position: relative
 }
 

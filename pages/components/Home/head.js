@@ -9,7 +9,7 @@ const Heads = () => {
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi"
       />
-      <meta charset="utf-8"></meta>
+      <meta charSet="utf-8"></meta>
       <meta name="description" content="JFFT" />
       <meta name="description" content="Jun For Fun Team" />
       <meta name="description" content="JFFLive" />

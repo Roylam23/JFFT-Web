@@ -175,7 +175,7 @@
 }
 
 .scroll {
-  font-size: calc(55px + 2vw);
+  font-size:50px;
   display: flex;
   white-space: nowrap;
   color: #fff;

@@ -58,21 +58,6 @@ const load = {
   },
 };
 
-const load1 = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: (i) => {
-    const delay = 6 + i * 0.5;
-    return {
-      opacity: 1,
-      pathLength: 1,
-      transition: {
-        pathLength: { delay, duration: 1.25 },
-        opacity: { delay, duration: 0.5 },
-      },
-    };
-  },
-};
-
 const clickTop = () => {
   window.scrollTo({
     top: 0,

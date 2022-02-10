@@ -140,10 +140,10 @@ const ShowList = () => {
   const [show, setShow] = useState(false);
   const [video, setVideo] = useState(false);
 
-  const sl = () =>{
+  const sl = () => {
     document.querySelector("#box").scrollLeft = 0;
     document.querySelector("#box1").scrollLeft = 0;
-  }
+  };
 
   const handleVideo = () => {
     setVideo(true);
@@ -167,6 +167,7 @@ const ShowList = () => {
       if (index / 5 == 1) {
         showes.push(
           <motion.a
+            key={index}
             className={`${styles.showImgA} ${styles.noMargin}`}
             variants={shows}
             initial="hidden"
@@ -187,6 +188,7 @@ const ShowList = () => {
       } else {
         showes.push(
           <motion.a
+            key={index}
             className={styles.showImgA}
             variants={shows}
             initial="hidden"
@@ -216,6 +218,7 @@ const ShowList = () => {
       if (index / 5 == 1) {
         showes.push(
           <motion.a
+            key={index}
             className={styles.showImgA}
             variants={lives}
             initial="hidden"
@@ -236,6 +239,7 @@ const ShowList = () => {
       } else {
         showes.push(
           <motion.a
+            key={index}
             className={styles.showImgA}
             variants={lives}
             initial="hidden"
@@ -260,7 +264,7 @@ const ShowList = () => {
   return (
     <motion.div
       className={styles.aceBox}
-      initial={{ opacity: 0}}
+      initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
         display: "block",

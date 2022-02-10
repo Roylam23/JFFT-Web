@@ -55,6 +55,7 @@ const Info = () => {
     member.forEach((item, index) => {
       memberes.push(
         <motion.div
+          key={index}
           className={styles.memberPhotoBox}
           variants={memberList}
           initial="hidden"

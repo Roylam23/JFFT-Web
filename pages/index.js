@@ -8,6 +8,7 @@ import Scrollbar from "./components/Home/scrollbar";
 import Update from "./components/Home/update";
 import Sub from "./components/Home/sub";
 import Title from "./components/Home/title";
+import Script from "next/script";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { initGA, logPageView } from "../utils/analytics";
@@ -16,7 +17,9 @@ export default function Home() {
   const router = useRouter();
   const [notice, setNotice] = useState(false);
   const [instagram, setInstagram] = useState(false);
+  const [low, setIsLow] = useState(false);
 
+  //Check Browser Agent
   useEffect(() => {
     var ua = navigator.userAgent || navigator.vendor || window.opera;
     var isSafari = ua.indexOf("Safari") > -1 ? true : false;
@@ -33,6 +36,16 @@ export default function Home() {
     }
   }, []);
 
+  //Play Music after 5s
+  if (typeof document !== "undefined") {
+    const video = document.getElementById("video");
+    setTimeout(function () {
+      video.play().catch(() => {
+        setIsLow(true);
+      });
+    }, 4500);
+  }
+
   useEffect(() => {
     initGA();
     if (!router.asPath.includes("?")) {
@@ -46,90 +59,6 @@ export default function Home() {
       router.events.off("routeChangeComplete", logPageView);
     };
   }, [router.events]);
-
-  //Onscroll resize view height
-  let height;
-  let preScroll = 0;
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-
-      if (scrollY > preScroll + 30) {
-        document.querySelector("#nav").classList.add("hidden");
-        preScroll = scrollY;
-      } else if (scrollY < preScroll && scrollY > 0) {
-        document.querySelector("#nav").classList.remove("hidden");
-        preScroll = scrollY;
-      }
-      //Nav transparent black
-      if (scrollY > 0) {
-        document.querySelector("#nav").classList.add("black");
-      } else if (scrollY == 0) {
-        document.querySelector("#nav").classList.remove("black");
-      }
-
-      document.documentElement.style.setProperty(
-        "--vh",
-        `${window.innerHeight}px`
-      );
-      height = window.innerHeight;
-
-      // if (scrollY < conHeight) {
-      //   document.documentElement.style.setProperty(
-      //     "--vh",
-      //     `${window.innerHeight}px`
-      //   );
-      //   height = window.innerHeight;
-      // }
-    };
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", () => {
-      document.documentElement.style.setProperty(
-        "--vh",
-        `${window.innerHeight}px`
-      );
-    });
-  }, []);
-
-  //Safari Viewport fix
-  if (typeof window !== "undefined") {
-    document.documentElement.style.setProperty(
-      "--vh",
-      `${window.innerHeight}px`
-    );
-    height = window.innerHeight;
-
-    setTimeout(() => {
-      document.documentElement.style.setProperty(
-        "--vh",
-        `${window.innerHeight}px`
-      );
-      height = window.innerHeight;
-    }, 1000);
-
-    console.log(
-      "%c%s",
-      "border-radius: 6px; padding: 8px; color: #ffffff; background: #4801ff;",
-      "✨ Developed by: RL — https://jfft.pages.dev"
-    );
-
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.getRegistrations().then((registrations) => {
-          for (let registration of registrations) {
-            registration.unregister().then((bool) => {
-              console.log("unregister: ", bool);
-            });
-          }
-        });
-      });
-    }
-    // Play Video Delay 4.5s
-    var video = document.getElementById("video");
-    setTimeout(function () {
-      video.play();
-    }, 4500);
-  }
 
   const noticeCon = () => {
     if (notice) {
@@ -156,7 +85,9 @@ export default function Home() {
                     Instagram<br></br>
                   </span>
                   <br></br>
-                  點擊右上按鈕，並按以瀏覽器開啓
+                  點擊右上按鈕，並按以瀏覽器開啓<br></br>
+                  Height:
+                  {document.documentElement.style.getPropertyValue("--vh")}
                 </>
               ) : (
                 <>
@@ -184,6 +115,7 @@ export default function Home() {
   return (
     <>
       {/* <div style={{position:"fixed",bottom:0,width:"100%",height:"50px",background:"#000",zIndex:200}}></div> */}
+      <Script src="/js/resize.js" strategy="beforeInteractive"></Script>
       <Logo />
       <motion.div
         className={styles.mainContainer}
@@ -196,27 +128,38 @@ export default function Home() {
           height: notice ? height : "auto",
           overflow: notice ? "hidden" : "visible",
           paddingBottom: "calc(45px + 1.2vw)",
-          transition: { delay: 10, duration: 1.5 },
+          transition: {
+            delay: 10,
+            duration: 1.5,
+          },
         }}
       >
         {noticeCon()}
         <div className={styles.container} id="container">
           <Heads />
           <motion.div className={styles.mainBox}>
-            <motion.div
-              dangerouslySetInnerHTML={{
-                __html: `
+            {low ? (
+              <div className={styles.low}>
+                由於IOS慳電模式會關閉自動播放功能<br></br>
+                建議關閉慳電模式並重新整理網頁
+              </div>
+            ) : (
+              <motion.div
+                dangerouslySetInnerHTML={{
+                  __html: `
           <video
             id="video"
-            loop
-            muted
+            loop 
+            muted 
             playsinline
             src="https://i.imgur.com/CE4dVM9.mp4"
             class="${styles.video}"
           />,
         `,
-              }}
-            ></motion.div>
+                }}
+              ></motion.div>
+            )}
+
             <div className={styles.filter}></div>
             <div className={styles.frame}></div>
           </motion.div>
@@ -231,7 +174,7 @@ export default function Home() {
           className={styles.footer}
           animate={{
             opacity: [0, 1],
-            transition: { delay: 6, duration: 1 },
+            transition: { delay: 12, duration: 1 },
           }}
         >
           <span>© 2022 JFFT</span>

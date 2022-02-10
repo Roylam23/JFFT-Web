@@ -2,12 +2,12 @@
 .mainContainer {
   display: block;
   position: relative;
-  height: var(--vh)
+  height: var(--vh);
 }
 
 .container {
   background-color: #090a0a;
-  z-index: 100
+  z-index: 100;
 }
 
 .textCon::before {
@@ -25,13 +25,9 @@
   z-index: 0
 }
 
-.logoBox,
-.mainBox {
-  display: flex;
-  align-items: center
-}
-
 .logoBox {
+  display: flex;
+  align-items: center;
   position: fixed;
   background-image: linear-gradient(#090a0a, #090a0a);
   transition: transform .5s, background-color .5s;
@@ -39,14 +35,23 @@
   z-index: 120;
   top: 0;
   width: 100%;
-  height: 100vh;
+  height: var(--vh);
 }
 
 .mainBox {
+  display: flex;
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden
+  overflow: hidden;
+  justify-content: center;
+}
+
+.low {
+  position:absolute;
+  bottom:70%;
+  width:80%;
+  text-align: center;
 }
 
 .title {
@@ -60,7 +65,7 @@
 }
 
 .load_icon {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%)
@@ -109,8 +114,8 @@
   padding: calc(50px + 2.5vw)0;
 }
 
-.textCon{
-  height:auto;
+.textCon {
+  height: auto;
 }
 
 #textCon,
@@ -120,7 +125,7 @@
 
 .subCon {
   flex-direction: column;
-  gap:calc(50px + 1.5vw);
+  gap: calc(50px + 1.5vw);
   z-index: 100;
 }
 
@@ -146,7 +151,7 @@
 
 .subImgLive {
   width: calc(100px + 5vw);
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .subTitleLive {
@@ -175,7 +180,7 @@
 }
 
 .scroll {
-  font-size:50px;
+  font-size: 50px;
   display: flex;
   white-space: nowrap;
   color: #fff;
@@ -208,7 +213,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  object-fit:cover
+  object-fit: cover
 }
 
 .filter {
@@ -692,15 +697,6 @@
 }
 
 @supports (-webkit-touch-callout:none) {
-
-  .container,
-  .mainContainer {
-    height: var(--vh);
-  }
-
-  .logoBox {
-    height: var(--vh);
-  }
 
   .memberBoxes>:last-child,
   .showBox>:last-child,

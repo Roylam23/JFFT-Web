@@ -52,7 +52,6 @@ export default function Home() {
   let preScroll = 0;
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY);
       const scrollY = window.scrollY;
       const conHeight = document.querySelector("#container").scrollHeight;
 
@@ -91,6 +90,7 @@ export default function Home() {
 
   //Safari Viewport fix
   if (typeof window !== "undefined") {
+    console.log("%c%s", "border-radius: 6px; padding: 8px; color: #ffffff; background: #4801ff;", "✨ Developed by: RL — https://jfft.pages.dev")
     document.documentElement.style.setProperty(
       "--vh",
       `${window.visualViewport.height}px`

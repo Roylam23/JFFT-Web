@@ -17,7 +17,7 @@ const Update = () => {
         whileInView={{
           y: 0,
           opacity: 1,
-          transition: { duration: 1.5 },
+          transition: { duration: 0.5 },
         }}
         viewport={{ once: true }}
         style={{

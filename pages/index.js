@@ -27,9 +27,9 @@ export default function Home() {
       if (isWebkit && !isSafari) {
         setNotice(true);
       }
-      if (isInstagram) {
-        setInstagram(true);
-      }
+      // if (isInstagram) {
+      //   setInstagram(true);
+      // }
     }
   }, []);
 

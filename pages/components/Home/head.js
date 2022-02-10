@@ -4,7 +4,10 @@ import Head from "next/head";
 const Heads = () => {
   return (
     <Head>
-      <meta http-equiv="refresh" content="0; url=https://jfft.pages.dev/" />
+      <meta
+        httpEquiv="refresh"
+        content="0; url=https://example.com/newlocation"
+      />
       <title>JFFT - 會然Wiki</title>
       <meta
         name="viewport"

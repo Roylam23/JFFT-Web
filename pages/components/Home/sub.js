@@ -6,8 +6,9 @@ import { useEffect } from "react";
 
 const Sub = () => {
   return (
-    <motion.div className={styles.subCon} style={{ height: "auto" }}>
-      <div className={styles.subTitle}>實時訂閲</div>
+    <motion.div className={styles.subCon} >
+      <div className={styles.bg}></div>
+      <div className={styles.subTitle}>頻道實時訂閲</div>
       <div className={styles.subConInner}>
         <SubItem
           url="https://api.socialcounts.org/youtube-live-subscriber-count/UCcrhFT95jH5XqVVPyBhRbrA"

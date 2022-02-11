@@ -94,6 +94,16 @@ const Heads = () => {
         href="https://fonts.googleapis.com/css2?family=Dongle&family=Fjalla+One&family=Open+Sans&family=Roboto:wght@300;400&display=swap"
         rel="stylesheet"
       ></link>
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin
+      ></link>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Dongle&family=Fjalla+One&family=Noto+Sans+HK&family=Open+Sans&family=Poppins:wght@500&family=Roboto:wght@300;400&family=Teko&display=swap"
+        rel="stylesheet"
+      ></link>
       <link rel="icon" href="/favicon.ico" />
       <link rel="shortcut icon" href="/favicon.ico"></link>
       <link rel="canonical" href="https://jfft.pages.dev/" />

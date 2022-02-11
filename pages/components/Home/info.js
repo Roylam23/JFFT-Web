@@ -79,6 +79,7 @@ const Info = () => {
   };
   return (
     <motion.div className={styles.info}>
+      <div className={styles.bg}></div>
       <motion.div className={styles.memberBox}>
         <motion.span
           className={styles.memberTitle}

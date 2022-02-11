@@ -24,11 +24,9 @@ const Update = () => {
           fontWeight: "600",
         }}
       >
-        網站初期設計少柒敬請見諒 <br></br>
-        <br></br>
-        內容會因應功課進度而更新<br></br>
-        <br></br>
-        加入JFFT永遠都唔會遲！
+        <span>網站初期設計少柒敬請見諒</span>
+        <span>內容會因應功課進度而更新</span>
+        <span>加入JFFT永遠都唔會遲！</span>
       </motion.div>
     </motion.div>
   );

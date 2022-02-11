@@ -61,7 +61,6 @@ const Title = () => {
         全港最大黃賭毒邪教
       </motion.span>
       <motion.span
-        className={styles.titleTop}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{
           // width: ["30vw", "20vw"],

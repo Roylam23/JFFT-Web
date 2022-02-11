@@ -103,7 +103,6 @@
   margin-bottom: 20px
 }
 
-.subCon,
 .textCon,
 .textCon1 {
   height: calc(250px + 40vh);
@@ -124,21 +123,27 @@
 }
 
 .subCon {
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
   z-index: 100;
-  padding: calc(50px + 6vw)0;
-  overflow: hidden;
   height: var(--vh);
+  display: block;
+  position: relative;
+  padding: 0;
+}
+
+.subInner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  position: sticky;
+  top: calc(55px + 1vw + 50px);
 }
 
 .subConInner {
   display: flex;
   width: 80%;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .subLive {
@@ -154,8 +159,6 @@
   padding-left: calc(30px + 2vw);
   font-weight: 600;
   z-index: 60;
-  position: absolute;
-  top: 50px;
 }
 
 .subImgLive {
@@ -786,13 +789,24 @@
 
 @media screen and (max-width:768px) {
   .subCon {
-    height: auto !important;
-    padding: 150px 0;
+    height: 1000px;
+    padding: 50px 0;
+  }
+
+  .subInner {
+    top: 12vh;
+    /* top: calc(55px + 1vw + 20px); */
+    gap: 5vh;
   }
 
   .subConInner {
     flex-direction: column;
-    gap: 75px
+    gap: 5vh;
+    margin-top: 0;
+  }
+
+  .subLive {
+    gap: 2vh;
   }
 
   .logoBox {
@@ -835,10 +849,10 @@
     height: calc(350px + 10vw)
   }
 
-  
+
 }
 
-@media screen and (max-width:400px){
+@media screen and (max-width:400px) {
   .footerImgCon {
     display: flex;
     gap: 10px;

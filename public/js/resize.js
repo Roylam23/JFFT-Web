@@ -18,13 +18,13 @@ console.log(
 
 function handleScroll() {
   var scrollY = window.scrollY;
-  if (scrollY > preScroll + 30) {
-    document.querySelector("#nav").classList.add("hidden");
-    preScroll = scrollY;
-  } else if (scrollY < preScroll && scrollY > 0) {
-    document.querySelector("#nav").classList.remove("hidden");
-    preScroll = scrollY;
-  }
+  // if (scrollY > preScroll + 30) {
+  //   document.querySelector("#nav").classList.add("hidden");
+  //   preScroll = scrollY;
+  // } else if (scrollY < preScroll && scrollY > 0) {
+  //   document.querySelector("#nav").classList.remove("hidden");
+  //   preScroll = scrollY;
+  // }
   //Nav transparent black
   if (scrollY > 0) {
     document.querySelector("#nav").classList.add("black");

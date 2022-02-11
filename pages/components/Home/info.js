@@ -69,16 +69,16 @@ const Info = () => {
               src={img[index]}
               alt={member[index]}
               id={id[index]}
-            ></img>
+            ></img>7
           </motion.div>
           <motion.span className={styles.memberName}>{item}</motion.span>
         </motion.div>
-      );
-    });
+      );7
+    });77
     return memberes;
   };
   return (
-    <motion.div className={styles.info}>
+    <motion.div className={styles.info} initial={{width:0}} whileInView={{width:"100%", transition:{duration:.5}}} viewport={{once:true}}>
       <div className={styles.bg}></div>
       <motion.div className={styles.memberBox}>
         <motion.span

@@ -11,7 +11,6 @@ const Scrollbar = () => {
     width1 = document.querySelector("#scroll1").scrollWidth;
     width2 = document.querySelector("#scroll2").scrollWidth;
   }
-  console.log(width)
   return (
     <motion.div className={styles.textCon}>
       {/* <div className={styles.bg1}></div> */}

@@ -12,12 +12,56 @@ import Script from "next/script";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { initGA, logPageView } from "../utils/analytics";
+import React from "react";
+
+if (typeof window !== "undefined") {
+  var height;
+  var preScroll = 0;
+  var isLow = false;
+  const a = true;
+  function resizeCon() {
+    document.documentElement.style.setProperty(
+      "--vh",
+      `${window.visualViewport.height}px`
+    );
+  }
+  resizeCon();
+  setTimeout(resizeCon, 2000);
+  height = window.visualViewport.height;
+  console.log(
+    "%c%s",
+    "border-radius: 6px; padding: 8px; color: #ffffff; background: #4801ff;",
+    "✨ Developed by: RL — https://jfft.pages.dev"
+  );
+
+  function handleScroll() {
+    var scrollY = window.scrollY;
+    // if (scrollY > preScroll + 30) {
+    //   document.querySelector("#nav").classList.add("hidden");
+    //   preScroll = scrollY;
+    // } else if (scrollY < preScroll && scrollY > 0) {
+    //   document.querySelector("#nav").classList.remove("hidden");
+    //   preScroll = scrollY;
+    // }
+    //Nav transparent black
+    if (scrollY > 0) {
+      document.querySelector("#nav").classList.add("black");
+    } else if (scrollY == 0) {
+      document.querySelector("#nav").classList.remove("black");
+    }
+    resizeCon();
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", resizeCon);
+}
 
 export default function Home() {
   const router = useRouter();
   const [notice, setNotice] = useState(false);
   const [instagram, setInstagram] = useState(false);
   const [low, setIsLow] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   //Check Browser Agent
   useEffect(() => {
@@ -115,7 +159,7 @@ export default function Home() {
   return (
     <>
       {/* <div style={{position:"fixed",bottom:0,width:"100%",height:"50px",background:"#000",zIndex:200}}></div> */}
-      <Script src="/js/resize.js" strategy="beforeInteractive"></Script>
+      {/* <Script src="/js/resize.js" strategy="beforeInteractive"></Script> */}
       <Logo />
       <motion.div
         className={styles.mainContainer}
@@ -256,10 +300,10 @@ export default function Home() {
             </motion.span>
           </div>
           <div className={styles.footerSec}>
-            <span style={{ fontSize: "calc(14px + .55vw)"}}>
+            <span style={{ fontSize: "calc(14px + .4vw)" }}>
               成為會然獲得更多福利
             </span>
-            <span style={{ fontSize: "calc(20px + .6vw)" }}>
+            <span style={{ fontSize: "calc(20px + .5vw)" }}>
               加入JFFT永遠都唔會遲
             </span>
             <span className={styles.footerImgCon}>

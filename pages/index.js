@@ -14,10 +14,9 @@ import { useEffect, useState } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import React from "react";
 
+var height;
 if (typeof window !== "undefined") {
-  var height;
-  var preScroll = 0;
-  var isLow = false;
+  
   const a = true;
   function resizeCon() {
     document.documentElement.style.setProperty(
@@ -26,7 +25,7 @@ if (typeof window !== "undefined") {
     );
   }
   resizeCon();
-  setTimeout(resizeCon, 2000);
+  setTimeout(resizeCon, 4000);
   height = window.visualViewport.height;
   console.log(
     "%c%s",

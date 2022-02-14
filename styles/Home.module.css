@@ -135,8 +135,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: sticky;
-  top: 17vh;
+  top: calc(var(--vh) - (var(--vh) / 2) - calc(16px + .45vw) - calc(100px + 10vw) - 2vw);
 }
 
 .subConInner {

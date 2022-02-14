@@ -12,7 +12,7 @@ const Scrollbar = () => {
     width2 = document.querySelector("#scroll2").scrollWidth;
   }
   return (
-    <motion.div className={styles.textCon}>
+    <motion.div className={styles.textCon} initial={{opacity: 0}} animate={{opacity: 1, transition:{delay:2,}}}>
       {/* <div className={styles.bg1}></div> */}
       <div className={styles.frameRe} id={styles.frame}></div>
       <div className={styles.frame} id={styles.frame}></div>

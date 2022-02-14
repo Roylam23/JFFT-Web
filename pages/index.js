@@ -25,7 +25,7 @@ if (typeof window !== "undefined") {
     );
   }
   resizeCon();
-  setTimeout(resizeCon, 4000);
+  setTimeout(resizeCon, 1000);
   height = window.visualViewport.height;
   console.log(
     "%c%s",

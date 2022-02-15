@@ -41,10 +41,10 @@ const SubItem = (props) => {
   return (
     <motion.div
       className={styles.subLive}
-      variants={display}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
+      // variants={display}
+      // initial="hidden"
+      // whileInView="visible"
+      // viewport={{ once: true }}
     >
       <img
         className={styles.subImgLive}

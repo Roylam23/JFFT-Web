@@ -9,14 +9,14 @@ import Update from "./components/Home/update";
 import Sub from "./components/Home/sub";
 import Title from "./components/Home/title";
 import Script from "next/script";
-import { motion } from "framer-motion";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import React from "react";
+import Debug from "./components/Home/debug";
 
 var height;
 if (typeof window !== "undefined") {
-  
   const a = true;
   function resizeCon() {
     document.documentElement.style.setProperty(
@@ -25,7 +25,11 @@ if (typeof window !== "undefined") {
     );
   }
   resizeCon();
-  setTimeout(resizeCon, 1000);
+  setTimeout(function () {
+    var h = document.querySelector("#mainContainer");
+    h.style.height = "auto";
+    h.style.overflow = "visible";
+  }, 10000);
   height = window.visualViewport.height;
   console.log(
     "%c%s",
@@ -35,6 +39,7 @@ if (typeof window !== "undefined") {
 
   function handleScroll() {
     var scrollY = window.scrollY;
+    // Hide Navbar
     // if (scrollY > preScroll + 30) {
     //   document.querySelector("#nav").classList.add("hidden");
     //   preScroll = scrollY;
@@ -42,6 +47,7 @@ if (typeof window !== "undefined") {
     //   document.querySelector("#nav").classList.remove("hidden");
     //   preScroll = scrollY;
     // }
+
     //Nav transparent black
     if (scrollY > 0) {
       document.querySelector("#nav").classList.add("black");
@@ -60,7 +66,9 @@ export default function Home() {
   const [notice, setNotice] = useState(false);
   const [instagram, setInstagram] = useState(false);
   const [low, setIsLow] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const { scrollY } = useViewportScroll();
+  const num = useTransform(scrollY, [0, 1000], [0, 100000]);
+  const vScroll = useTransform(scrollY, [0, height], [0, height / 2]);
 
   //Check Browser Agent
   useEffect(() => {
@@ -112,7 +120,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { delay: 0.5, duration: 1 } }}
           >
-            <img className="noticeImg" src="/jffticon.png" alt="jfft"></img>
+            <img className="noticeImg" src="/jffticon.png" alt="jfft" />
             <span>
               建議使用Safari瀏覽器以達到最佳觀賞效果 <br></br>
               <br></br>{" "}
@@ -130,7 +138,7 @@ export default function Home() {
                   <br></br>
                   點擊右上按鈕，並按以瀏覽器開啓<br></br>
                   Height:
-                  {height}
+                  {num["current"]}
                 </>
               ) : (
                 <>
@@ -160,20 +168,10 @@ export default function Home() {
       {/* <div style={{position:"fixed",bottom:0,width:"100%",height:"50px",background:"#000",zIndex:200}}></div> */}
       {/* <Script src="/js/resize.js" strategy="beforeInteractive"></Script> */}
       <Logo />
+      {/* <Debug info={height} /> */}
       <motion.div
         className={styles.mainContainer}
         id="mainContainer"
-        initial={{
-          overflow: "hidden",
-        }}
-        animate={{
-          height: notice ? height : "auto",
-          overflow: notice ? "hidden" : "visible",
-          transition: {
-            delay: 10,
-            duration: 1.5,
-          },
-        }}
       >
         {noticeCon()}
         <div className={styles.container} id="container">
@@ -187,6 +185,8 @@ export default function Home() {
               </div>
             ) : (
               <motion.div
+                id="videoS"
+                style={{ y: vScroll }}
                 dangerouslySetInnerHTML={{
                   __html: `
           <video

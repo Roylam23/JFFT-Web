@@ -5,6 +5,10 @@
   height: var(--vh);
 }
 
+.mainContainer {
+  overflow: hidden;
+}
+
 .container {
   background-color: #090a0a;
   z-index: 100;
@@ -127,7 +131,7 @@
   height: calc(1.5 * var(--vh));
   display: block;
   position: relative;
-  padding:50px 0;
+  padding: 50px 0;
 }
 
 .subInner {

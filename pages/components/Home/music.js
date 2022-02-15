@@ -57,7 +57,7 @@ const navi = (i) => {
 };
 
 let style = ["", "img1", "", "img2", "img3"];
-let name = ["JFFSong", "尋找白卡", "等你下火", "甘願墮落", "接龍"];
+let name = ["JFFSONG", "尋找白卡", "等你下火", "甘願墮落", "接龍"];
 let singers = ["香港卍會", "床哥 (feat. 釘姐)", "耀祥, 雞翼", "新光合唱團", "良少, 雞翼, 米爺"];
 let id;
 const Music = () => {

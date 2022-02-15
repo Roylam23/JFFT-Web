@@ -13,35 +13,16 @@ let elementTop;
 let elementHeight;
 
 const Sub = () => {
-  const ref = useRef();
-  const { scrollY, scrollYProgress } = useViewportScroll();
-  const [scrollPercentageStart, setScrollPercentageStart] = useState(0);
-  const [scrollPercentageEnd, setScrollPercentageEnd] = useState(0);
-  const op = useTransform(
-    scrollYProgress,
-    [scrollPercentageStart, scrollPercentageEnd],
-    [0, 1]
-  );
-  useLayoutEffect(() => {
-    // Get the distance from the start of the page to the element start
-    document.addEventListener("scroll", () => {
-      const rect = ref.current.getBoundingClientRect();
-      console.log(rect);
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      const offsetStart = rect.top + scrollTop;
-      const offsetEnd = offsetStart + rect.height;
-
-      const elementScrollStart = offsetStart / document.body.clientHeight;
-      const elementScrollEnd = offsetEnd / document.body.clientHeight;
-
-      setScrollPercentageStart(elementScrollStart);
-      setScrollPercentageEnd(elementScrollEnd);
-    });
-  }, []);
+  // const { scrollY, scrollYProgress } = useViewportScroll();
+  // const [scrollPercentageStart, setScrollPercentageStart] = useState(0);
+  // const [scrollPercentageEnd, setScrollPercentageEnd] = useState(0);
+  // const op = useTransform(
+  //   scrollYProgress,
+  //   [scrollPercentageStart, scrollPercentageEnd],
+  //   [0, 1]
+  // );
   return (
-    <div ref={ref} className={styles.subCon} id="subCon">
+    <div className={styles.subCon} id="subCon">
       {/* <Debug info={elementTop} /> */}
       <div className={styles.bg}></div>
       <div className={styles.subInner}>
@@ -50,7 +31,7 @@ const Sub = () => {
           className={styles.subConInner}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{margin: "-25% 0px"}}
+          viewport={{margin: "-15% 0px"}}
         >
           <SubItem
             url="https://api.socialcounts.org/youtube-live-subscriber-count/UCcrhFT95jH5XqVVPyBhRbrA"

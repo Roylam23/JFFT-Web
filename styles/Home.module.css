@@ -128,7 +128,7 @@
 
 .subCon {
   z-index: 100;
-  height: calc(1.5 * var(--vh));
+  height: calc(1.2 * var(--vh));
   display: block;
   position: relative;
   padding: 50px 0;
@@ -174,6 +174,124 @@
 .subTitleLive {
   font-size: calc(20px + 3vw);
   font-weight: 600
+}
+
+.musicCon {
+  width: 100%;
+  height: auto;
+  background-color: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: calc(50px + 2vw) 0;
+}
+
+.musicTitle {
+  width: 100%;
+  font-size: calc(16px + .45vw);
+  font-weight: 600;
+  padding-left: calc(30px + 2vw);
+}
+
+.musicList {
+  display: flex;
+  width: 100%;
+  gap: 25px;
+  padding: 0 calc(30px + 2vw);
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-top: calc(35px + .5vw);
+}
+
+.playBtn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  margin: 15px;
+  background: #e90080da;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .5s;
+  margin-bottom: calc(50px + 1.5vw);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playBtn:after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.musicMinCon {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 10%;
+  min-width: 150px;
+  background: #181818;
+  border-radius: 10px;
+  padding: calc(10px + .2vw);
+  padding-bottom: calc(15px + .35vw);
+  z-index: 80;
+  box-sizing: unset;
+  cursor: pointer;
+  position: relative;
+}
+
+.musicMinCon:hover .playBtn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.musicList::-webkit-scrollbar {
+  display: none;
+}
+
+.musicBox {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 10px 10px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.musicBox:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.musicPhoto {
+  position: absolute;
+  width: 180%;
+  top: 0;
+  left: -35%;
+}
+
+.musicName {
+  font-family: sans-serif;
+  font-size: calc(12px + .5vw);
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.singer {
+  font-family: sans-serif;
+  font-size: calc(8px + .35vw);
+  font-weight: 600;
+  color: #979797;
+  margin-top: 5px;
+}
+
+#dolok {
+  left: -70%;
 }
 
 #textCon {
@@ -340,7 +458,8 @@
   padding: 0 calc(30px + 2vw);
   grid-gap: 20px;
   position: relative;
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+  cursor: grab
 }
 
 .showBox {
@@ -628,7 +747,7 @@
 .memberBoxes,
 .memberInner {
   display: inline-flex;
-  justify-content: space-between
+  justify-content: space-around;
 }
 
 .memberBoxes {
@@ -647,7 +766,8 @@
 .memberTitle {
   font-size: calc(16px + .45vw);
   font-weight: 600;
-  padding-left: calc(30px + 2vw)
+  padding-left: calc(30px + 2vw);
+  white-space: nowrap;
 }
 
 .memberPhotoBox {
@@ -793,6 +913,12 @@
 }
 
 @media screen and (max-width:768px) {
+
+  .memberBoxes,
+  .memberInner {
+    justify-content: space-between;
+  }
+
   .subCon {
     height: 1000px;
     padding: 50px 0;
@@ -854,6 +980,10 @@
     height: calc(350px + 10vw)
   }
 
+  .musicCon {
+    padding: 0;
+    padding-top: calc(50px + 2vw);
+  }
 
 }
 
@@ -885,6 +1015,11 @@
   .showVideo>:last-child {
     padding-right: 20px;
     box-sizing: unset
+  }
+
+  .musicList>:last-child {
+    padding-right: 20px;
+    box-sizing: unset;
   }
 
   .titleTop {

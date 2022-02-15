@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 import React from "react";
 import Debug from "./components/Home/debug";
+import Music from "./components/Home/music";
 
 var height;
 if (typeof window !== "undefined") {
@@ -66,9 +67,9 @@ export default function Home() {
   const [notice, setNotice] = useState(false);
   const [instagram, setInstagram] = useState(false);
   const [low, setIsLow] = useState(false);
-  const { scrollY } = useViewportScroll();
-  const num = useTransform(scrollY, [0, 1000], [0, 100000]);
-  const vScroll = useTransform(scrollY, [0, height], [0, height / 2]);
+  // const { scrollY } = useViewportScroll();
+  // const num = useTransform(scrollY, [0, 1000], [0, 100000]);
+  // const vScroll = useTransform(scrollY, [0, height], ["0%", "20%"]);
 
   //Check Browser Agent
   useEffect(() => {
@@ -169,10 +170,7 @@ export default function Home() {
       {/* <Script src="/js/resize.js" strategy="beforeInteractive"></Script> */}
       <Logo />
       {/* <Debug info={height} /> */}
-      <motion.div
-        className={styles.mainContainer}
-        id="mainContainer"
-      >
+      <motion.div className={styles.mainContainer} id="mainContainer">
         {noticeCon()}
         <div className={styles.container} id="container">
           <Heads />
@@ -186,7 +184,7 @@ export default function Home() {
             ) : (
               <motion.div
                 id="videoS"
-                style={{ y: vScroll }}
+                // style={{ y: vScroll }}
                 dangerouslySetInnerHTML={{
                   __html: `
           <video
@@ -209,6 +207,7 @@ export default function Home() {
         </div>
         <Info />
         <Scrollbar />
+        <Music />
         <Sub />
         {/* <Update /> */}
         <motion.footer

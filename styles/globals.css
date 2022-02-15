@@ -9,6 +9,7 @@ body {
   background-color: rgb(14, 14, 14);
   scroll-behavior: smooth;
   color: #fff;
+  user-select: none;
 }
 
 a {
@@ -76,6 +77,18 @@ a {
 
 .noticeImg {
   width: calc(100px + 5vw);
+}
+
+#img1{
+  left:-22%;
+}
+
+#img2{
+  left:-70%;
+}
+
+#img3{
+  transform: scale(1.2);
 }
 
 /* odometer */

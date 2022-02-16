@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   position: fixed;
-  background-image: linear-gradient(#090a0a, #090a0a);
+  background-image: linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0));
   transition: transform .5s, background-color .5s;
   padding: 0 calc(30px + 2vw);
   z-index: 120;
@@ -326,6 +326,19 @@
   display: flex;
   flex-direction: column;
   gap: calc(5px + 1vw);
+}
+
+.text2{
+  font-size: calc(20px + 1vw);
+  color: #fff;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  gap: calc(10px + 1vw);
 }
 
 .scroll {

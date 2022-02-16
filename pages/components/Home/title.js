@@ -8,7 +8,7 @@ const icon = {
     y: 20,
   },
   visible: (i) => {
-    const delay = 5 + 1.5 + i * 0.15;
+    const delay = 5.25 + 1.5 + i * 0.15;
     return {
       opacity: 1,
       y: 0,
@@ -21,7 +21,7 @@ const icon = {
 };
 
 const Title = () => {
-  const sec = 5;
+  const sec = 5.25;
   // const { scrollY } = useViewportScroll();
   // const movement = ["0", "100px"];
   // const opacity = [1, 0];

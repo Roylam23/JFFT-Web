@@ -5,7 +5,7 @@ const Heads = () => {
   return (
     <Head>
       <title>JFFT - 會然Wiki</title>
-      <meta name="viewport" content="width=device-width,minimum-scale=1" />
+      <meta name="viewport" content="width=device-width,minimum-scale=1, user-scalable=no" />
       <meta charSet="utf-8"></meta>
       <meta name="description" content="JFFT" />
       <meta name="description" content="Jun For Fun Team" />

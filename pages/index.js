@@ -51,9 +51,9 @@ if (typeof window !== "undefined") {
     // }
 
     //Nav transparent black
-    if (scrollY > 0) {
+    if (scrollY > (document.querySelector("#container").offsetHeight - 400)) {
       document.querySelector("#nav").classList.add("black");
-    } else if (scrollY == 0) {
+    } else {
       document.querySelector("#nav").classList.remove("black");
     }
     // resizeCon();
@@ -210,7 +210,7 @@ export default function Home() {
         <Scrollbar />
         <Music />
         <Sub />
-        {/* <Update /> */}
+        <Update />
         <motion.footer
           className={styles.footer}
           animate={{

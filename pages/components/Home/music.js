@@ -21,7 +21,7 @@ const ani = {
   visible1: (i) => {
     const delay = i * 0.05;
     return {
-      opacity: .4,
+      opacity: 0.4,
       y: 0,
       transition: {
         delay: delay,
@@ -50,15 +50,15 @@ let link = [
   "https://www.youtube.com/watch?v=xkaLRoUQJow",
 ];
 
-const navi = (i) => {
-  if (typeof window !== "undefined") {
-    window.open(i, "_blank");
-  }
-};
-
 let style = ["", "img1", "", "img2", "img3"];
 let name = ["JFFSONG", "尋找白卡", "等你下火", "甘願墮落", "接龍"];
-let singers = ["香港卍會", "床哥 (feat. 釘姐)", "耀祥, 雞翼", "新光合唱團", "良少, 雞翼, 米爺"];
+let singers = [
+  "東京卍會",
+  "床哥 (feat. 釘姐)",
+  "耀祥, 雞翼",
+  "新光合唱團",
+  "良少, 雞翼, 米爺",
+];
 let id;
 const Music = () => {
   const listes = () => {
@@ -66,39 +66,40 @@ const Music = () => {
     img.forEach((item, index) => {
       id = style[index];
       music.push(
-        <motion.div
-          className={styles.musicMinCon}
-          variants={ani}
-          initial="hidden"
-          whileInView="visible"
-          custom={index}
-          whileHover={{ backgroundColor: "#252525" }}
-          whileTap={{ backgroundColor: "#252525" }}
-          viewport={{ once: true, margin: "-20% 0%" }}
-          onClick={(e) => navi(link[index])}
-        >
-          <div className={styles.playBtn}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              role="img"
-              width="calc(1.2em + .25vw)"
-              height="calc(1.2em + .25vw)"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-            >
-              <path
-                fill="currentColor"
-                d="M7 28a1 1 0 0 1-1-1V5a1 1 0 0 1 1.482-.876l20 11a1 1 0 0 1 0 1.752l-20 11A1 1 0 0 1 7 28Z"
-              />
-            </svg>
-          </div>
-          <span className={styles.musicBox}>
-            <img className={styles.musicPhoto} src={item} id={id}></img>
-          </span>
-          <span className={styles.musicName}>{name[index]}</span>
-          <span className={styles.singer}>{singers[index]}</span>
-        </motion.div>
+        <a href={link[index]} className={styles.musicMainCon}>
+          <motion.div
+            className={styles.musicMinCon}
+            variants={ani}
+            initial="hidden"
+            whileInView="visible"
+            custom={index}
+            whileHover={{ backgroundColor: "#252525" }}
+            whileTap={{ backgroundColor: "#252525" }}
+            viewport={{ once: true, margin: "-20% 0%" }}
+          >
+            <div className={styles.playBtn}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="img"
+                width="calc(1.2em + .25vw)"
+                height="calc(1.2em + .25vw)"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  fill="currentColor"
+                  d="M7 28a1 1 0 0 1-1-1V5a1 1 0 0 1 1.482-.876l20 11a1 1 0 0 1 0 1.752l-20 11A1 1 0 0 1 7 28Z"
+                />
+              </svg>
+            </div>
+            <span className={styles.musicBox}>
+              <img className={styles.musicPhoto} src={item} id={id}></img>
+            </span>
+            <span className={styles.musicName}>{name[index]}</span>
+            <span className={styles.singer}>{singers[index]}</span>
+          </motion.div>
+        </a>
       );
     });
     return music;
@@ -107,21 +108,23 @@ const Music = () => {
     const e = [];
     for (var i = 0; i < 10; i++) {
       e.push(
-        <motion.div
-          className={styles.musicMinCon}
-          variants={ani}
-          initial="hidden"
-          whileInView="visible1"
-          custom={i + 5}
-          viewport={{ once: true, margin: "-20% 0%" }}
-        >
-          <span
-            className={styles.musicBox}
-            style={{ background: "#131313" }}
-          ></span>
-          <span className={styles.musicName}>快啲出新歌啦屌</span>
-          <span className={styles.singer}>會然</span>
-        </motion.div>
+        <a className={styles.musicMainCon}>
+          <motion.div
+            className={styles.musicMinCon}
+            variants={ani}
+            initial="hidden"
+            whileInView="visible1"
+            custom={i + 5}
+            viewport={{ once: true, margin: "-20% 0%" }}
+          >
+            <span
+              className={styles.musicBox}
+              style={{ background: "#131313" }}
+            ></span>
+            <span className={styles.musicName}>快啲出新歌啦屌</span>
+            <span className={styles.singer}>會然</span>
+          </motion.div>
+        </a>
       );
     }
     return e;
@@ -133,7 +136,7 @@ const Music = () => {
       <div className={styles.musicList}>
         {listes()}
         {empty()}
-        <div style={{ height: "1px" }}></div>
+        <div className={styles.musicMargin}></div>
       </div>
     </div>
   );

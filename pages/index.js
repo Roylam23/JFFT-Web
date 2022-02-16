@@ -17,21 +17,22 @@ import Debug from "./components/Home/debug";
 import Music from "./components/Home/music";
 
 var height;
+var preScroll = 0;
 if (typeof window !== "undefined") {
   const a = true;
-  function resizeCon() {
-    document.documentElement.style.setProperty(
-      "--vh",
-      `${window.visualViewport.height}px`
-    );
-  }
-  resizeCon();
+  // function resizeCon() {
+  //   document.documentElement.style.setProperty(
+  //     "--vh",
+  //     `${window.visualViewport.height}px`
+  //   );
+  // }
+  // resizeCon();
   setTimeout(function () {
     var h = document.querySelector("#mainContainer");
     h.style.height = "auto";
     h.style.overflow = "visible";
   }, 10000);
-  height = window.visualViewport.height;
+  // height = window.visualViewport.height;
   console.log(
     "%c%s",
     "border-radius: 6px; padding: 8px; color: #ffffff; background: #4801ff;",
@@ -55,11 +56,11 @@ if (typeof window !== "undefined") {
     } else if (scrollY == 0) {
       document.querySelector("#nav").classList.remove("black");
     }
-    resizeCon();
+    // resizeCon();
   }
 
   window.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", resizeCon);
+  // window.addEventListener("resize", resizeCon);
 }
 
 export default function Home() {

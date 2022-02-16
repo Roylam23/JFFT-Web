@@ -2,7 +2,23 @@
 .mainContainer {
   display: block;
   position: relative;
-  height: var(--vh);
+  /* Webkit Viewport Fix */
+  height: 100vh;
+  max-height: -webkit-fill-available;
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  background-image: linear-gradient(#090a0a, #090a0a);
+  transition: transform .5s, background-color .5s;
+  padding: 0 calc(30px + 2vw);
+  z-index: 120;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  max-height: -webkit-fill-available;
 }
 
 .mainContainer {
@@ -27,19 +43,6 @@
   left: 0;
   opacity: .3;
   z-index: 0
-}
-
-.logoBox {
-  display: flex;
-  align-items: center;
-  position: fixed;
-  background-image: linear-gradient(#090a0a, #090a0a);
-  transition: transform .5s, background-color .5s;
-  padding: 0 calc(30px + 2vw);
-  z-index: 120;
-  top: 0;
-  width: 100%;
-  height: var(--vh);
 }
 
 .mainBox {
@@ -128,7 +131,7 @@
 
 .subCon {
   z-index: 100;
-  height: calc(1.2 * var(--vh));
+  height: calc(1.2 * 100vh);
   display: block;
   position: relative;
   padding: 50px 0;
@@ -141,7 +144,7 @@
   align-items: center;
   justify-content: center;
   position: sticky;
-  top: calc(var(--vh) - (var(--vh) / 2) - calc(16px + .45vw) - calc(100px + 10vw) - 2vw);
+  top: calc(100vh - 50vh - calc(16px + .45vw) - calc(100px + 10vw) - 2vw);
 }
 
 .subConInner {
@@ -228,20 +231,24 @@
   padding-top: 100%;
 }
 
+.musicMainCon{
+  width: 12%;
+  min-width: 150px;
+  flex-shrink: 0;
+  box-sizing: unset;
+}
+
 .musicMinCon {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
-  width: 10%;
-  min-width: 150px;
-  background: #181818;
+  background: #191919;
   border-radius: 10px;
   padding: calc(10px + .2vw);
   padding-bottom: calc(15px + .35vw);
   z-index: 80;
-  box-sizing: unset;
   cursor: pointer;
   position: relative;
+  width: 100%;
 }
 
 .musicMinCon:hover .playBtn {
@@ -278,16 +285,20 @@
 .musicName {
   font-family: sans-serif;
   font-size: calc(12px + .5vw);
-  margin-top: 20px;
+  margin-top: calc(20px + .05vw);
   font-weight: 600;
 }
 
 .singer {
   font-family: sans-serif;
-  font-size: calc(8px + .35vw);
+  font-size: calc(8px + .3vw);
   font-weight: 600;
   color: #979797;
   margin-top: 5px;
+}
+
+.musicMargin {
+  display: none;
 }
 
 #dolok {
@@ -1020,6 +1031,11 @@
   .musicList>:last-child {
     padding-right: 20px;
     box-sizing: unset;
+  }
+
+  .musicMargin {
+    display: block;
+    width: 1px;
   }
 
   .titleTop {

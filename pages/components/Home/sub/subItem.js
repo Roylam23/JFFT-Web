@@ -23,44 +23,32 @@ const Odometer = dynamic(import("react-odometerjs"), {
   loading: () => 0,
 });
 
-const navi = (i) => {
-  if (typeof window !== "undefined") {
-    if (i == 1) {
-      window.open("https://www.youtube.com/c/JFFLiveChannel", "_blank");
-    } else {
-      window.open("https://www.youtube.com/c/JFFTHK", "_blank");
-    }
-  }
-};
-
 const SubItem = (props) => {
   const { data, error } = useSWR(props.url, fetcher, {
     refreshInterval: 2500,
   });
   if (!data) return null;
   return (
-    <motion.div
-      className={styles.subLive}
-      // variants={display}
-      // initial="hidden"
-      // whileInView="visible"
-      // viewport={{ once: true }}
-    >
-      <img
-        className={styles.subImgLive}
-        src={props.img}
-        onClick={(e) => navi(props.param)}
-      ></img>
-      <span className={styles.subTitleLive}>{props.name}</span>
-      <div className={styles.odoCon}>
-        <Odometer
-          className={styles.odometer}
-          id={styles.odometer}
-          value={data["est_sub"]}
-          format="(,ddd)"
-        />
-      </div>
-    </motion.div>
+    <a href={props.param}>
+      <motion.div
+        className={styles.subLive}
+        // variants={display}
+        // initial="hidden"
+        // whileInView="visible"
+        // viewport={{ once: true }}
+      >
+        <img className={styles.subImgLive} src={props.img}></img>
+        <span className={styles.subTitleLive}>{props.name}</span>
+        <div className={styles.odoCon}>
+          <Odometer
+            className={styles.odometer}
+            id={styles.odometer}
+            value={data["est_sub"]}
+            format="(,ddd)"
+          />
+        </div>
+      </motion.div>
+    </a>
   );
 };
 

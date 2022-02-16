@@ -30,20 +30,20 @@ const Sub = () => {
         <motion.div
           className={styles.subConInner}
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{margin: "-15% 0px"}}
+          whileInView={{ opacity: 1, transition: { duration: .5 } }}
+          viewport={{ margin: "-15% 0px" }}
         >
           <SubItem
             url="https://api.socialcounts.org/youtube-live-subscriber-count/UCcrhFT95jH5XqVVPyBhRbrA"
             img="/jffticon.png"
             name="JFFT"
-            param="0"
+            param="https://www.youtube.com/c/JFFTHK"
           />
           <SubItem
             url="https://api.socialcounts.org/youtube-live-subscriber-count/UC3aipgNToMvs2pFaQyaM_hg"
             img="/jfflive.png"
             name="JFFLive"
-            param="1"
+            param="https://www.youtube.com/c/JFFLiveChannel"
           />
         </motion.div>
       </div>

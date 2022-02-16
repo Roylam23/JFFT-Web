@@ -45,6 +45,21 @@
   z-index: 0
 }
 
+.updateCon::before{
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: url(/jfflive.png);
+  background-attachment: fixed;
+  background-size: calc(200px + 5vw);
+  background-position: center 65%;
+  position: absolute;
+  left: 0;
+  opacity: .3;
+  z-index: 0
+} 
+
 .mainBox {
   display: flex;
   width: 100%;
@@ -111,7 +126,7 @@
 }
 
 .textCon,
-.textCon1 {
+.textCon1,.updateCon {
   height: calc(250px + 40vh);
   overflow: hidden;
   position: relative;
@@ -120,7 +135,7 @@
   padding: calc(50px + 2.5vw)0;
 }
 
-.textCon {
+.textCon,.updateCon {
   height: auto;
 }
 
@@ -1000,7 +1015,7 @@
     font-size: calc(50px + 1vw)
   }
 
-  .textCon {
+  .textCon,.updateCon {
     height: calc(350px + 10vw)
   }
 

@@ -150,7 +150,7 @@ a {
   }
 
   .scrollBoxInner {
-    overflow: scroll;
+    overflow-x: scroll;
   }
 }
 

@@ -6,8 +6,6 @@ const Update = () => {
   return (
     <motion.div
       className={styles.updateCon}
-      id={styles.textCon}
-      style={{ height: "auto" }}
     >
       <div className={styles.frameRe} id={styles.frame}></div>
       <div className={styles.frame} id={styles.frame}></div>

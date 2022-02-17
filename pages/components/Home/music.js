@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 import styles from "../../../styles/Home.module.css";
+import { Icon } from "@iconify/react";
 
 const ani = {
   hidden: { opacity: 0, y: 15 },
@@ -60,6 +61,7 @@ let singers = [
   "良少, 雞翼, 米爺",
 ];
 let id;
+
 const Music = () => {
   const listes = () => {
     const music = [];
@@ -82,8 +84,8 @@ const Music = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
                 role="img"
-                width="calc(1.2em + .25vw)"
-                height="calc(1.2em + .25vw)"
+                width="calc(1.2em + .3vw)"
+                height="calc(1.2em + .3vw)"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 32 32"
               >
@@ -106,7 +108,7 @@ const Music = () => {
   };
   const empty = () => {
     const e = [];
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 9; i++) {
       e.push(
         <a className={styles.musicMainCon}>
           <motion.div
@@ -129,14 +131,45 @@ const Music = () => {
     }
     return e;
   };
+  //Scroll Box
+  if (typeof window !== "undefined") {
+    var s = document.querySelector("#scrollBoxInner");
+    var vw = window.innerWidth / 100;
+    var vw2 = 2 * vw;
+    var padding = (30 + vw2) * 2;
+    var scrolls = s.offsetWidth - padding + 25;
+    window.addEventListener("resize", function () {
+      vw = window.innerWidth / 100;
+      vw2 = 2 * vw;
+      padding = (30 + vw2) * 2;
+      scrolls = s.offsetWidth - padding + 25;
+      s.scrollLeft = 0;
+    });
+    document.querySelector("#left").addEventListener("click", function () {
+      s.scrollLeft -= scrolls;
+      console.log(scrolls);
+    });
+    document.querySelector("#right").addEventListener("click", function () {
+      s.scrollLeft += scrolls;
+      console.log(scrolls);
+    });
+  }
   return (
     <div className={styles.musicCon}>
       <div className={styles.bg}></div>
       <div className={styles.musicTitle}>熱門單曲</div>
-      <div className={styles.musicList}>
-        {listes()}
-        {empty()}
-        <div className={styles.musicMargin}></div>
+      <div className="scrollBox">
+        <div className="scrollBoxBtn" id="left">
+          <Icon width="36" icon="akar-icons:chevron-left" />
+        </div>
+        <div className="scrollBoxBtn" id="right">
+          <Icon width="36" icon="akar-icons:chevron-right" />
+        </div>
+        <div className="scrollBoxInner" id="scrollBoxInner">
+          {listes()}
+          {empty()}
+          <div className={styles.musicMargin}></div>
+        </div>
       </div>
     </div>
   );

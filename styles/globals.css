@@ -148,6 +148,10 @@ a {
   #right {
     display: none;
   }
+
+  .scrollBoxInner {
+    overflow: scroll;
+  }
 }
 
 /* odometer */

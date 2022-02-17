@@ -221,7 +221,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: calc(20px + 1.75vw);
+  width: calc(30px + 1.45vw);
   margin: 15px;
   background: #e90080da;
   border-radius: 50%;
@@ -1031,15 +1031,6 @@
   .textCon,
   .updateCon {
     height: calc(350px + 10vw)
-  }
-
-  .musicCon {
-    padding: 0;
-    padding-top: calc(50px + 2vw);
-  }
-
-  .musicList {
-    overflow: scroll;
   }
 
 }

@@ -96,7 +96,7 @@ const Music = () => {
               </svg>
             </div>
             <span className={styles.musicBox}>
-              <img className={styles.musicPhoto} src={item} id={id}></img>
+              <img loading="lazy" className={styles.musicPhoto} src={item} id={id}></img>
             </span>
             <span className={styles.musicName}>{name[index]}</span>
             <span className={styles.singer}>{singers[index]}</span>

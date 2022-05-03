@@ -34,13 +34,13 @@ const Sub = () => {
           viewport={{ margin: "-15% 0px" }}
         >
           <SubItem
-            url="https://api.socialcounts.org/youtube-live-subscriber-count/UCcrhFT95jH5XqVVPyBhRbrA"
+            url="https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&hl=fr&id=UCcrhFT95jH5XqVVPyBhRbrA&key=AIzaSyAdG9n0Y_ojAJV6-ffClxb4W7EsCLUBhAk"
             img="/jffticon.png"
             name="JFFT"
             param="https://www.youtube.com/c/JFFTHK"
           />
           <SubItem
-            url="https://api.socialcounts.org/youtube-live-subscriber-count/UC3aipgNToMvs2pFaQyaM_hg"
+            url="https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&hl=fr&id=UC3aipgNToMvs2pFaQyaM_hg&key=AIzaSyAdG9n0Y_ojAJV6-ffClxb4W7EsCLUBhAk"
             img="/jfflive.png"
             name="JFFLive"
             param="https://www.youtube.com/c/JFFLiveChannel"

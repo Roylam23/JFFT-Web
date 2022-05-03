@@ -16,7 +16,7 @@ const shows = {
       zIndex: 70,
       transition: {
         delay: delay,
-        duration: 0.5,
+        duration: 0.3,
         zIndex: { delay: 0 },
       },
     };
@@ -35,14 +35,14 @@ const shows = {
     };
   },
   visible: (i) => {
-    const delay = 0.5 + i * 0.1;
+    const delay = 0.3 + i * 0.1;
     return {
       opacity: 1,
       x: 0,
       zIndex: 80,
       transition: {
         delay: delay,
-        duration: 0.5,
+        duration: 0.3,
         zIndex: { delay: 0 },
       },
     };
@@ -62,20 +62,20 @@ const lives = {
       zIndex: 70,
       transition: {
         delay: delay,
-        duration: 0.5,
+        duration: 0.3,
         zIndex: { delay: 0 },
       },
     };
   },
   out: (i) => {
-    const delay = 0.5 + i * 0.1;
+    const delay = 0.3 + i * 0.1;
     return {
       opacity: 1,
       x: 0,
       zIndex: 80,
       transition: {
         delay: delay,
-        duration: 0.5,
+        duration: 0.3,
         zIndex: { delay: 0 },
       },
     };
@@ -177,7 +177,7 @@ const ShowList = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img
+            <img loading="lazy"
               layout="fill"
               alt={showAlt[index]}
               src={a}
@@ -198,7 +198,7 @@ const ShowList = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img
+            <img loading="lazy"
               layout="fill"
               alt={showAlt[index]}
               src={a}
@@ -228,7 +228,7 @@ const ShowList = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img
+            <img loading="lazy"
               layout="fill"
               alt={liveAlt[index]}
               src={a}
@@ -249,7 +249,7 @@ const ShowList = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img
+            <img loading="lazy"
               layout="fill"
               alt={liveAlt[index]}
               src={a}

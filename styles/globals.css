@@ -110,7 +110,7 @@ a {
   justify-content: center;
   align-items: center;
   z-index: 90;
-  opacity: 0;
+  opacity: .2;
   transition: all .3s;
   cursor: pointer;
   background: #00000015;

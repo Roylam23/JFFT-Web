@@ -122,7 +122,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { delay: 0.5, duration: 1 } }}
           >
-            <img className="noticeImg" src="/jffticon.png" alt="jfft" />
+            <img loading="lazy" className="noticeImg" src="/jffticon.png" alt="jfft" />
             <span>
               建議使用Safari瀏覽器以達到最佳觀賞效果 <br></br>
               <br></br>{" "}
@@ -306,27 +306,27 @@ export default function Home() {
               加入JFFT永遠都唔會遲
             </span>
             <span className={styles.footerImgCon}>
-              <img
+              <img loading="lazy"
                 className={styles.footerImg}
                 src="https://yt3.ggpht.com/oXoO57pmKFsC2PkbY4b4kjBggZ-HDf0tLJELc5utJSdnFtzqbeViG4PPotSByw3ghYQXvKHgOw0=s64-k-nd"
               ></img>
-              <img
+              <img loading="lazy"
                 className={styles.footerImg}
                 src="https://yt3.ggpht.com/foTPqcJtDbZfJxfKTt7VtjuKuY-gu1oVXfVqnliYqedAy3BD8KQHrv5D3ZMIXH4smBdW3fI7IA=s64-k-nd"
               ></img>
-              <img
+              <img loading="lazy"
                 className={styles.footerImg}
                 src="https://yt3.ggpht.com/Dgmmeat8PM1ptCDOGafjcSGhm1xZdqO415gWUzsU_eIrFMlhOQo5BIC8PRI9H7gtVvj2un7sAQ=s64-k-nd"
               ></img>
-              <img
+              <img loading="lazy"
                 className={styles.footerImg}
                 src="https://yt3.ggpht.com/chQ8p2BC3hHW7qJGv-CiD8wpPW2uc8Fhzh4n6eUQ8ypuij-7wKIxgG23f5fXUemg-KJnuokF=s64-k-nd"
               ></img>
-              <img
+              <img loading="lazy"
                 className={styles.footerImg}
                 src="https://yt3.ggpht.com/orKxvq5-N1YSxyPb-aRNbPBr5h05LcxjsuVmQ2-FhIlBrF-Bj-VBFKjeTYUiaEqd3Hh4tPE0Zg=s64-k-nd"
               ></img>
-              <img
+              <img loading="lazy"
                 className={styles.footerImg}
                 src="https://yt3.ggpht.com/33_YRLxYvsObX0GrJNgfGI5A5MZ979YHVTIT-S6srwCngVwW74ZkrCcUG4kuIu2WqA8bvbOf3g=s64-k-nd"
               ></img>

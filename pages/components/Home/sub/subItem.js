@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useEffect } from "react";
 import useSWR from "swr";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
@@ -27,23 +27,24 @@ const SubItem = (props) => {
   const { data, error } = useSWR(props.url, fetcher, {
     refreshInterval: 2500,
   });
+  // useEffect(() => {
+  //   if (data) {
+  //     console.log(data['items'][0]['statistics']['subscriberCount']);
+  //   }
+  // }, [data]);
   if (!data) return null;
   return (
     <a href={props.param}>
       <motion.div
         className={styles.subLive}
-        // variants={display}
-        // initial="hidden"
-        // whileInView="visible"
-        // viewport={{ once: true }}
       >
         <img className={styles.subImgLive} src={props.img}></img>
-        <span className={styles.subTitleLive}>{props.name}</span>
+        <span className={styles.subTitleLive}>{props.name}{data['items']['kind']}</span>
         <div className={styles.odoCon}>
           <Odometer
             className={styles.odometer}
             id={styles.odometer}
-            value={data["est_sub"]}
+            value={data['items'][0]['statistics']['subscriberCount']}
             format="(,ddd)"
           />
         </div>

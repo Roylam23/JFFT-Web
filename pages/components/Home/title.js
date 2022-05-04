@@ -58,7 +58,7 @@ const Title = () => {
         id={styles.top}
         // style={{ x: x1, opacity: op1 }}
       >
-        全港最大黃賭毒邪教
+        只是為了好玩的團隊
       </motion.span>
       <motion.span
         initial={{ opacity: 0, y: 30 }}

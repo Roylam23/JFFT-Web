@@ -22,8 +22,8 @@ const Update = () => {
           fontWeight: "600",
         }}
       >
-        <span>網站初期設計少柒敬請見諒</span>
-        <span>內容同功能會因功課進度而更新</span>
+        <span>網站初期設計簡陋敬請見諒</span>
+        <span>網站預期於暑假期間進行更新</span>
         <span>加入JFFT永遠都唔會遲！</span>
         <span>感謝JFFT為各位會然帶黎歡樂</span>
       </motion.div>

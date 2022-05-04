@@ -9,6 +9,8 @@ const Heads = () => {
       <meta charSet="utf-8"></meta>
       <meta name="description" content="JFFT" />
       <meta name="description" content="Jun For Fun Team" />
+      <meta name="description" content="JFFT Wiki" />
+      <meta name="description" content="只是為了好玩的團隊"/>
       <meta name="description" content="JFFLive" />
       <meta name="description" content="加入JFFT永遠都唔會遲" />
       <meta name="description" content="Firm" />

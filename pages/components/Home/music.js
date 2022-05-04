@@ -147,11 +147,11 @@ const Music = () => {
     });
     document.querySelector("#left").addEventListener("click", function () {
       s.scrollLeft -= scrolls;
-      console.log(scrolls);
+      // console.log(scrolls);
     });
     document.querySelector("#right").addEventListener("click", function () {
       s.scrollLeft += scrolls;
-      console.log(scrolls);
+      // console.log(scrolls);
     });
   }
   return (
